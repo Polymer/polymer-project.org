@@ -87,7 +87,7 @@ gulp.task('generate-service-worker', function() {
   }
 
   const rootDir = 'dist';
-  const partialTemplateFiles = ['head-meta.html', 'site-nav.html']
+  const partialTemplateFiles = ['head-meta.html']
     .map(file => path.join(rootDir, 'templates', file));
 
   const config = {
@@ -315,7 +315,6 @@ gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', funct
     .pipe(gulp.dest('dist'));
 
   const gae = gulp.src([
-      'app/**/nav.yaml',
       'app/**/blog.yaml',
       'app/**/authors.yaml',
       '{templates,lib}/**/*'

@@ -18,6 +18,4 @@ import '@polymer/paper-listbox/paper-listbox.js';
 
 import './demo-tabs.js';
 import './google-youtube.js';
-import './iron-doc-viewer.js';
 import './pw-footer.js';
-import './pw-version-selector.js';

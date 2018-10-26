@@ -35,29 +35,8 @@ class PwShell extends PolymerElement {
         text-decoration: none;
       }
 
-      /* To avoid flashing the content before it's being distributed,
-       * the nav links where initially display: none. */
-      .drawer-contents ::slotted(.site-nav) {
-        display: block !important;
-      }
-
       a.iron-selected {
         color: #333;
-      }
-
-      .drawer {
-       display: none;
-       z-index: var(--app-drawer-z-index);
-      }
-
-      .drawer-contents {
-        height: 100%;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .drawer-toggle {
-        display: none;
       }
 
       .header {
@@ -112,15 +91,6 @@ class PwShell extends PolymerElement {
         border-bottom: 4px solid #f50057;  /* pink-a400 */
       }
 
-      :host([active-docs-version="1.0"]) .sections-tabs a[data-version="2.0"],
-      :host([active-docs-version="1.0"]) .sections-tabs a[data-version="3.0"],
-      :host([active-docs-version="2.0"]) .sections-tabs a[data-version="1.0"],
-      :host([active-docs-version="2.0"]) .sections-tabs a[data-version="3.0"],
-      :host([active-docs-version="3.0"]) .sections-tabs a[data-version="1.0"],
-      :host([active-docs-version="3.0"]) .sections-tabs a[data-version="2.0"] {
-        display: none;
-      }
-
       .search-box {
         width: 100%;
         height: 100%;
@@ -158,10 +128,7 @@ class PwShell extends PolymerElement {
 
     <app-header class="header" reveals snaps shadow>
       <div class="header-toolbar layout horizontal center">
-        <paper-icon-button class="drawer-toggle" icon="pw-icons:menu" on-click="_toggleDrawer"></paper-icon-button>
-
         <a href="/" class="logo-link">
-          <img src="/images/logos/p-logo.png" alt="Polymer Logo">
           <span>Polymer Project</span>
         </a>
 
@@ -169,20 +136,9 @@ class PwShell extends PolymerElement {
 
         <nav>
           <iron-selector class="sections-tabs" attr-for-selected="name" activate-event="" selected="[[_computeSection(path)]]">
-            <a href="/1.0/start/" name="1.0/start" data-version="1.0">Start</a>
-            <a href="/1.0/docs/devguide/feature-overview" name="1.0/docs" data-version="1.0">Polymer</a>
-            <a href="/1.0/toolbox/" name="1.0/toolbox" data-version="1.0">App Toolbox</a>
-
-            <a href="/2.0/start/" name="2.0/start" data-version="2.0">Start</a>
-            <a href="/2.0/docs/devguide/feature-overview" name="2.0/docs" data-version="2.0">Polymer</a>
-            <a href="/2.0/toolbox/" name="2.0/toolbox" data-version="2.0">App Toolbox</a>
-
-            <a href="/3.0/start/" name="3.0/start" data-version="3.0">Start</a>
-            <a href="/3.0/docs/devguide/feature-overview" name="3.0/docs" data-version="3.0">Polymer</a>
-            <a href="/3.0/toolbox/" name="3.0/toolbox" data-version="3.0">App Toolbox</a>
+            <a href="/" name="home">Home</a>
 
             <a href="/blog/" name="blog">Blog</a>
-            <a href="/community/" name="community">Community</a>
           </iron-selector>
         </nav>
 
@@ -193,11 +149,6 @@ class PwShell extends PolymerElement {
       <input id="searchBox" on-change="_onSearchInputChange" type="search" class="search-box fit" placeholder="Search Polymer Site" aria-labelledby="searchLabel">
     </app-header>
 
-    <app-drawer id="drawer" class="drawer" swipe-open>
-      <div class="drawer-contents">
-        <slot name="site-nav"></slot>
-      </div>
-    </app-drawer>
 
     <slot></slot>
 
@@ -230,16 +181,6 @@ class PwShell extends PolymerElement {
         observer: '_collapseTocChanged'
       },
 
-      /**
-       * Which version (1.0 or 2.0) of the docs we are using, so that the
-       * main nav and side nav can be kept in sync across page navigations.
-       */
-      activeDocsVersion: {
-        type: String,
-        value: '3.0',
-        reflectToAttribute: true
-      },
-
       path: {
         type: String
       }
@@ -264,11 +205,6 @@ class PwShell extends PolymerElement {
     // Keep track of the scrolling position so that we can fix the TOC (which is in our light dom)
     this._stickyTocPosition = this._getStickyTocPosition();
     document.addEventListener('scroll', () => this._onScroll());
-
-    // Save which version of docs we're looking at, since we need to
-    // maintain this state across the app. Note that not all sections are versioned.
-    if (/[123]\.0/.test(this._routeData.version))
-      this.activeDocsVersion = this._routeData.version;
   }
 
   _toggleDrawer() {
@@ -286,7 +222,7 @@ class PwShell extends PolymerElement {
   _computeSection(path) {
     // This attempts to match the prefix of the current path with the name attribute on one of
     // the links in .sections-tabs (e.g. '1.0/start', '2.0/toolbox', 'blog', 'community', etc.).
-    var match = /^\/([123]\.0\/[^\/]+|blog|community)\//.exec(path);
+    var match = /^\/blog\//.exec(path);
     return match ? match[1] : null;
   }
 
@@ -304,14 +240,6 @@ class PwShell extends PolymerElement {
     if (this.hasAttribute('server-rendered')) {
       this.removeAttribute('server-rendered');
     } else {
-      // Not all sections have a version, so only update the docs version if
-      // there's actually a change.
-      // Also I don't understand, but 'blog' comes with a version of "blog" so...
-      var version = this._routeData.version;
-      if (/[123]\.0/.test(version)) {
-        this.activeDocsVersion = version;
-      }
-
       var doc = event.detail.response;
       document.title = doc.title;
 
@@ -349,89 +277,6 @@ class PwShell extends PolymerElement {
     this._tocElement = this.querySelector('details');
     if (this._tocElement) {
       this._updateTocStyles();
-    }
-
-    // If there's two links matching this path (i.e. because there's no landing
-    // page for a section), and pick the deepest link to highlight.
-    var matchingLinks = this.querySelectorAll('.site-nav a[name="' + this.path +'"]');
-    var activeLink = matchingLinks[matchingLinks.length - 1];
-
-    if (activeLink) {
-      this.toggleClass('selected', true, activeLink);
-      this.styleLinkPath(activeLink, true);
-    }
-  }
-
-  styleLinkPath(link, opened) {
-    var classList = link.classList;
-
-    if (classList.contains('level-1')) {
-      this._styleLevel1Link(link, opened);
-    } else if (classList.contains('level-2') && classList.contains('indent')) {
-      this._styleLevel3Link(link);
-    } else if (classList.contains('level-2')) {
-      this._styleLevel2Link(link, opened);
-    }
-  }
-
-  _styleLevel1Link(link, opened) {
-    // Style the active selection.
-    this.toggleClass('active', opened, link);
-
-    var collapse = link.nextElementSibling;
-    this._showOrHideCollapse(link, opened);
-
-    // Style all the other greyed-out links.
-    const links = this.querySelectorAll('a.level-1');
-    for (let i = 0; i < links.length; i++) {
-      if (link !== links[i]) {
-        // Close all other collapses.
-        this._showOrHideCollapse(links[i], false);
-        this.toggleClass('active', false, links[i]);
-
-        // If the active collapse is opened, then grey-out the other links.
-        this.toggleClass('greyed-out', collapse && collapse.opened, links[i]);
-      }
-    }
-  }
-
-  _styleLevel2Link(link, opened) {
-    // Style the active selection.
-    this.toggleClass('active', opened, link);
-
-    // A level-2 link is inside a collapse, which comes after the level-1 link
-    // responsible for toggling that collapse. Style the parent level-1 link
-    // as well, so that the whole path of the tree is highlighted.
-    var parentLink = link.parentElement.previousElementSibling;
-    this._styleLevel1Link(parentLink, true);
-
-    // This link might have a collapse as well that we need to open.
-    this._showOrHideCollapse(link, opened);
-  }
-
-  _styleLevel3Link(link) {
-    // Style the active selection.
-    this.toggleClass('active', true, link);
-
-    // A level-3 link is inside a level-2 collapse, and after the level-2
-    // link responsible for opening it.
-    this._styleLevel2Link(link.parentElement.previousElementSibling, true);
-  }
-
-  _showOrHideCollapse(link, opened) {
-    var collapse = link.nextElementSibling;
-    var expandButton = link.querySelector('paper-icon-button');
-
-    // Wait until the element has been distributed and upgraded
-    if (!expandButton || !collapse || !collapse.hide || !collapse.show)
-      return;
-
-    if (opened) {
-      expandButton.icon = 'expand-less';
-      collapse.show();
-    } else {
-      expandButton.icon = 'expand-more';
-      collapse.hide();
     }
   }
 

@@ -243,8 +243,6 @@ class Site(webapp2.RequestHandler):
       shortpath = match.group(2)
 
       data = {
-        'site_nav': self.get_site_nav(version),
-        'section_nav': self.get_section_nav(version, shortpath),
         'path': '/' + path,
         # API docs are not editable in GH.
         'edit_on_github': path.find('.0/docs/api/') == -1,
@@ -263,7 +261,6 @@ class Site(webapp2.RequestHandler):
         active_article = self.get_active_article(articles, template_path)
 
       data = {
-        'site_nav': self.get_site_nav('1.0') + self.get_site_nav('2.0') + self.get_site_nav('3.0'),
         'articles': articles,
         'active_article': active_article
       }
