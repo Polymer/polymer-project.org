@@ -10,7 +10,6 @@
 
 import './icons.js';
 
-import '@polymer/iron-collapse/iron-collapse.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/paper-item/paper-item.js';

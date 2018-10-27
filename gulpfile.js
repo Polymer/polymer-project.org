@@ -282,9 +282,7 @@ gulp.task('js', 'Minify JS to dist/', ['jshint'], function() {
 
 gulp.task('build-bundles', 'Build element bundles', function() {
   return merge(
-    $.run('polymer build').exec(),
-    $.run('polymer build', {cwd: 'app/2.0/samples/homepage/contact-card'}).exec(),
-    $.run('polymer build', {cwd: 'app/2.0/samples/homepage/google-map'}).exec())
+    $.run('polymer build').exec())
 });
 
 gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', function() {
