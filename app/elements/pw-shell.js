@@ -12,7 +12,6 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings.js';
 import { scroll } from '@polymer/app-layout/helpers/helpers.js';
-import '@polymer/app-layout/app-drawer/app-drawer.js';
 import '@polymer/app-layout/app-header/app-header.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
@@ -111,9 +110,6 @@ class PwShell extends PolymerElement {
       }
 
       @media (max-width: 767px) {
-        .drawer, .drawer-toggle {
-          display: block;
-        }
 
         .sections-tabs > a {
           display: none;
@@ -207,10 +203,6 @@ class PwShell extends PolymerElement {
     document.addEventListener('scroll', () => this._onScroll());
   }
 
-  _toggleDrawer() {
-    this.$.drawer.toggle();
-  }
-
   _focusSearch() {
     this.$.searchBox.focus();
   }
@@ -294,19 +286,12 @@ class PwShell extends PolymerElement {
   }
 
   _locationChanged() {
-    this.$.drawer.close();
-
     var hash = window.location.hash;
     if (hash) {
       var el = this.querySelector(hash);
       if (el) {
         el.scrollIntoView();
-      } else {
-        var viewer = this.querySelector(
-          'iron-doc-element, iron-doc-mixin, iron-doc-namespace, iron-doc-module');
-        if (viewer)
-          viewer.scrollToAnchor(hash);
-      }
+      } 
     }
   }
 
