@@ -122,9 +122,6 @@ class PwFooter extends PolymerElement {
     <footer>
       <section class="footer-media-links">
         <div class="layout horizontal center center-justified">
-          <a href="http://plus.google.com/107187849809354688692/" title="Follow +polymer on Google+" aria-label="Follow polymer on Google+">
-            <iron-icon icon="social-icons:gplus"></iron-icon>
-            <span>Polymer</span></a>
           <a href="https://twitter.com/intent/follow?screen_name=polymer" title="Follow @polymer on Twitter" aria-label="Follow polymer on Twitter">
             <iron-icon icon="social-icons:twitter"></iron-icon>
             <span>@Polymer</span>
@@ -146,41 +143,36 @@ class PwFooter extends PolymerElement {
 
       <section class="footer-links layout horizontal justified">
         <div class="flex">
-          <div class="title">Getting Started</div>
-          <a href="/2.0/start/first-element/intro">Your first element</a>
-          <a href="/2.0/start/toolbox/set-up">Your first app</a>
-          <a href="/2.0/docs/tools/overview">Using the tools</a>
+          <div class="title">Products</div>
+          <a href="https://github.com/Polymer/lit-element/blob/master/README.md">LitElement</a>
+          <a href="https://github.com/Polymer/pwa-starter-kit/blob/master/README.md">PWA Starter Kit</a>
+          <a href="https://github.com/material-components/material-components-web-components/blob/master/README.md">Material Web Components</a>
         </div>
 
         <div class="flex">
-          <div class="title">Polymer Docs</div>
-          <a href="/2.0/docs/api/">Polymer 2.x API Reference</a>
-          <a href="/2.0/docs/devguide/feature-overview">Polymer 2.x Guides</a>
-          <a href="/1.0/docs/devguide/feature-overview">Polymer 1.x Guides</a>
+          <div class="title">Products</div>
+          <a href="https://polymer.github.io/lit-html/">lit-html</a>
+          <a href="https://classic.polymer-project.org">Polymer Classic library</a>
+          <a href="https://github.com/Polymer/prpl-server/blob/master/README.md">PRPL Server</a>
         </div>
 
-        <div class="flex">
-          <div class="title">App Toolbox</div>
-          <a href="/2.0/toolbox/index">Overview</a>
-          <a href="/2.0/toolbox/case-study">App Case Study</a>
-        </div>
 
         <div class="flex">
-          <div class="title">Blog</div>
-          <a href="/blog/">Articles</a>
-          <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIDdS7HWIC_BYRunV6MHs5xo">Polycasts</a>
+          <div class="title">About the Project</div>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/Polymer/project/blob/master/Roadmap.md">Roadmap</a>
+          <a href="https://github.com/Polymer/project/blob/master/Contributing.md">Contributing</a>
         </div>
 
         <div class="flex">
           <div class="title">Community</div>
-          <a href="/community/">Resources</a>
-          <a href="https://www.webcomponents.org/">Element Catalog</a>
+          <a href="https://www.webcomponents.org/">WebComponents.org</a>
         </div>
       </section>
 
       <div class="copyright layout horizontal">
         <div class="flex">
-          &copy; 2017 Polymer Authors.
+          &copy; 2018 Polymer Authors.
           <span class="additional-text">Code Licensed under the BSD License. Documentation licensed under CC BY 3.0.<span>
         </div>
         <a href="#" on-click="_smoothScrollToTop">
