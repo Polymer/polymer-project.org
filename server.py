@@ -247,7 +247,6 @@ class Site(webapp2.RequestHandler):
         # API docs are not editable in GH.
         'edit_on_github': path.find('.0/docs/api/') == -1,
         'edit_on_github_path': BASE_EDIT_PATH % edit_on_github_path,
-        'versioned_paths': self.get_versioned_paths(shortpath),
         # we use this as a macro in cross-references.
         # please don't take it away.
         'polymer_version_dir': version

@@ -103,7 +103,6 @@ gulp.task('generate-service-worker', function() {
     ],
     dynamicUrlToDependencies: {
       '/': partialTemplateFiles.concat([`${rootDir}/index.html`, `${rootDir}/blog.yaml`, `${rootDir}/authors.yaml`]),
-      '/about': partialTemplateFiles.concat(`${rootDir}/about.html`),
       '/app-shell.html': partialTemplateFiles.concat(`${rootDir}/app-shell.html`),
     },
     runtimeCaching: [
@@ -228,17 +227,6 @@ function convertMarkdownToHtml(templateName) {
   });
 }
 
-gulp.task('md:docs', 'Docs markdown -> HTML conversion. Syntax highlight and TOC generation', function() {
-  return gulp.src([
-      'app/**/*.md',
-      '!app/blog/*.md',
-      '!app/{bower_components,elements,images,js,sass}/**',
-    ], {base: 'app/'})
-    .pipe(convertMarkdownToHtml('templates/page.template'))
-    .pipe($.rename({extname: '.html'}))
-    .pipe(gulp.dest('dist'));
-});
-
 gulp.task('md:blog', 'Blog markdown -> HTML conversion. Syntax highlight and TOC generation', function() {
   return gulp.src([
       'app/blog/*.md',
@@ -299,7 +287,6 @@ gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', funct
   const docs = gulp.src([
       'app/**/*.html',
       '!app/{bower_components,elements}/**',
-      '!app/2.0/samples/homepage/**',
      ], {base: 'app/'})
     .pipe($.highlight({
       selector: 'pre code'
@@ -307,8 +294,7 @@ gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', funct
     .pipe(gulp.dest('dist'));
 
   const samples = gulp.src([
-      'app/3.0/start/samples/**/*',
-      'app/3.0/samples/**/*',
+      'app/blog/samples/**/*'
     ], {base: 'app/'})
     .pipe(gulp.dest('dist'));
 
@@ -344,7 +330,7 @@ gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', funct
     ], {base: 'app'})
     .pipe(gulp.dest('dist'));
 
-  return merge(app, docs, samples, gae, webcomponentsjs, bundles, demo1, demo2, summit);
+  return merge(app, docs, samples, gae, webcomponentsjs, bundles, summit);
 });
 
 gulp.task('watch', 'Watch files for changes', function() {
@@ -361,7 +347,6 @@ gulp.task('watch', 'Watch files for changes', function() {
   gulp.watch('app/js/*.js', ['js', reload]);
 
   gulp.watch('app/blog/*.md', ['md:blog', reload]);
-  gulp.watch('app/**/*.md', ['md:docs', reload]);
   gulp.watch(['templates/*.html', 'app/**/*.html'], ['copy', reload]);
   // Watch for changes to server itself.
   gulp.watch('*.py', function(files) {
@@ -387,7 +372,7 @@ gulp.task('clean', 'Remove dist/ and other built files', function() {
 gulp.task('default', 'Build site', ['clean', 'jshint'], function(done) {
   runSequence(
     'build-bundles',
-    ['copy', 'md:docs', 'md:blog', 'style', 'images', 'js'],
+    ['copy', 'md:blog', 'style', 'images', 'js'],
     'generate-service-worker',
     done);
 });
