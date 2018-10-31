@@ -12,9 +12,6 @@ import './icons.js';
 
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
-import '@polymer/paper-item/paper-item.js';
-import '@polymer/paper-listbox/paper-listbox.js';
 
-import './demo-tabs.js';
 import './google-youtube.js';
 import './pw-footer.js';
