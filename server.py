@@ -19,6 +19,7 @@ import webapp2
 import yaml
 import re
 import json
+from collections import OrderedDict
 
 from google.appengine.api import memcache
 
@@ -51,6 +52,15 @@ IS_DEV = os.environ.get('SERVER_SOFTWARE', '').startswith('Dev')
 # base path for edit-on-github links
 BASE_EDIT_PATH = "https://github.com/Polymer/docs/edit/master/app/%s.md"
 
+# base paths for site links & redirects
+# NOTE: URLs in the site footer are hardcoded and need to be updated separately
+SITE_URLS = {
+  'site_classic': 'https://polymer-classic-dot-polymer-project.appspot.com',
+  'site_lithtml': 'https://keanulee.github.io/lit-html',
+  'site_litelement': 'https://keanulee.github.io/lit-element',
+  'site_pwastarterkit': 'https://keanulee.github.io/pwa-starter-kit'
+}
+
 def render(out, template, data={}):
   try:
     t = env.get_template(template)
@@ -80,13 +90,29 @@ def read_redirects_file(filename):
   # e.g. "/0.5/page.html /1.0/page" -> {"/0.5/page.html": "/1.0/page")
   # If the redirect path ends with *, treat it as a wildcard.
   # e.g. "/0.5/* /1.0/" redirects "/0.5/foo/bar" to "/1.0/foo/bar"
+  # variables in SITE_URLS can be added with __underscores__ :
+  # /1.0/ __site_classic__/1.0/
   for r in redirects:
     parts = r.split()
+    match = re.match('__([a-z0-9_-]+)__(.*)', parts[1])
+    if match:
+	logging.warning("Matching.")
+	site = match.group(1)
+	if site in SITE_URLS: 
+	  logging.warning("Foo: %s %s" % (site, match.group(2)))
+	  parts[1] = SITE_URLS[site] + match.group(2)
+          logging.warning("Found redirect URL %s" % parts[1])
+	else:
+	  logging.error("Bad site in redirect file: %s" % site)
+    else:
+	logging.warning("No match for %s" % parts[1])
     if parts[0].endswith('*'):
       wildcards[parts[0][:-1]] = parts[1]
     else:
       literals[parts[0]] = parts[1]
-  return {'literal': literals, 'wildcard': wildcards}
+  # sort the wildcards longest-first, so a more specific wilcard gets picked over a less specific one.
+  sortedWildcards = OrderedDict(sorted(wildcards.items(), lambda a, b: len(b) - len(a)))
+  return {'literal': literals, 'wildcard': sortedWildcards}
 
 def read_nav_file(filename, version):
   nav = load_yaml_config(filename)
@@ -236,33 +262,18 @@ class Site(webapp2.RequestHandler):
     elif path.endswith('.html'):
       return self.redirect('/' + path[:-len('.html')], permanent=True)
 
-    match = re.match('([0-9]+\.[0-9]+)/([^/]+)', path)
+    articles = None
+    active_article = None
 
-    if match:
-      version = match.group(1)
-      shortpath = match.group(2)
+    if template_path.startswith('blog') or template_path == 'index.html':
+      articles = self.get_articles()
+      active_article = self.get_active_article(articles, template_path)
 
-      data = {
-        'path': '/' + path,
-        # API docs are not editable in GH.
-        'edit_on_github': path.find('.0/docs/api/') == -1,
-        'edit_on_github_path': BASE_EDIT_PATH % edit_on_github_path,
-        # we use this as a macro in cross-references.
-        # please don't take it away.
-        'polymer_version_dir': version
-      }
-    else:
-      articles = None
-      active_article = None
-
-      if template_path.startswith('blog') or template_path == 'index.html':
-        articles = self.get_articles()
-        active_article = self.get_active_article(articles, template_path)
-
-      data = {
-        'articles': articles,
-        'active_article': active_article
-      }
+    data = SITE_URLS.copy()
+    data.update({
+      'articles': articles,
+      'active_article': active_article
+    })
 
     # Add .html to construct template path.
     if not template_path.endswith('.html'):

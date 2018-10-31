@@ -145,14 +145,14 @@ class PwFooter extends PolymerElement {
         <div class="flex">
           <div class="title">Products</div>
           <a href="https://github.com/Polymer/lit-element/blob/master/README.md">LitElement</a>
-          <a href="https://github.com/Polymer/pwa-starter-kit/blob/master/README.md">PWA Starter Kit</a>
+          <a href="https://github.com/Polymer/pwa-starter-kit">PWA Starter Kit</a>
           <a href="https://github.com/material-components/material-components-web-components/blob/master/README.md">Material Web Components</a>
         </div>
 
         <div class="flex">
           <div class="title">Products</div>
-          <a href="https://polymer.github.io/lit-html/">lit-html</a>
-          <a href="https://classic.polymer-project.org">Polymer Classic library</a>
+          <a href="https://polymer.github.io/lit-html">lit-html</a>
+          <a href="https://polymer-classic-dot-polymer-project.appspot.com">Polymer Classic library</a>
           <a href="https://github.com/Polymer/prpl-server/blob/master/README.md">PRPL Server</a>
         </div>
 

@@ -126,7 +126,7 @@ gulp.task('generate-service-worker', function() {
         }
       },
       {
-        urlPattern: new RegExp('/(docs|start|toolbox|community|blog)/'),
+        urlPattern: new RegExp('/blog/'),
         handler: pwShellSWHandler,
         options: {
           cache: {

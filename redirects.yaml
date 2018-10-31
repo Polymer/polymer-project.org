@@ -57,6 +57,12 @@
 - /2.0/toolbox/server /2.0/toolbox/prpl
 - /1.0/about /about
 
+# 3.0 => classic site restructure
+- /3.0/docs/api/* __site_classic__/3.0/api/
+- /3.0/toolbox/* __site_classic__/3.0/docs/apps/
+- /3.0/start/* __site_classic__/3.0/docs/
+- /3.0/* __site_classic__/3.0/
+
 # ------------------------------------------------------------------------------
 # Note: keep these for the tests!
 - /oldpage/ /
