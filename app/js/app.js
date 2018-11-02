@@ -41,7 +41,4 @@ ga('create', 'UA-39334307-1', 'auto', {'siteSpeedSampleRate': 50});
 ga('create', 'UA-49880327-9', 'auto', {'name': 'devrelTracker'});
 recordPageview();
 
-// Entypoint for element definitions - full path is needed for fragment loading on any doc URL.
-window.define([window.location.origin + '/elements/pw-shell.js']);
-
 })(window);

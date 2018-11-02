@@ -10,336 +10,147 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/Organization" lang="en">
 <head>
-<title>Welcome - Polymer Project</title>
+<title>Polymer Project</title>
 {% include 'templates/head-meta.html' %}
 </head>
 <body>
-  <pw-shell server-rendered>
+  <header class="hero gradient-bg">
+    {% include 'templates/topnav.html' %}
+    <div class="wrapper">
+      <h1 class="hero-title">Polymer Project</h1>
+      <p class="hero-caption">Open-source libraries, tools, and patterns to help developers build modern web applications</p>
+      <a class="hero-link" href="/blog/">Blog</a>
+    </div>
+  </header>
 
-    <style>
-      .page-index-hero {
-        background-image: url("/images/page-index/hero.png");
-        background-size: contain;
-      }
-
-      .page-index-hero .logo-wrapper {
-        padding: 40px;
-        border-radius: 50%;
-        background: white;
-        box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
-        height: 200px;
-        width: 200px;
-        vertical-align: middle;
-      }
-
-      .page-index-hero .logo-wrapper img {
-        width: 120px;
-        height: 84px;
-      }
-
-      @media (max-width: 767px) {
-        .page-index-hero .logo-wrapper {
-          display: none !important;
-        }
-      }
-
-      .page-index-hero .content {
-        vertical-align: middle;
-      }
-
-      @media (max-width: 900px) {
-        .page-index-hero .content .section-columns {
-          /* Switch to a vertical layout */
-          -ms-flex-direction: column;
-          -webkit-flex-direction: column;
-          flex-direction: column;
-        }
-      }
-
-      .page-index-hero .blue-button:not(:last-of-type) {
-        margin-right: 20px;
-      }
-
-      @media (max-width: 900px) {
-        .page-index-hero .blue-button:not(:last-of-type) {
-          margin-right: 0;
-        }
-      }
-
-      .page-index-features .feature {
-        color: white;
-      }
-
-      .page-index-features .feature img {
-        width: 100%;
-        display: block;
-      }
-
-      .page-index-features .feature h2 {
-        font-size: 20px;
-      }
-
-      @media (max-width: 767px) {
-        .page-index-features .feature {
-          margin: 0;
-          margin-bottom: 40px;
-          margin: auto;
-        }
-        .page-index-features .feature img {
-          display: none;
-        }
-        .page-index-features .feature h2 {
-          font-size: 18px;
-        }
-      }
-
-      .page-index-examples .subsection .example-code {
-        min-width: 60%;
-        /* Override the very opinionated and specific highlight.js style */
-      }
-
-      @media (max-width: 767px) {
-        .page-index-examples .subsection .example-code {
-          width: 100%;
-          margin-bottom: 40px;
-        }
-      }
-
-      .page-index-examples .subsection .example-code pre {
-        background-color: #fafafa !important;
-        padding: 0 !important;
-      }
-
-      .page-index-examples .subsection iframe {
-        margin: 0.5em 0;
-      }
-
-      .page-index-examples .subsection .example-google-map iframe {
-        height: 232px;
-      }
-
-      .page-index-examples .subsection .example-contact-card iframe {
-        height: 72px;
-      }
-
-      .page-index-examples .subsection .example-friend-list iframe {
-        height: 452px;
-      }
-
-      @media (max-width: 767px) {
-        .page-index-examples .subsection .example-friend-list iframe {
-          height: 232px;
-        }
-      }
-
-      .page-index-examples .subsection .example-pwa img {
-        display: block;
-        margin: 0.5em auto;
-      }
-
-      .page-index-summit img {
-        margin-top: 20px;
-      }
-
-      .page-index-summit p:not(:first-of-type) {
-        margin-top: 40px;
-      }
-
-      section.page-index-logos {
-        text-align: center;
-      }
-
-      .page-index-partners {
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .page-index-partners img {
-        height: 30px;
-        width: auto;
-        margin: 10px;
-      }
-
-      .page-index-partners img.logo-embiggen {
-        height: 60px;
-      }
-      .page-index-partners img.logo-emsmallen {
-        height: 20px;
-      }
-
-      .page-index-browsers {
-        margin-top: 40px;
-      }
-
-      .page-index-browsers img {
-        width: 70px;
-        height: 70px;
-        margin: 20px;
-      }
-
-      @media (max-width: 767px) {
-        .page-index-browsers img {
-          width: 40px;
-          height: 40px;
-          margin: 10px;
-        }
-
-        .page-index-partners img {
-          height: 20px;
-        }
-        .page-index-partners img.logo-embiggen {
-          height: 40px;
-        }
-        .page-index-partners img.logo-emsmallen {
-          height: 10px;
-        }
-      }
-
-      .page-index-articles .post {
-        margin-top: 20px;
-      }
-
-      @media (max-width: 767px) {
-        .page-index-articles .post:not(:last-child) {
-          border-bottom: 1px solid #f50057;
-          margin-bottom: 20px;
-        }
-      }
-
-      .page-index-articles .post .post-title {
-        font-size: 18px;
-        color: #1e88e5;
-        text-decoration: none;
-      }
-
-      google-youtube {
-        min-width: 40%;
-      }
-    </style>
-
-    <section class="page-index-hero grey">
-      <div class="section-columns layout center">
-        <div class="layout vertical center center-justified">
-          <h2>The<br>Polymer<br>Project</h2>
-        </div>
-        <div class="content flex">
-          <h1>Make the web better</h1>
-          <div class="flex">
-            <p>
-              Our five year mission: build open-source libraries, tools, and patterns to help developers build modern web applications.
-              The Polymer Project is led by a team of front-end developers working within the Chrome organization at Google, aided and abetted
-              by an awesome community of web lovers. 
-              </p>
-            </p>
-          </div>
+  <section>
+    <div class="wrapper">
+      <div class="responsive-row center">
+        <div style="max-width: 600px">
+          <h2>Make the web better</h2>
+          <p>
+            Our five year mission: build open-source libraries, tools, and patterns to help developers build modern web applications.
+            The Polymer Project is led by a team of front-end developers working within the Chrome organization at Google, aided and abetted
+            by an awesome community of web lovers. 
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="light">
+  <section class="grey-bg">
+    <div class="wrapper">
+      <h2>Our work</h2>
+      <div class="responsive-row">
+        <div style="flex: 1; margin-right: 20px">
+          <h2 class="underline">LitElement</h2>
+          <p>An ultra-light, highly performant custom element base class with a simple but expressive API. Status: prerelease.</p>
+          <a href="{{{site_litelement}}}">lit-element</a>
+        </div>
+        <div style="flex: 1; margin-right: 20px">
+          <h2 class="underline">PWA Starter Kit</h2>
+          <p>Your one-stop shop for building Progressive Web Apps that make the most of the modern web. Status: prerelease.</p>
+          <a href="{{{site_pwastarterkit}}}">PWA Starter Kit</a>
+        </div>
+        <div style="flex: 1; margin-right: 20px">
+          <h2 class="underline">Material Web Components</h2>
+          <p>Pixel-perfect realizations of Google's Material Design spec that work anywhere on the web. Status: prerelease.</p>
+          <a href="https://github.com/material-components/material-components-web-components/blob/master/README.md">Material Web Components</a>
+        </div>
+      </div>
+      <div class="responsive-row">
+        <div style="flex: 1; margin-right: 20px">
+          <h2 class="underline">Polymer classic library</h2>
+          <p>Our original web component library. Status: maintenance.</p>
+          <a href="{{{site_classic}}}">Polymer classic library</a>
+        </div>
+        <div style="flex: 1; margin-right: 20px">
+          <h2 class="underline">Tools</h2>
+          <p>Tools for scaffolding, building, and testing apps with web components. Status: stable.</p>
+          <a href="https://github.com/Polymer/tools/blob/master/README.md">Tools</a>
+        </div>
+        <div style="flex: 1; margin-right: 20px">
+          <h2 class="underline">PRPL server</h2>
+          <p>A sample Node server for serving fast modern web applications using the PRPL pattern. Status: stable.</p>
+          <a href="https://github.com/Polymer/prpl-server/blob/master/README.md">PRPL server</a>
+        </div>  
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrapper">
+      <div class="responsive-row">
+        <div style="flex: 1; margin-right: 20px">
+          <h2>About the Polymer Project</h2>
+          <div>
+            <p>As a team of front-end engineers embedded in the Chrome team, our mission is to make the web better, by helping developers unlock the web’s full potential and by spurring the web platform to evolve and improve.</p>
+            <p>We work on libraries, tools and patterns to help developers build modern Progressive Web Apps, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
+            <p>We also participate in the standards process, doing our part to ensure that front-end developers have a strong voice in the evolution of the platform.</p>
+          </div>
+        </div>
+        <div style="flex: 1; margin-right: 20px">
+          <h2>Why Web Components?</h2>
+          <div>
+            <p>Web Components are the web platform's native solution for component-based development.</p>
+            <p>With Web Components, you can create reusable custom elements that interoperate seamlessly with the browser’s built-in elements, or break your app up into right-sized pieces, making your code cleaner and less expensive to maintain.</p>
+            <p>Our products sprinkle a bit of sugar over the standard Web Components APIs and shine a light on best practices for building elements and apps, making it easier for you to get great results.</p>
+          </div>
+          <a href="https://webcomponents.org">More about Web Components</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="grey-bg">
+    <div class="wrapper">
+      <h2>Latest news</h2>
+      <div class="responsive-row">
+        {% for item in articles[:3] %}
+        <div style="flex: 1; margin-right: 20px">
+          <a href="{{{item.path}}}" class="post-title">{{{item.title}}}</a>
+          <p>{{{item.description}}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrapper" style="text-align: center">
+      <h2>Browser Compatibility</h2>
+      <p>Polymer products work in all major browsers (Chrome, Firefox, IE, Edge, Safari, and Opera). </p>
       <div>
-        <h2>Our work</h2>
-        <p></p>
-        <div class="section-columns">
-          <div class="flex">
-            <h2 class="underline">LitElement</h2>
-            <p>An ultra-light, highly performant custom element base class with a simple but expressive API. Status: prerelease.</p>
-            <a href="{{{site_litelement}}}" class="blue-button flex">lit-element</a>
-
-          </div>
-          <div class="flex">
-            <h2 class="underline">PWA Starter Kit</h2>
-            <p>Your one-stop shop for building Progressive Web Apps that make the most of the modern web. Status: prerelease.</p>
-            <a href="{{{site_pwastarterkit}}}" class="blue-button flex">PWA Starter Kit</a>
-          </div>
-          <div class="flex">
-            <h2 class="underline">Material Web Components</h2>
-            <p>Pixel-perfect realizations of Google's Material Design spec that work anywhere on the web. Status: prerelease.</p>
-            <a href="https://github.com/material-components/material-components-web-components/blob/master/README.md" class="blue-button flex">Material Web Components</a>
-          </div>
-        </div>
-        <div class="section-columns">
-
-          <div class="flex">
-              <h2 class="underline">Polymer classic library</h2>
-              <p>Our original web component library. Status: maintenance.</p>
-              <a href="{{{site_classic}}}" class="blue-button flex">Polymer classic library</a>
-              
-            </div>
-            <div class="flex">
-              <h2 class="underline">Tools</h2>
-              <p>Tools for scaffolding, building, and testing apps with web components. Status: stable.</p>
-              <a href="https://github.com/Polymer/tools/blob/master/README.md" class="blue-button flex">Tools</a>
-            </div>
-            <div class="flex">
-              <h2 class="underline">PRPL server</h2>
-              <p>A sample Node server for serving fast modern web applications using the PRPL pattern. Status: stable.</p>
-              <a href="https://github.com/Polymer/prpl-server/blob/master/README.md" class="blue-button flex">PRPL server</a>
-            </div>  
-        </div>
+        <img width="70" height="70" src="/images/browsers/chrome_128x128.png" alt="chrome logo">
+        <img width="70" height="70" src="/images/browsers/firefox_128x128.png" alt="firefox logo">
+        <img width="70" height="70" src="/images/browsers/internet-explorer_128x128.png" alt="internet explorer logo">
+        <img width="70" height="70" src="/images/browsers/edge_128x128.png" alt="edge logo">
+        <img width="70" height="70" src="/images/browsers/safari_128x128.png" alt="safari logo">
+        <img width="70" height="70" src="/images/browsers/opera_128x128.png" alt="opera logo">
       </div>
-    </section>
-  
-    <section class="library grey">
-      <div class="section-columns">
-          <div class="flex">
-            <h2 class="underline">About the Polymer Project</h2>
-            <div class="flex">
-              <p>As a team of front-end engineers embedded in the Chrome team, our mission is to make the web better, by helping developers unlock the web’s full potential and by spurring the web platform to evolve and improve.</p>
-              <p>We work on libraries, tools and patterns to help developers build modern Progressive Web Apps, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
-              <p>We also participate in the standards process, doing our part to ensure that front-end developers have a strong voice in the evolution of the platform.</p>
-            </div>
-            <a href="/about" class="blue-button">More About the Project</a>
-          </div>
-          <div class="flex">
-            <h2 class="underline">Why Web Components?</h2>
-            <div class="flex">
-              <p>Web Components are the web platform's native solution for component-based development.</p>
-              <p>With Web Components, you can create reusable custom elements that interoperate seamlessly with the browser’s built-in elements, or break your app up into right-sized pieces, making your code cleaner and less expensive to maintain.</p>
-              <p>Our products sprinkle a bit of sugar over the standard Web Components APIs and shine a light on best practices for building elements and apps, making it easier for you to get great results.</p>
-            </div>
-            <a href="https://webcomponents.org" class="blue-button">More about Web Components</a>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="page-index-articles light">
-      <div>
-        <h2 class="underline">Latest news</h2>
-        <div class="section-columns">
-          {% for item in articles[:3] %}
-          <div class="post">
-            <a href="{{{item.path}}}" class="post-title">{{{item.title}}}</a>
-            <p>{{{item.description}}}</p>
-          </div>
-          {% endfor %}
-        </div>
+  <footer>
+    <div class="wrapper">
+      <div class="group">
+        More projects<br>
+        <a href="https://polymer.github.io/lit-html/">lit-html</a><br>
+        <a href="https://polymer.github.io/lit-element/">LitElement</a><br>
+        <a href="https://polymer.github.io/pwa-starter-kit/">PWA Starter Kit</a>
       </div>
-    </section>
-
-    <section class="grey gradient-light page-index-logos">
-      <div>
-        <h2>Browser Compatibility</h2>
-        <div>Polymer products <a href="/3.0/docs/browsers">work in all major browsers</a> (Chrome, Firefox, IE, Edge, Safari, and Opera).</div>
-        <div class="page-index-browsers layout wrap justified spaced">
-          <img src="/images/browsers/chrome_128x128.png" alt="chrome logo">
-          <img src="/images/browsers/firefox_128x128.png" alt="firefox logo">
-          <img src="/images/browsers/internet-explorer_128x128.png" alt="internet explorer logo">
-          <img src="/images/browsers/edge_128x128.png" alt="edge logo">
-          <img src="/images/browsers/safari_128x128.png" alt="safari logo">
-          <img src="/images/browsers/opera_128x128.png" alt="opera logo">
-        </div>
+      <div class="group">
+        Stay in touch<br>
+        <a href="https://www.github.com/polymer/pwa-starter-kit" rel="noopener" target="_blank">GitHub</a><br>
+        <a href="https://www.twitter.com/polymer" rel="noopener" target="_blank">Twitter</a><br>
+        <a href="https://www.youtube.com/watch?v=we3lLo-UFtk" rel="noopener" target="_blank">YouTube</a>
       </div>
-    </section>
-
-  </pw-shell>
-  <pw-footer></pw-footer>
+      <div class="attribution">
+        © 2018 Polymer Authors.<br>
+        Code licensed under the
+        <a target="_blank" href="http://polymer.github.io/LICENSE.txt">BSD License</a>.
+      </div>
+    </div>
+  </footer>
   <script src="/js/app.js"></script>
 </body>
 </html>

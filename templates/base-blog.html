@@ -14,8 +14,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 {% include 'templates/head-meta.html' %}
 </head>
 <body>
-  <pw-shell server-rendered>
+  {% include 'templates/topnav.html' %}
 
+  <main class="wrapper"><div>
     <!-- Because we want the styles to be loaded when the pw-shell changes its
       content, they need to be here, and not in the <head> -->
     <style>
@@ -99,8 +100,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       /* Match the main media-queries to the header, but don't worry about centering
-       * the content, since we do that separately.
-       */
+        * the content, since we do that separately.
+        */
       @media (min-width: 1001px) {
         .main-section {
           padding-right: 40px;  /* So that the TOC doesn't jump */
@@ -186,9 +187,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </section>
 
     {% endif %}
+  </div></main>
 
-  </pw-shell>
-  <pw-footer></pw-footer>
+  <footer>
+    <div class="wrapper">
+      <div class="group">
+        More projects<br>
+        <a href="https://polymer.github.io/lit-html/">lit-html</a><br>
+        <a href="https://polymer.github.io/lit-element/">LitElement</a><br>
+        <a href="https://polymer.github.io/pwa-starter-kit/">PWA Starter Kit</a>
+      </div>
+      <div class="group">
+        Stay in touch<br>
+        <a href="https://www.github.com/polymer/pwa-starter-kit" rel="noopener" target="_blank">GitHub</a><br>
+        <a href="https://www.twitter.com/polymer" rel="noopener" target="_blank">Twitter</a><br>
+        <a href="https://www.youtube.com/watch?v=we3lLo-UFtk" rel="noopener" target="_blank">YouTube</a>
+      </div>
+      <div class="attribution">
+        © 2018 Polymer Authors.<br>
+        Code licensed under the
+        <a target="_blank" href="http://polymer.github.io/LICENSE.txt">BSD License</a>.
+      </div>
+    </div>
+  </footer>
   <script src="/js/app.js"></script>
 </body>
 </html>

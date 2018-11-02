@@ -272,7 +272,6 @@ gulp.task('clean', 'Remove dist/ and other built files', function() {
 // Default task. Build the dest dir.
 gulp.task('default', 'Build site', ['clean', 'jshint'], function(done) {
   runSequence(
-    'build-bundles',
     ['copy', 'md:blog', 'style', 'images', 'js'],
     done);
 });
