@@ -41,61 +41,7 @@ ga('create', 'UA-39334307-1', 'auto', {'siteSpeedSampleRate': 50});
 ga('create', 'UA-49880327-9', 'auto', {'name': 'devrelTracker'});
 recordPageview();
 
-if (console) {
-  console.log("%cWelcome to Polymer!\n%cweb components are the <bees-knees>",
-              "font-size:1.5em;color:#4558c9;", "color:#d61a7f;font-size:1em;");
-}
-
-// Show a toast with a service-worker-related update.
-window.showToast = function(message) {
-  var toast = document.getElementById('sw-toast');
-  if (!toast) {
-    toast = document.createElement('paper-toast');
-    toast.id = 'sw-toast';
-    document.body.appendChild(toast);
-  }
-  toast.textContent = message;
-  toast.show();
-};
-
 // Entypoint for element definitions - full path is needed for fragment loading on any doc URL.
 window.define([window.location.origin + '/elements/pw-shell.js']);
-
-// Register service worker, if supported, after the load event (to deprioritize it after lazy imports).
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-      registration.onupdatefound = function() {
-        // The updatefound event implies that registration.installing is set; see
-        // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
-        const installingWorker = registration.installing;
-        installingWorker.onstatechange = function() {
-          switch (installingWorker.state) {
-            case 'installed':
-              if (!navigator.serviceWorker.controller) {
-                window.showToast('Service Worker installed! Pages you view are cached for offline use.');
-              }
-              break;
-
-            case 'redundant':
-              throw Error('The installing service worker became redundant.');
-          }
-        };
-      };
-    }).catch(function(e) {
-      console.error('Service worker registration failed:', e);
-    });
-
-    // Check to see if the service worker controlling the page at initial load
-    // has become redundant, since this implies there's a new service worker with fresh content.
-    if (navigator.serviceWorker.controller) {
-      navigator.serviceWorker.controller.onstatechange = function(event) {
-        if (event.target.state === 'redundant') {
-          window.showToast('Site updated. Refresh this page to see the latest content.');
-        }
-      };
-    }
-  });
-}
 
 })(window);

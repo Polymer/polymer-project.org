@@ -35,7 +35,6 @@
     "@polymer/paper-item": "^3.0.0",
     "@polymer/paper-listbox": "^3.0.0",
     "@polymer/paper-tabs": "^3.0.0",
-    "@polymer/paper-toast": "^3.0.0",
     "@polymer/polymer": "^3.0.0",
     "@stackblitz/sdk": "^1.2.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",

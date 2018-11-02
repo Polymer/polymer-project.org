@@ -12,7 +12,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 // const gulp = require('gulp');
 const gulp = require('gulp-help')(require('gulp'));
 const $ = require('gulp-load-plugins')();
-const swPrecache = require('sw-precache');
 const argv = require('yargs').argv;
 const browserSync = require('browser-sync').create();
 const del = require('del');
@@ -36,7 +35,6 @@ const markdownIt = require('markdown-it')({
   });
 const markdownItAttrs = require('markdown-it-attrs');
 const merge = require('merge-stream');
-const path = require('path');
 const runSequence = require('run-sequence');
 const toc = require('toc');
 const composer = require('gulp-uglify/composer');
@@ -53,104 +51,6 @@ markdownIt.validateLink = function(link) { return true; }
 const reload = argv.reload ? browserSync.reload : function() {
   return new require('stream').PassThrough({objectMode: true});
 }
-
-gulp.task('generate-service-worker', function() {
-  /**
-   * NOTE(keanulee): This function is run in the context of the generated SW where variables
-   * like `toolbox` and `caches` are defined. It is referenced as a handler by the runtime
-   * caching config below which embeds the value of pwShellSWHandler.toString() in the
-   * generated SW.
-   *
-   * This handler will return the cached app shell for all navigate requests and network-first
-   * for all other requests.
-   */
-  function pwShellSWHandler(request, values, options) {
-    // Only serve the app shell for navigate requests (not XHRs) of non-sample content.
-    if ((request.mode === 'navigate') && !request.url.match('samples')) {
-      return caches.open(cacheName).then(function(cache) {
-        const url = new URL('/app-shell.html', self.location).toString();
-        return cache.match(urlsToCacheKeys.get(url)).then(function(response) {
-          if (response) {
-            return response;
-          }
-          throw Error('/app-shell.html missing from cache.');
-        });
-      }).catch(function(e) {
-        // Fall back to fetching the actual content if /app-shell.html is missing.
-        // The SW should precache it the next time it initializes.
-        console.warn('/app-shell.html missing from cache: %O', e);
-        return toolbox.networkFirst(request, values, options);
-      });
-    } else {
-      return toolbox.networkFirst(request, values, options);
-    }
-  }
-
-  const rootDir = 'dist';
-  const partialTemplateFiles = ['head-meta.html']
-    .map(file => path.join(rootDir, 'templates', file));
-
-  const config = {
-    cacheId: 'polymerproject',
-    staticFileGlobs: [
-      `${rootDir}/images/logos/p-logo.png`,
-      `${rootDir}/images/logos/polymerosaurus.png`,
-      `${rootDir}/elements/**`,
-      `${rootDir}/js/*.js`,
-      `${rootDir}/css/*.css`,
-      `${rootDir}/webcomponentsjs/custom-elements-es5-adapter.js`,
-      `${rootDir}/webcomponentsjs/webcomponents-loader.js`,
-    ],
-    dynamicUrlToDependencies: {
-      '/': partialTemplateFiles.concat([`${rootDir}/index.html`, `${rootDir}/blog.yaml`, `${rootDir}/authors.yaml`]),
-      '/app-shell.html': partialTemplateFiles.concat(`${rootDir}/app-shell.html`),
-    },
-    runtimeCaching: [
-      {
-        urlPattern: new RegExp('/images/'),
-        handler: 'fastest',
-        options: {
-          cache: {
-            maxEntries: 50,
-            name: 'image-cache'
-          }
-        }
-      },
-      {
-        urlPattern: new RegExp('/webcomponentsjs/.*.js'),
-        handler: 'fastest',
-        options: {
-          cache: {
-            name: 'webcomponentsjs-polyfills-cache'
-          }
-        }
-      },
-      {
-        urlPattern: new RegExp('/blog/'),
-        handler: pwShellSWHandler,
-        options: {
-          cache: {
-            maxEntries: 100,
-            name: 'docs-cache'
-          }
-        }
-      },
-      {
-        urlPattern: new RegExp('/samples/'),
-        handler: 'fastest',
-        options: {
-          cache: {
-            maxEntries: 20,
-            name: 'samples-cache'
-          }
-        }
-      }
-    ],
-    stripPrefix: rootDir + '/',
-    verbose: false  /* When debugging, you can enable this to true  */
-  };
-  return swPrecache.write(path.join(rootDir, 'service-worker.js'), config);
-});
 
 gulp.task('style', 'Compile sass, autoprefix, and minify CSS', function() {
   const sassOpts = {
@@ -277,6 +177,7 @@ gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', funct
   const app = gulp.src([
       '*',
       'app/manifest.json',
+      'app/service-worker.js',
       '!{README.md,package.json,gulpfile.js}',
     ], {nodir: true})
     .pipe(gulp.dest('dist'));
@@ -373,6 +274,5 @@ gulp.task('default', 'Build site', ['clean', 'jshint'], function(done) {
   runSequence(
     'build-bundles',
     ['copy', 'md:blog', 'style', 'images', 'js'],
-    'generate-service-worker',
     done);
 });

@@ -18,7 +18,6 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/iron-ajax/iron-ajax.js';
 import '@polymer/iron-media-query/iron-media-query.js';
 import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
-import '@polymer/paper-toast/paper-toast.js';
 
 class PwShell extends PolymerElement {
   static get template() {
