@@ -62,12 +62,9 @@ I’m also obviously super excited to meet and chat with some very interesting p
 
 Watch Bede's Polymer Summit talk here:
 
-<google-youtube video-id="c-WDHG6rrdU"
-          list-type="playlist"
-          list="PLNYkxOF6rcIDP0PqVaJxqNWwIgvoEPzJi"
-          autoplay="0"
-          rel="0">
-          </google-youtube>
+<iframe src="https://www.youtube.com/embed/c-WDHG6rrdU?list=PLNYkxOF6rcIDP0PqVaJxqNWwIgvoEPzJi"
+    style="width: 560px; height: 315px; max-width: 100%; border: none"
+    allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 This year's summit took place August 22–23 in beautiful downtown [Copenhagen, Denmark](https://goo.gl/maps/pgFPsEkRRcS2).
 

@@ -102,12 +102,13 @@ function convertMarkdownToHtml(templateName) {
       // Leave a trailing opening <div class="article-wrapper"><article> in the TOC, so that we can wrap the original
       // markdown content into a div, for styling
       data.content = toc.process(content, {
-        header: '<h<%= level %><%= attrs %> id="<%= anchor %>" class="has-permalink"><%= header %></h<%= level %>>',
-        TOC: '<div class="details-wrapper"><details id="toc"><summary>Contents</summary><%= toc %></details></div><div class="article-wrapper"><article>',
-        openUL: '<ul data-depth="<%= depth %>">',
-        closeUL: '</ul>',
-        openLI: '<li data-level="H<%= level %>"><a href="#<%= anchor %>"><%= text %></a>',
-        closeLI: '</li>',
+        // header: '<h<%= level %><%= attrs %> id="<%= anchor %>" class="has-permalink"><%= header %></h<%= level %>>',
+        // TOC: '<div class="details-wrapper"><details id="toc"><summary>Contents</summary><%= toc %></details></div><div class="article-wrapper"><article>',
+        TOC: '<h2 id="table-of-contents">Table of Contents</h2><%= toc %>',
+        // openUL: '<ul data-depth="<%= depth %>">',
+        // closeUL: '</ul>',
+        // openLI: '<li data-level="H<%= level %>"><a href="#<%= anchor %>"><%= text %></a>',
+        // closeLI: '</li>',
         tocMax: 3,
         anchor: function(header, attrs) {
           // if we have an ID attribute, use that, otherwise
@@ -115,9 +116,9 @@ function convertMarkdownToHtml(templateName) {
           var id = attrs.match(/(?:^|\s+)id="([^"]*)"/)
           return id ? id[1] : toc.anchor(header);
         }
-      }) + '</article></div>';
+      })// + '</article></div>';
     } else {
-      data.content = '<div class="article-wrapper"><article>' + content + '</article></div>';
+      data.content = content//'<div class="article-wrapper"><article>' + content + '</article></div>';
     }
 
     const tmpl = fs.readFileSync(templateName);

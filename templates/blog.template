@@ -5,6 +5,5 @@
 {% block title %}<%= title %>{% endblock %}
 
 {% block content %}
-{% include 'templates/page-md-styles.html' %}
 <%= content %>
 {% endblock %}

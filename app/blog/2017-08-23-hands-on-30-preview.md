@@ -97,12 +97,9 @@ If you're looking for a thorough background in ES6 modules, you might want to re
 
 You can also watch Sam Thorogood's talk about ES6 modules from Polymer Summit.
 
-<google-youtube video-id="fIP4pjAqCtQ"
-          list-type="playlist"
-          list="PLNYkxOF6rcIDP0PqVaJxqNWwIgvoEPzJi"
-          autoplay="0"
-          rel="0">
-          </google-youtube>
+<iframe src="https://www.youtube.com/embed/fIP4pjAqCtQ?list=PLNYkxOF6rcIDP0PqVaJxqNWwIgvoEPzJi"
+    style="width: 560px; height: 315px; max-width: 100%; border: none"
+    allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Import dependencies
 

@@ -1,3 +1,5 @@
+@import "syntax-style";
+
 /* Tagname styles */
 body {
   margin: 0;
@@ -179,7 +181,7 @@ section .wrapper {
   position: -webkit-sticky;
   position: sticky;
   top: 60px;
-  padding: 40px 0;
+  padding: 40px 40px 40px 0;
   width: 240px;
   font-size: 14px;
   font-weight: 500;
@@ -208,7 +210,7 @@ section .wrapper {
 /* Article area */
 article {
   flex: 1;
-  margin: 40px;
+  margin: 40px 0;
   /* Set min-width so article width will shrink
   (and code snippets will horizontally scroll). */
   min-width: 1px;
@@ -307,7 +309,7 @@ th, td {
     padding-right: 32px;
   }
   .side-nav {
-    padding: 32px 0;
+    padding: 32px 24px 32px 0;
   }
   footer .group {
     margin-right: 24px;
@@ -316,7 +318,7 @@ th, td {
     padding-left: 32px;
   }
   article {
-    margin: 32px 0 32px 24px;
+    margin: 32px 0;
   }
   .block {
     margin-bottom: 24px;
@@ -329,7 +331,7 @@ th, td {
   }
 
   main {
-    display: block;
+    margin-top: 56px;
   }
 
   .hero .hero-title {
@@ -395,8 +397,8 @@ th, td {
     padding: 20px 0;
   }
 
-  main {
-    margin-top: 112px;
+  .side-nav + article {
+    margin-top: 56px;
   }
   
   .wrapper {
