@@ -38,42 +38,78 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
   </section>
 
-  <section class="grey-bg">
+  <style>
+    .product-grid-item {
+      flex: 1;
+      position: relative;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 20px;
+      background: #999;
+      background: linear-gradient(175deg, #999 0%, #eee 100%);
+      color: #000;
+    }
+
+    .product-grid-item:hover {
+      text-decoration: none;
+    }
+
+    .product-grid-item h2 {
+      color: #fff;
+    }
+
+    .product-grid-item p {
+      margin-right: 40px;
+    }
+
+    .product-grid-item .status {
+      position: absolute;
+      bottom: 16px;
+      right: 32px;
+      transform: rotate(90deg);
+      transform-origin: bottom right;
+      font-size: 14px;
+    }
+  </style>
+
+  <section>
     <div class="wrapper">
       <h2>Our work</h2>
       <div class="responsive-row">
-        <div style="flex: 1; margin-right: 20px">
-          <h2 class="underline">LitElement</h2>
-          <p>An ultra-light, highly performant custom element base class with a simple but expressive API. Status: prerelease.</p>
-          <a href="{{{site_litelement}}}">lit-element</a>
-        </div>
-        <div style="flex: 1; margin-right: 20px">
-          <h2 class="underline">PWA Starter Kit</h2>
-          <p>Your one-stop shop for building Progressive Web Apps that make the most of the modern web. Status: prerelease.</p>
-          <a href="{{{site_pwastarterkit}}}">PWA Starter Kit</a>
-        </div>
-        <div style="flex: 1; margin-right: 20px">
-          <h2 class="underline">Material Web Components</h2>
-          <p>Pixel-perfect realizations of Google's Material Design spec that work anywhere on the web. Status: prerelease.</p>
-          <a href="https://github.com/material-components/material-components-web-components/blob/master/README.md">Material Web Components</a>
-        </div>
+        <a class="product-grid-item" href="https://polymer.github.io/pwa-starter-kit/" style="background: #6711df; background: linear-gradient(175deg, #6711df 0%, #d8bbfa 100%)">
+          <h2>PWA Starter Kit</h2>
+          <p>Starter templates for building full-featured Progressive Web Apps to take advantage of the modern web.</p>
+          <span class="status">Prerelease</span>
+        </a>
+        <a class="product-grid-item" href="https://polymer.github.io/lit-html/" style="background: #de02a9; background: linear-gradient(175deg, #de02a9 0%, #f9ade6 100%)">
+          <h2>lit-html</h2>
+          <p>Efficient, expressive, extensible HTML templating in JavaScript.</p>
+          <span class="status">Prerelease</span>
+        </a>
       </div>
       <div class="responsive-row">
-        <div style="flex: 1; margin-right: 20px">
-          <h2 class="underline">Polymer classic library</h2>
-          <p>Our original web component library. Status: maintenance.</p>
-          <a href="{{{site_classic}}}">Polymer classic library</a>
-        </div>
-        <div style="flex: 1; margin-right: 20px">
-          <h2 class="underline">Tools</h2>
-          <p>Tools for scaffolding, building, and testing apps with web components. Status: stable.</p>
-          <a href="https://github.com/Polymer/tools/blob/master/README.md">Tools</a>
-        </div>
-        <div style="flex: 1; margin-right: 20px">
-          <h2 class="underline">PRPL server</h2>
-          <p>A sample Node server for serving fast modern web applications using the PRPL pattern. Status: stable.</p>
-          <a href="https://github.com/Polymer/prpl-server/blob/master/README.md">PRPL server</a>
-        </div>  
+        <a class="product-grid-item" href="https://polymer.github.io/lit-element/" style="background: #0078b7; background: linear-gradient(175deg, #0078b7 0%, #b4d4e9 100%)">
+          <h2>LitElement</h2>
+          <p>A simple base class for creating fast, lightweight web components that work in any page with your favorite libraries and frameworks.</p>
+          <span class="status">Prerelease</span>
+        </a>
+        <a class="product-grid-item" href="https://github.com/material-components/material-components-web-components" style="background: #02d67d; background: linear-gradient(175deg, #02d67d 0%, #c8fce0 100%)">
+          <h2>Material Web Components</h2>
+          <p>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</p>
+          <span class="status">Prerelease</span>
+        </a>
+      </div>
+      <div class="responsive-row">
+        <a class="product-grid-item" href="{{{site_classic}}}">
+          <h2>Polymer classic library</h2>
+          <p>Our original web component library.</p>
+          <span class="status">Maintenance</span>
+        </a>
+        <a class="product-grid-item" href="https://www.webcomponents.org/author/PolymerElements">
+          <h2>Polymer elements</h2>
+          <p>Our original sets of Polymer-based web components.</p>
+          <span class="status">Maintenance</span>
+        </a>
       </div>
     </div>
   </section>
@@ -81,7 +117,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <section>
     <div class="wrapper">
       <div class="responsive-row">
-        <div style="flex: 1; margin-right: 20px">
+        <div style="flex: 1">
           <h2>About the Polymer Project</h2>
           <div>
             <p>As a team of front-end engineers embedded in the Chrome team, our mission is to make the web better, by helping developers unlock the web’s full potential and by spurring the web platform to evolve and improve.</p>
@@ -89,7 +125,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <p>We also participate in the standards process, doing our part to ensure that front-end developers have a strong voice in the evolution of the platform.</p>
           </div>
         </div>
-        <div style="flex: 1; margin-right: 20px">
+        <div style="flex: 1">
           <h2>Why Web Components?</h2>
           <div>
             <p>Web Components are the web platform's native solution for component-based development.</p>
@@ -106,7 +142,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2>Latest news</h2>
       <div class="responsive-row">
         {% for item in articles[:3] %}
-        <div style="flex: 1; margin-right: 20px">
+        <div style="flex: 1">
           <a href="{{{item.path}}}" class="post-title">{{{item.title}}}</a>
           <p>{{{item.description}}}</p>
         </div>

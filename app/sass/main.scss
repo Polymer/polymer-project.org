@@ -21,8 +21,8 @@ a:hover {
 
 /* Theme backgrounds */
 .gradient-bg {
-  background: #fa61b5;
-  background: linear-gradient(225deg, #fa61b5 0%, #f7691c 100%);
+  background: #0078b7;
+  background: linear-gradient(175deg, #0078b7 0%, #ffabac 100%);
 }
 
 .grey-bg {
@@ -166,6 +166,11 @@ section .wrapper {
 
 .responsive-row {
   display: flex;
+  margin-right: -20px;
+}
+
+.responsive-row > * {
+  margin-right: 20px;
 }
 
 .center {

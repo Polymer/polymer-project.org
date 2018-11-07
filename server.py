@@ -55,10 +55,7 @@ BASE_EDIT_PATH = "https://github.com/Polymer/docs/edit/master/app/%s.md"
 # base paths for site links & redirects
 # NOTE: URLs in the site footer are hardcoded and need to be updated separately
 SITE_URLS = {
-  'site_classic': 'https://polymer-classic-dot-polymer-project.appspot.com',
-  'site_lithtml': 'https://keanulee.github.io/lit-html',
-  'site_litelement': 'https://keanulee.github.io/lit-element',
-  'site_pwastarterkit': 'https://keanulee.github.io/pwa-starter-kit'
+  'site_classic': 'https://polymer-classic-dot-polymer-project.appspot.com'
 }
 
 def render(out, template, data={}):
