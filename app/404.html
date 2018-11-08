@@ -1,6 +1,6 @@
 <!--
 @license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
@@ -14,54 +14,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 {% include 'templates/head-meta.html' %}
 </head>
 <body>
-  <pw-shell server-rendered>
+  {% include 'templates/topnav.html' %}
 
-    <style>
-      .page-error {
-        align-items: center;
-      }
+  <main class="wrapper">
+    <article>
+      <h1>Not found</h1>
+    </article>
+  </main>
 
-      .page-error img {
-        max-width: 250px;
-        display: block;
-      }
-
-      .page-error h1 {
-        font-size: 50px;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-
-      .page-error h2 {
-        font-family: 'Roboto', 'Noto', sans-serif;
-        font-weight: 400;
-      }
-
-      @media (max-width: 767px) {
-        .page-error img {
-          max-width: 200px;
-          margin: 0 auto;
-        }
-
-        .page-error h1 {
-          font-size: 40px;
-          text-align: center;
-        }
-      }
-    </style>
-    <section class="light gradient-light">
-      <div class="page-error section-columns">
-        <div class="image-container">
-          <img src="/images/logos/polymerosaurus.png" alt="Offline Polymer dinosaur">
-        </div>
-        <div class="flex">
-          <h1>Not found.</h1>
-          <h2>We're sorry, but the polymerosaurus can't find the page you were looking for.</h2>
-          <p>Maybe head back to the <a href="/">homepage</a> or use one of the menu links instead?</p>
-        </div>
-      </div>
-    </section>
-  </pw-shell>
   <footer>
     <div class="wrapper">
       <div class="group">
