@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="192px" viewBox="0 0 400 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>thumb_pwa</title>
+    <desc>Created with Sketch.</desc>
+    <g id="thumb_pwa" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-25" transform="translate(2.000000, 0.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-8" transform="translate(0.000000, 2.000000)">
+                <g id="Group">
+                    <polygon id="Rectangle" points="156.46717 0.986380213 187.563327 0.986380213 187.563327 32.0825381 32.0825381 187.563327 0.986380213 187.563327 0.986380213 156.46717"></polygon>
+                    <polygon id="Rectangle-Copy-35" opacity="0.5" points="32.0825381 0.986380213 187.563327 156.46717 187.563327 187.563327 156.46717 187.563327 0.986380213 32.0825381 0.986380213 0.986380213"></polygon>
+                </g>
+            </g>
+            <g id="Group-9" transform="translate(206.000000, 0.000000)">
+                <g id="Group-17">
+                    <rect id="Rectangle" stroke="#FFFFFF" stroke-width="24" opacity="0.49562872" x="12" y="12" width="168" height="168" rx="84"></rect>
+                    <rect id="Rectangle-Copy-36" x="27.3684211" y="27.3684211" width="138" height="138" rx="69"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
