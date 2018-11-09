@@ -54,7 +54,7 @@ BASE_EDIT_PATH = "https://github.com/Polymer/polymer-library-docs/edit/master/ap
 # base paths for site links & redirects
 # NOTE: URLs in the site footer are hardcoded and need to be updated separately
 SITE_URLS = {
-  'site_classic': 'https://library.polymer-project.org'
+  'site_classic': 'https://polymer-library.polymer-project.org'
 }
 
 def render(out, template, data={}):

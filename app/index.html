@@ -97,24 +97,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="wrapper">
       <h2>Our work</h2>
       <div class="responsive-row">
+        <a class="product-grid-item" href="https://lit-element.polymer-project.org" style="background: #0078b7; background: linear-gradient(175deg, #0078b7 0%, #b4d4e9 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg)"></div>
+          <h2>LitElement</h2>
+          <p>A simple base class for creating fast, lightweight web components that work in any page with your favorite libraries and frameworks.</p>
+          <span class="status">Prerelease</span>
+        </a>
         <a class="product-grid-item" href="https://pwa-starter-kit.polymer-project.org" style="background: #6711df; background: linear-gradient(175deg, #6711df 0%, #d8bbfa 100%)">
           <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg)"></div>
           <h2>PWA Starter Kit</h2>
           <p>Starter templates for building full-featured Progressive Web Apps to take advantage of the modern web.</p>
           <span class="status">Prerelease</span>
         </a>
+      </div>
+      <div class="responsive-row">
         <a class="product-grid-item" href="https://lit-html.polymer-project.org" style="background: #e33400; background: linear-gradient(175deg, #e33400 0%, #f7beb0 100%)">
           <div class="thumb" style="background-image:url(/images/thumbnails/thumb_lit-html.svg)"></div>
           <h2>lit-html</h2>
           <p>Efficient, expressive, extensible HTML templating in JavaScript.</p>
-          <span class="status">Prerelease</span>
-        </a>
-      </div>
-      <div class="responsive-row">
-        <a class="product-grid-item" href="https://lit-element.polymer-project.org" style="background: #0078b7; background: linear-gradient(175deg, #0078b7 0%, #b4d4e9 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg)"></div>
-          <h2>LitElement</h2>
-          <p>A simple base class for creating fast, lightweight web components that work in any page with your favorite libraries and frameworks.</p>
           <span class="status">Prerelease</span>
         </a>
         <a class="product-grid-item" href="https://github.com/material-components/material-components-web-components" style="background: #0db76f; background: linear-gradient(175deg, #0db76f 0%, #c8fce0 100%)">
@@ -201,33 +201,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
   </section>
 
-  <footer>
-    <div class="wrapper">
-      <div class="group">
-        Projects<br>
-        <a href="https://lit-html.polymer-project.org">lit-html</a><br>
-        <a href="https://lit-element.polymer-project.org">LitElement</a><br>
-        <a href="https://pwa-starter-kit.polymer-project.org">PWA Starter Kit</a>
-      </div>
-      <div class="group">
-           <br>
-          <a href="https://lit-html.polymer-project.org">lit-html</a><br>
-          <a href="https://lit-element.polymer-project.org">LitElement</a><br>
-          <a href="https://pwa-starter-kit.polymer-project.org">PWA Starter Kit</a>
-        </div>
-      <div class="group">
-        Stay in touch<br>
-        <a href="https://www.github.com/polymer/lit-element" rel="noopener" target="_blank">GitHub</a><br>
-        <a href="https://www.twitter.com/polymer" rel="noopener" target="_blank">Twitter</a><br>
-        <a href="https://www.youtube.com/watch?v=we3lLo-UFtk" rel="noopener" target="_blank">YouTube</a>
-      </div>
-      <div class="attribution">
-        © 2018 Polymer Authors.<br>
-        Code licensed under the
-        <a target="_blank" href="http://polymer.github.io/LICENSE.txt">BSD License</a>.
-      </div>
-    </div>
-  </footer>
+  {% include 'templates/footer.html' %}
   <script src="/js/app.js"></script>
 </body>
 </html>
