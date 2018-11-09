@@ -25,10 +25,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <style>
     .product-grid-item {
-      flex: 1;
-      position: relative;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      display: inline-block;
+      width: calc(50% - 50px);
+      margin-bottom: 20px;
       padding: 20px;
       background: #777;
       background: linear-gradient(175deg, #777 0%, #eee 100%);
@@ -36,6 +35,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       transition: 0.4s transform;
       will-change: transform;
       transform: scale(1);
+    }
+
+    .product-grid-item.left {
+      float: left;
+    }
+
+    .product-grid-item.right {
+      float: right;
     }
 
     .product-grid-item:hover {
@@ -70,10 +77,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .product-grid-item h2 {
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-size: 32px;
+      font-weight: normal;
+      line-height: 38px;
       color: #fff;
     }
 
     .product-grid-item p {
+      margin-top: 0;
+      margin-bottom: 0;
       margin-right: 40px;
     }
 
@@ -91,52 +105,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       letter-spacing: .25px;
       text-transform: uppercase;
     }
+
+    @media screen and (max-width: 640px) {
+      .product-grid-item {
+        display: block;
+        width: auto;
+      }
+
+      .product-grid-item.left,
+      .product-grid-item.right {
+        float: none;
+      }
+    }
   </style>
 
   <section>
     <div class="wrapper">
-      <div class="responsive-row">
-        <a class="product-grid-item" href="https://lit-element.polymer-project.org" style="background: #0078b7; background: linear-gradient(175deg, #0078b7 0%, #b4d4e9 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg)"></div>
+      <div>
+        <a class="product-grid-item left" href="https://lit-element.polymer-project.org" style="background: #0078b7; background: linear-gradient(175deg, #0078b7 0%, #b4d4e9 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg); padding-top: 35%"></div>
           <h2>LitElement</h2>
           <p>A simple base class for creating fast, lightweight web components that work in any page with your favorite libraries and frameworks.</p>
           <span class="status">Prerelease</span>
         </a>
-        <a class="product-grid-item" href="https://pwa-starter-kit.polymer-project.org" style="background: #6711df; background: linear-gradient(175deg, #6711df 0%, #d8bbfa 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg)"></div>
+        <a class="product-grid-item right" href="https://pwa-starter-kit.polymer-project.org" style="background: #6711df; background: linear-gradient(175deg, #6711df 0%, #d8bbfa 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg); padding-top: 48%"></div>
           <h2>PWA Starter Kit</h2>
           <p>Starter templates for building full-featured Progressive Web Apps to take advantage of the modern web.</p>
           <span class="status">Prerelease</span>
         </a>
-      </div>
-      <div class="responsive-row">
-        <a class="product-grid-item" href="https://lit-html.polymer-project.org" style="background: #e33400; background: linear-gradient(175deg, #e33400 0%, #f7beb0 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_lit-html.svg)"></div>
+        <a class="product-grid-item left" href="https://lit-html.polymer-project.org" style="background: #e33400; background: linear-gradient(175deg, #e33400 0%, #f7beb0 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_lit-html.svg); padding-top: 41%"></div>
           <h2>lit-html</h2>
           <p>Efficient, expressive, extensible HTML templating in JavaScript.</p>
           <span class="status">Prerelease</span>
         </a>
-        <a class="product-grid-item" href="https://github.com/material-components/material-components-web-components" style="background: #0db76f; background: linear-gradient(175deg, #0db76f 0%, #c8fce0 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg)"></div>
+        <a class="product-grid-item right" href="https://github.com/material-components/material-components-web-components" style="background: #0db76f; background: linear-gradient(175deg, #0db76f 0%, #c8fce0 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg); padding-top: 55%"></div>
           <h2>Material Web Components</h2>
           <p>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</p>
           <span class="status">Prerelease</span>
         </a>
-      </div>
-      <div class="responsive-row">
-        <a class="product-grid-item" href="{{{site_classic}}}">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_library.svg)"></div>
+        <a class="product-grid-item left" href="{{{site_classic}}}">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_library.svg); padding-top: 41%"></div>
           <h2>Polymer Library</h2>
           <p>Our original web component library.</p>
           <span class="status">Maintenance</span>
         </a>
-        <a class="product-grid-item" href="https://www.webcomponents.org/author/PolymerElements">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_elements.svg)"></div>
+        <a class="product-grid-item right" href="https://www.webcomponents.org/author/PolymerElements">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_elements.svg); padding-top: 35%"></div>
           <h2>Polymer Elements</h2>
           <p>Our original sets of web components, built with the Polymer library.</p>
           <span class="status">Maintenance</span>
         </a>
       </div>
+      <div style="clear: both"></div>
     </div>
   </section>
 
