@@ -44,7 +44,6 @@ if 'CURRENT_VERSION_ID' in os.environ:
   MEMCACHE_PREFIX = os.environ.get('CURRENT_VERSION_ID').split('.')[0] + '/'
 
 REDIRECTS_FILE = 'redirects.yaml'
-NAV_FILE = '%s/nav.yaml'
 ARTICLES_FILE = 'blog.yaml'
 AUTHORS_FILE = 'authors.yaml'
 IS_DEV = os.environ.get('SERVER_SOFTWARE', '').startswith('Dev')
@@ -111,26 +110,6 @@ def read_redirects_file(filename):
   sortedWildcards = OrderedDict(sorted(wildcards.items(), lambda a, b: len(b) - len(a)))
   return {'literal': literals, 'wildcard': sortedWildcards}
 
-def read_nav_file(filename, version):
-  nav = load_yaml_config(filename)
-  for one_section in nav:
-    one_section['version'] = version
-    base_path = '/%s/%s/' % (version, one_section['shortpath'])
-    if 'items' in one_section:
-        for link in one_section['items']:
-          if 'path' in link:
-            # turn boolean flag into an additional CSS class.
-            if 'indent' in link and link['indent']:
-              link['indent'] = 'indent'
-            else:
-              link['indent'] = ''
-            if not 'name' in link:
-              if link['path'].startswith(base_path):
-                link['name'] = link['path'].replace(base_path, '')
-              else:
-                link['name'] = 'index'
-  return nav
-
 def read_articles_file(articlefile, authorfile):
   articles = load_yaml_config(articlefile)
   authors = load_yaml_config(authorfile)
@@ -180,46 +159,6 @@ class Site(webapp2.RequestHandler):
         return True
 
     return False
-
-  def get_site_nav(self, version):
-    nav_file_for_version = NAV_FILE % version
-    nav_cache = MEMCACHE_PREFIX + nav_file_for_version
-    site_nav = memcache.get(nav_cache)
-    if site_nav is None or IS_DEV:
-      site_nav = read_nav_file(nav_file_for_version, version)
-      memcache.add(nav_cache, site_nav)
-    return site_nav
-
-  def get_section_nav(self, version, shortpath):
-    site_nav = self.get_site_nav(version)
-    if site_nav:
-      for section in site_nav:
-        if section['shortpath'] == shortpath:
-          if 'items' in section:
-            return section['items']
-    return None
-
-  def get_versioned_paths(self, shortpath):
-    site_nav_1 = self.get_site_nav('1.0')
-    site_nav_2 = self.get_site_nav('2.0')
-    site_nav_3 = self.get_site_nav('3.0')
-    versioned_paths = ['','','']
-    if site_nav_1:
-      for section in site_nav_1:
-        if section['shortpath'] == shortpath:
-          versioned_paths[0] = section['path']
-          break
-    if site_nav_2:
-      for section in site_nav_2:
-        if section['shortpath'] == shortpath:
-          versioned_paths[1] = section['path']
-          break
-    if site_nav_3:
-      for section in site_nav_3:
-        if section['shortpath'] == shortpath:
-          versioned_paths[2] = section['path']
-          break
-    return versioned_paths
 
   def get_articles(self):
     articles_cache = MEMCACHE_PREFIX + ARTICLES_FILE
