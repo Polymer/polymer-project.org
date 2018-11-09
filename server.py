@@ -51,7 +51,7 @@ IS_DEV = os.environ.get('SERVER_SOFTWARE', '').startswith('Dev')
 # base path for edit-on-github links
 BASE_EDIT_PATH = "https://github.com/Polymer/polymer-library-docs/edit/master/app/%s.md"
 
-# base paths for site links & redirects
+# base path for site links & redirects
 # NOTE: URLs in the site footer are hardcoded and need to be updated separately
 SITE_URLS = {
   'site_classic': 'https://polymer-library.polymer-project.org'
