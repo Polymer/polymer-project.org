@@ -1,6 +1,6 @@
 <!--
 @license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/Organization" lang="en">
 <head>
-<title>{% block title %}{% endblock %} - Polymer Project</title>
+<title><%= title %> - Polymer Project</title>
 {% include 'templates/head-meta.html' %}
 </head>
 <body>
@@ -29,38 +29,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <main class="wrapper">
     <article>
-      {% if markdown %}
-        <!-- Single blog post page -->
-        <h1>{{{active_article.title}}}</h1>
-        <p>{{{active_article.description}}}</p>
+      <h1>{{{active_article.title}}}</h1>
+      <p>{{{active_article.description}}}</p>
 
-        <p>
-          <a href="https://plus.google.com/{{{active_article.author.gplus}}}" target="blank_">
-            <img class="author-img" src="{{{active_article.author.profile_pic}}}" alt="{{{active_article.author.full_name}}} profile pic" title="{{{active_article.author.full_name}}}">
-          </a>
-          <a href="{{{active_article.author.web}}}" target="blank_">{{{active_article.author.full_name}}}</a>
-          ,
-          <time pubdate="" datetime="{{{active_article.published}}}">{{{active_article.published}}}</time>
-        </p>
+      <p>
+        <a href="https://plus.google.com/{{{active_article.author.gplus}}}" target="blank_">
+          <img class="author-img" src="{{{active_article.author.profile_pic}}}" alt="{{{active_article.author.full_name}}} profile pic" title="{{{active_article.author.full_name}}}">
+        </a>
+        <a href="{{{active_article.author.web}}}" target="blank_">{{{active_article.author.full_name}}}</a>
+        ,
+        <time pubdate="" datetime="{{{active_article.published}}}">{{{active_article.published}}}</time>
+      </p>
 
-        {% block content %}{% endblock %}
-      {% else %}
-        <!-- Blog landing page -->
-        <h1>Blog</h1>
-        <p>The latest goings-on with the Polymer project and in the community.
-          We'll update this page to announce major releases and showcase cool stuff
-          being built with Polymer. Have an idea for an article?
-          <a href="https://github.com/Polymer/docs/issues/new?labels=article">Suggest it!</a>
-        </p>
-
-        {% for item in articles %}
-        <h2><a href="{{{item.path}}}.html">{{{item.title}}}</a></h2>
-        <div class="byline author">
-          <time pubdate="" datetime="{{{item.published}}}">{{{item.published}}}</time>
-        </div>
-        <p>{{{item.description}}}</p>
-        {% endfor %}
-      {% endif %}
+      <%= content %>
     </article>
   </main>
 
