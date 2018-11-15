@@ -10,16 +10,8 @@ libraries:
 
 handlers:
 
-- url: /webcomponentsjs
-  static_dir: webcomponentsjs
-  secure: always
-
 - url: /css
   static_dir: css
-  secure: always
-
-- url: /elements
-  static_dir: elements
   secure: always
 
 - url: /images
@@ -28,17 +20,6 @@ handlers:
 
 - url: /js
   static_dir: js
-  secure: always
-
-- url: /humans.txt
-  static_files: humans.txt
-  upload: humans.txt
-  secure: always
-
-- url: /manifest.json
-  static_files: manifest.json
-  upload: manifest.json
-  mime_type: application/manifest+json
   secure: always
 
 - url: /service-worker.js
@@ -112,16 +93,3 @@ handlers:
 - url: .*
   script: server.app
   secure: always
-
-skip_files:
-  - ^(.*/)?#.*#$
-  - ^(.*/)?.*~$
-  - ^(.*/)?.*\.py[co]$
-  - ^(.*/)?.*\.md$
-  - ^(.*/)?.*\.graffle$
-  - ^(.*/)?.*/RCS/.*$
-  - ^(.*/)?\..*$
-  - gulpfile.js
-  - test*
-  - bower_components/[^/]+/bower_components/.*$
-  - bower_components/(.+/)+(test/|demo/|README|AUTHORS|CONTRIBUTING|PATENTS|Makefile)

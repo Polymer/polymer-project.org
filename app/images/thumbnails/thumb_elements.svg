@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="400px" height="140px" viewBox="0 0 400 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
-    <title>thumb_elements</title>
-    <desc>Created with Sketch.</desc>
-    <g id="thumb_elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-26" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="4">
-            <circle id="Oval" cx="211" cy="69" r="67"></circle>
-            <path d="M331,5.47213595 L265.236068,137 L396.763932,137 L331,5.47213595 Z" id="Triangle-Copy-3"></path>
-            <rect id="Rectangle" x="2" y="4" width="130" height="130"></rect>
-        </g>
-    </g>
-</svg>
+<svg width="400" height="140" viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg"><title>thumb_elements</title><g fill-rule="nonzero" stroke="#FFF" stroke-width="4" fill="none"><circle cx="211" cy="69" r="67"/><path d="M331 5.472L265.236 137h131.528L331 5.472zM2 4h130v130H2z"/></g></svg>

@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="400px" height="220px" viewBox="0 0 400 220" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
-    <title>thumb_material</title>
-    <desc>Created with Sketch.</desc>
-    <g id="thumb_material" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-23" fill-rule="nonzero">
-            <rect id="Rectangle" stroke="#FFFFFF" stroke-width="4" x="2" y="2.4159292" width="335.823009" height="214.584071"></rect>
-            <rect id="Rectangle-Copy-21" stroke="#FFFFFF" stroke-width="8" x="174.79646" y="59.2831858" width="221.20354" height="155.716814"></rect>
-            <rect id="Rectangle-Copy-32" stroke="#FFFFFF" stroke-width="8" fill="#FFFFFF" opacity="0.5" x="131.433628" y="102.646018" width="204.389381" height="112.353982"></rect>
-            <rect id="Rectangle-Copy-33" fill="#FFFFFF" x="90.2654867" y="127.849558" width="53.9823009" height="91.1504425"></rect>
-            <rect id="Rectangle-Copy-34" fill="#FFFFFF" x="321" y="176" width="35.3982301" height="35.3982301" rx="17.699115"></rect>
-        </g>
-    </g>
-</svg>
+<svg width="400" height="220" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><title>thumb_material</title><g fill-rule="nonzero" fill="none"><path stroke="#FFF" stroke-width="4" d="M2 2.416h335.823V217H2z"/><path stroke="#FFF" stroke-width="8" d="M174.796 59.283H396V215H174.796z"/><path stroke="#FFF" stroke-width="8" fill="#FFF" opacity=".5" d="M131.434 102.646h204.389V215H131.434z"/><path fill="#FFF" d="M90.265 127.85h53.982V219H90.265z"/><rect fill="#FFF" x="321" y="176" width="35.398" height="35.398" rx="17.699"/></g></svg>
