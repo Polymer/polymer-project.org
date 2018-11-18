@@ -176,7 +176,7 @@ Now we're shifting our focus back to implementing more of the MDC components as 
 
 ## PWA Starter Kit
 
-[PWA Starter Kit](https://polymer.github.io/pwa-starter-kit/) is the next generation application toolkit with docs, templates, and samples for building best-in-class applications using the the web platform.
+[PWA Starter Kit](https://pwa-starter-kit.polymer-project.org/) is the next generation application toolkit with docs, templates, and samples for building best-in-class applications using the the web platform.
 
 Over the past months we've been taking lots of feedback on where the rough edges are and incorporating them into improved documentation and templates.
 
