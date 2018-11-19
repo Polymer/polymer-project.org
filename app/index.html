@@ -26,17 +26,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style>
     .product-grid-item {
       display: inline-block;
-      width: calc(50% - 50px);
-      margin-bottom: 20px;
+      width: calc(50% - 60px);
+      margin-bottom: 40px;
       padding: 20px;
       background: rgba(0,0,0,0.6);
       background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
-      color: #000;
+      color: rgba(0,0,0,.87);
       transition: 0.4s transform;
       will-change: transform;
       transform: scale(1);
     }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 4px;
 
+    }
     .product-grid-item.left {
       float: left;
     }
@@ -77,11 +81,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .product-grid-item h2 {
-      margin-top: 0;
-      margin-bottom: 4px;
-      font-size: 32px;
-      font-weight: normal;
-      line-height: 38px;
       color: #fff;
     }
 
@@ -106,6 +105,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       text-transform: uppercase;
     }
 
+    @media screen and (max-width: 1160px) {
+      .product-grid-item {
+        margin-bottom: 24px;
+        width: calc(50% - 52px);
+      }
+    }
+
     @media screen and (max-width: 640px) {
       .product-grid-item {
         display: block;
@@ -116,46 +122,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .product-grid-item.right {
         float: none;
       }
+
+      .product-grid-item {
+        margin-bottom: 20px;
+      }
     }
   </style>
 
   <section>
     <div class="wrapper">
       <div>
-        <a class="product-grid-item left" href="https://lit-element.polymer-project.org" style="background: #00A3E6; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #3FC7FF 0%, #00A3E6 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg); padding-top: 35%"></div>
+        <a class="onload-fadein product-grid-item left" href="https://lit-element.polymer-project.org" style="-webkit-animation-delay: .15s; background: #00A3E6; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #3FC7FF 0%, #00A3E6 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg); padding-top: 39%; margin: 10px 8%;"></div>
           <h2>LitElement</h2>
           <p>A simple base class for creating fast, lightweight web components.</p>
           <span class="status">Prerelease</span>
         </a>
-        <a class="product-grid-item right" href="https://pwa-starter-kit.polymer-project.org" style="background: #6700DF; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #AF6AFF 0%, #6700DF 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg); padding-top: 48%"></div>
+        <a class="onload-fadein product-grid-item right" href="https://pwa-starter-kit.polymer-project.org" style="-webkit-animation-delay: .3s; background: #6700DF; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #AF6AFF 0%, #6700DF 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg); padding-top: 46%; margin: 0px 13%;"></div>
           <h2>PWA Starter Kit</h2>
           <p>Starter templates for building full-featured Progressive Web Apps from web components.</p>
           <span class="status">Prerelease</span>
         </a>
-        <a class="product-grid-item left" href="https://lit-html.polymer-project.org" style="background: #FF2F2F; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #FA5A5A 0%, #FF2F2F 100%)">
+        <a class="onload-fadein product-grid-item left" href="https://github.com/material-components/material-components-web-components" style="-webkit-animation-delay: .25s; background: #00D67C; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #20FFA7 0%, #00D67C 100%)">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg); padding-top: 46%; margin: 10px 15%;"></div>
+          <h2>Material Web Components</h2>
+          <p>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</p>
+          <span class="status">Prerelease</span>
+        </a>
+        <a class="onload-fadein product-grid-item right" href="https://lit-html.polymer-project.org" style="-webkit-animation-delay: .3s; background: #FF2F2F; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #FA5A5A 0%, #FF2F2F 100%)">
           <div class="thumb" style="background-image:url(/images/thumbnails/thumb_lit-html.svg); padding-top: 41%"></div>
           <h2>lit-html</h2>
           <p>An efficient, expressive, extensible HTML templating library for JavaScript.</p>
           <span class="status">Prerelease</span>
         </a>
-        <a class="product-grid-item right" href="https://github.com/material-components/material-components-web-components" style="background: #00D67C; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #20FFA7 0%, #00D67C 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg); padding-top: 55%"></div>
-          <h2>Material Web Components</h2>
-          <p>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</p>
-          <span class="status">Prerelease</span>
-        </a>
-        <a class="product-grid-item left" href="{{{site_classic}}}">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_library.svg); padding-top: 41%"></div>
-          <h2>Polymer Library</h2>
-          <p>Our original web component library.</p>
-          <span class="status">Maintenance</span>
-        </a>
-        <a class="product-grid-item right" href="https://www.webcomponents.org/author/PolymerElements">
+        <a class="onload-fadein product-grid-item right" href="https://www.webcomponents.org/author/PolymerElements" style="-webkit-animation-delay: .35s;">
           <div class="thumb" style="background-image:url(/images/thumbnails/thumb_elements.svg); padding-top: 35%"></div>
           <h2>Polymer Elements</h2>
           <p>Our original sets of web components, built with the Polymer library.</p>
+          <span class="status">Maintenance</span>
+        </a>
+        <a class="onload-fadein product-grid-item left" href="{{{site_classic}}}" style="-webkit-animation-delay: .4s;">
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_library.svg); padding-top: 41%"></div>
+          <h2>Polymer Library</h2>
+          <p>Our original web component library.</p>
           <span class="status">Maintenance</span>
         </a>
       </div>
@@ -164,49 +174,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </section>
 
   <section>
-    <div class="wrapper">
-      <div class="responsive-row">
-        <div style="flex: 1">
-          <h2>About the Polymer Project</h2>
-          <div>
-            <p>As front-end engineers in the Chrome team, our mission is to make the web better.</p>
+      <div class="wrapper">
+        <div class="responsive-row">
+          <div style="flex: 1">
+            <h2>About the Polymer Project</h2>
+            <div>
+              <p>As front-end engineers in the Chrome team, our mission is to make the web better.</p>
 
-            <p>We work on libraries and tools to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
-              
-            <p>We experiment with new patterns for building faster, smaller web applications.</p>
-              
-            <p>We advocate for standards, helping ensure that web developers have a strong voice in the process.</p>
+              <p>We work on libraries and tools to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
+
+              <p>We experiment with new patterns for building faster, smaller web applications.</p>
+
+              <p>We advocate for standards, helping ensure that web developers have a strong voice in the process.</p>
+            </div>
           </div>
-        </div>
-        <div style="flex: 1">
-          <h2>Why Web Components?</h2>
-          <div>
-            <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
+          <div style="flex: 1">
+            <h2>Why Web Components?</h2>
+            <div>
+              <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
 
-            <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
-                
-            <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
-                
-            <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
+              <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
+
+              <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
+
+              <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
+            </div>
+            <a href="https://webcomponents.org">More about Web Components</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grey-bg">
+      <div class="wrapper">
+        <h2>Latest news</h2>
+        <div class="responsive-row">
+          {% for item in articles[:3] %}
+          <div style="flex: 1">
+            <a href="{{{item.path}}}" class="post-title">{{{item.title}}}</a>
+            <p>{{{item.description}}}</p>
           </div>
-          <a href="https://webcomponents.org">More about Web Components</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="grey-bg">
-    <div class="wrapper">
-      <h2>Latest news</h2>
-      <div class="responsive-row">
-        {% for item in articles[:3] %}
-        <div style="flex: 1">
-          <a href="{{{item.path}}}" class="post-title">{{{item.title}}}</a>
-          <p>{{{item.description}}}</p>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
-    </div>
-  </section>
+    </section>
 
   {% include 'templates/footer.html' %}
   <script src="/js/app.js"></script>

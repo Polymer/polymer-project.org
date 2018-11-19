@@ -3,6 +3,12 @@ a {
   color: #FF4470;
 }
 
+h2 {
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 38px;
+}
+
 .hero,
 .main-nav {
   background: #FFF;
@@ -28,7 +34,7 @@ body {
   padding: 0;
   font-family: 'Google Sans', 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #333;
+  color: rgba(0,0,0,.87);
   line-height: 1.5;
 }
 
@@ -36,9 +42,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
+
 
 article p {
   font-family: 'Roboto', 'Noto', sans-serif;
@@ -133,16 +137,18 @@ main {
 }
 
 .hero .wrapper {
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 16vh;
+  padding-bottom: 16vh;
 }
 
 .hero .hero-title {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: -14px;
   padding-right: 5%;
   font-size: 72px;
   font-weight: 400;
+  line-height: 1.3em;
+  text-indent: -4px;
 }
 
 .hero .hero-title::after {
@@ -166,10 +172,14 @@ main {
   font-size: 20px;
   font-weight: 500;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .hero .hero-link::before {
-  content: "→ ";
+  display: inline-block;
+  vertical-align: text-top;
+  margin-right: 8px;
+  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="#FF4470" points="22 11.4953271 16 17 12 17 16.4981689 13 2 13 2 10 16.4981689 10 12 6 16 6"></polygon></g></svg>');
 }
 
 section .wrapper {
@@ -356,7 +366,7 @@ th, td {
     font-size: 56px;
     line-height: 64px;
   }
-  
+
   .hero .hero-caption {
     font-size: 22px;
     line-height: 32px;
@@ -418,7 +428,7 @@ th, td {
   .side-nav + article {
     margin-top: 56px;
   }
-  
+
   .wrapper {
     padding-left: 20px;
     padding-right: 20px;
@@ -429,3 +439,22 @@ th, td {
     margin-right: 0;
   }
 }
+
+/* Animation */
+.onload-fadein {
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: fadein;
+  -webkit-animation-duration: 1s;
+  opacity: 0;
+}
+  @-webkit-keyframes fadein {
+      from {
+          opacity:0;
+          -webkit-transform: translate3d(0,32px,0);
+      }
+      to {
+          opacity:1;
+          -webkit-transform: translate3d(0,0,0);
+      }
+  }
