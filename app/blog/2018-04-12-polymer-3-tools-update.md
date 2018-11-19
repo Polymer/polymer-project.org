@@ -73,8 +73,11 @@ You can also use the command line flag `--js-transform-modules-to-amd` instead o
 polymer build --npm --module-resolution=node --js-transform-modules-to-amd 
 ```
 
+<div class="alert alert-info">
+
 **Note:** Currently, you _must_ set the `inlineScripts` flag to false when bundling Polymer 3.x applications, as shown in the example above.
-{.alert .alert-info}
+
+</div>
 
 
 ## Known issues
