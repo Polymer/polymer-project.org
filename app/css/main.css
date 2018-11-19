@@ -34,7 +34,7 @@ body {
   padding: 0;
   font-family: 'Google Sans', 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: rgba(0,0,0,.87);
+  color: #222222;
   line-height: 1.5;
 }
 
@@ -179,7 +179,7 @@ main {
   display: inline-block;
   vertical-align: text-top;
   margin-right: 8px;
-  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="#FF4470" points="22 11.4953271 16 17 12 17 16.4981689 13 2 13 2 10 16.4981689 10 12 6 16 6"></polygon></g></svg>');
+  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="#FF4470" points="21.5 12.4953271 16 18 13 18 17.4981689 13.5 3 13.5 3 11.5 17.4981689 11.5 13 7 16 7"></polygon></g></svg>');
 }
 
 section .wrapper {
@@ -442,19 +442,19 @@ th, td {
 
 /* Animation */
 .onload-fadein {
-  -webkit-transform: translate3d(0,0,0);
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-name: fadein;
-  -webkit-animation-duration: 1s;
+  transform: translate3d(0,0,0);
+  animation-fill-mode: forwards;
+  animation-name: fadein;
+  animation-duration: 1s;
   opacity: 0;
 }
-  @-webkit-keyframes fadein {
-      from {
-          opacity:0;
-          -webkit-transform: translate3d(0,32px,0);
-      }
-      to {
-          opacity:1;
-          -webkit-transform: translate3d(0,0,0);
-      }
+@keyframes fadein {
+  from {
+    opacity:0;
+    transform: translate3d(0,32px,0);
   }
+  to {
+    opacity:1;
+    transform: translate3d(0,0,0);
+  }
+}
