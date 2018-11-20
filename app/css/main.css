@@ -4,9 +4,9 @@ a {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: normal;
-  line-height: 38px;
+  line-height: 36px;
 }
 
 .hero,
@@ -15,7 +15,7 @@ h2 {
 }
 
 .hero .hero-title,
-.hero .hero-link,
+.link-with-arrow,
 .main-nav {
   color: #FF4470;
 }
@@ -163,19 +163,22 @@ main {
 .hero .hero-caption {
   max-width: 640px;
   padding-right: 10%;
-  line-height: 38px;
+  line-height: 36px;
   font-size: 28px;
   font-weight: 400;
 }
 
-.hero .hero-link {
-  font-size: 20px;
-  font-weight: 500;
+.link-with-arrow {
   text-transform: uppercase;
   text-decoration: none;
+  line-height: 26px;
+  vertical-align: unset;
+  display: flex;
+  align-content: start;
+  font-weight: 500;
 }
 
-.hero .hero-link::before {
+.link-with-arrow::before {
   display: inline-block;
   vertical-align: text-top;
   margin-right: 8px;
@@ -190,10 +193,11 @@ section .wrapper {
 .responsive-row {
   display: flex;
   margin-right: -20px;
+  margin-left: -20px;
 }
 
 .responsive-row > * {
-  margin-right: 20px;
+  padding: 0 20px;
 }
 
 .center {
@@ -260,11 +264,12 @@ article {
 
 /* Footer */
 footer {
-  border-top: 1px solid #d9d9d9;
+  /* border-top: 1px solid #d9d9d9; */
+  background: #f5f5f5;
 }
 
 footer .wrapper {
-  margin-top: 24px;
+  padding-top: 24px;
   /* No spacing between child elements. */
   font-size: 0px;
 }
@@ -284,6 +289,7 @@ footer .attribution {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 24px;
+  color: #999;
 }
 
 
@@ -364,7 +370,8 @@ th, td {
 
   .hero .hero-title {
     font-size: 56px;
-    line-height: 64px;
+    line-height: 92px;
+    margin-bottom: -4px;
   }
 
   .hero .hero-caption {
