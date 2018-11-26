@@ -4,16 +4,6 @@ title: "Building web components using ES6 classes"
 
 <!-- toc -->
 
-<style>
-paper-button.blue {
-  background: #4285f4;
-  color: #fff;
-}
-paper-button.blue:hover {
-  background: #2a56c6;
-}
-</style>
-
 ## Introduction
 
 Web components evolve markup into something that's meaningful, maintainable, and highly modular. Thanks to these new API primitives, not only do we have improved ergonomics when building apps, but we gain better overall structure, design, and reusability.
@@ -26,14 +16,8 @@ In this article we'll create a `<stock-ticker>` custom element using ES6 classes
 First, I'll cover how to create the element using the vanilla web component JS APIs and
 then how to create the same element using Polymer.
 
-<p layout horizontal center-center>
-<a href="http://ebidel.github.io/polymer-experiments/polymersummit/stockticker/" target="_blank">
-  <paper-button raised class="blue">Stock Ticker Demo</paper-button>
-</a>
-<a href="https://github.com/ebidel/polymer-experiments/tree/master/polymersummit/stockticker" target="_blank">
-  <paper-button raised class="blue">Full source</paper-button>
-</a>
-</p>
+- [Stock Ticker Demo](http://ebidel.github.io/polymer-experiments/polymersummit/stockticker/)
+- [Full source](https://github.com/ebidel/polymer-experiments/tree/master/polymersummit/stockticker)
 
 ## Defining custom elements from a class
 
@@ -47,9 +31,12 @@ Custom elements can be defined from an ES6 class by extending the `HTMLElement` 
 
 Extending `HTMLElement` creates the element with the correct `prototype`, inheriting all the methods/properties of the DOM interface.
 
+<div class="alert alert-info">
+
 **Note** Some browsers require `'use strict';` for using ES6 features but I'll be
 leaving it off the other examples on this page.
-{: .alert .alert-info }
+
+</div>
 
 ### Element "constructors"
 
@@ -83,10 +70,13 @@ The following example creates a class definition for our stocker ticker element:
       attributeChangedCallback() { ... }
     }
 
+<div class="alert alert-info">
+
 **Note** Spec authors are working to support `constructor` with custom elements, but
 it's currently a hole in the spec. The lack of support is due to the way native
 elements are created by the browser.
-{: .alert .alert-info }
+
+</div>
 
 One nice thing I'm doing here is using a [template string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings) to create Shadow DOM from an HTML snippet. Rather than concatenating strings or using escape sequences, we get a nicely formatted multiline string.
 
@@ -150,8 +140,11 @@ There's nothing new here. We're used to registering custom elements by passing
 `document.registerElement` the element name followed by a `prototype`. The only difference
 with classes is that you provide a `class` rather than a `prototype`.
 
+<div class="alert alert-info">
+
 **Classes are prototypes!** Strictly speaking, classes are syntactic sugar for `prototype`s. You may not see the `prototype` keyword when creating elements from ES6 classes, but in actuality, a `prototype` is still being passed under the hood. The JS engine does this for you.
-{: .alert .alert-info }
+
+</div>
 
 ## Defining Polymer elements from a class
 
@@ -221,19 +214,16 @@ Here's our stock ticker:
     </script>
     </dom-module>
 
-<p layout horizontal center-center>
-<a href="http://ebidel.github.io/polymer-experiments/polymersummit/stockticker/" target="_blank">
-  <paper-button raised class="blue">Stock Ticker Demo</paper-button>
-</a>
-<a href="https://github.com/ebidel/polymer-experiments/tree/master/polymersummit/stockticker" target="_blank">
-  <paper-button raised class="blue">Full source</paper-button>
-</a>
-</p>
+- [Stock Ticker Demo](http://ebidel.github.io/polymer-experiments/polymersummit/stockticker/)
+- [Full source](https://github.com/ebidel/polymer-experiments/tree/master/polymersummit/stockticker)
 
 ## Building for production
 
+<div class="alert alert-info">
+
 **Note** ES6 classes currently work in Chrome 42+, Safari 9+, Edge preview, and FF nightly.
-{: .alert .alert-info }
+
+</div>
 
 For our ES6 code to work in all modern browsers, we need to transpile it to an ES5 equivalent. [BabelJS](https://babeljs.io/) is my personal favorite. It's the most popular at the moment and comes with
 a convenient CLI and Gulp/Grunt/Browserify workflows.

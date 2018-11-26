@@ -36,8 +36,11 @@ With the 3.0 release, we'll be updating not just the core Polymer library, but a
 *   The element catalog at webcomponents.org will be updated to support elements built with modules and distributed via npm.
 *   We'll update our documentation to reflect all of these changes.
 
+<div class="alert alert-info">
+
 In sum, the goal of Polymer 3.0 is to make sure that anyone who has built elements and apps with earlier versions of Polymer (or following patterns and conventions established by Polymer) can easily move forward with us as we start a new chapter.
-{.alert .alert-tip}
+
+</div>
 
 
 ## What's next?

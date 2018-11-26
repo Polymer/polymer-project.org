@@ -442,4 +442,8 @@ Here's what's still in progress:
 
 We are working on Polymer 3.0 app and element templates that you’ll be able to generate from the Polymer CLI with the polymer init command. In the mean time, take a look at this [sample Polymer 3.0 app built with the new preview](https://github.com/PolymerLabs/start-polymer3). A [hosted demo is also available](https://start-polymer3.firebaseapp.com/).
 
-**The sample app uses dynamic imports.** The sample app shows an example of a dynamic import for lazy-loading. For this reason, it only works in the latest versions of Chrome and Safari. { .alert }
+<div class="alert alert-info">
+
+**The sample app uses dynamic imports.** The sample app shows an example of a dynamic import for lazy-loading. For this reason, it only works in the latest versions of Chrome and Safari.
+
+</div>

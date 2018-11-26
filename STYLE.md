@@ -195,8 +195,6 @@ paragraph with the `caption` class added:
 Call them what you will. Use the `alert` and <code>alert-<var>type</var></code>
 classes to identify an alert, where <code><var>type</var></code> is one of:
 
-*   `success`/`tip`. A tip, shortcut, or extra tidbit of information that may
-     not be directly related to the current topic. Usually in a tutorial.
 *   `info`. Introduces a note or sidebar related to the current topic.
 *   `warning`. Warns about a potential issue, antipattern, or unintended
     consequence.
@@ -207,8 +205,11 @@ for warnings.
 
 Example:
 
+    <div class="alert alert-info">
+
     **Don't feed the lions.** They might get used to it.
-    {.alert .alert-warning}
+    
+    </div>
 
 Use admonitions sparingly. More than one per section can be distracting and
 break up the text flow. In any case, two alerts should never appear next to each
