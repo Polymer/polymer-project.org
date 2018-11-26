@@ -191,7 +191,7 @@ main {
   display: inline-block;
   vertical-align: text-top;
   margin-right: 8px;
-  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="#FF4470" points="21.5 12.4953271 16 18 13 18 17.4981689 13.5 3 13.5 3 11.5 17.4981689 11.5 13 7 16 7"></polygon></g></svg>');
+  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="%23FF4470" points="21.5 12.4953271 16 18 13 18 17.4981689 13.5 3 13.5 3 11.5 17.4981689 11.5 13 7 16 7"></polygon></g></svg>');
 }
 
 section .wrapper {
