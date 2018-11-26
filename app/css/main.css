@@ -2,11 +2,20 @@
 a {
   color: #FF4470;
 }
-
-h2 {
-  font-size: 32px;
+h1 {
+  font-size: 40px;
+  line-height: 48px;
   font-weight: normal;
-  line-height: 38px;
+}
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: normal;
+}
+h3 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: normal;
 }
 
 .hero,
@@ -15,7 +24,7 @@ h2 {
 }
 
 .hero .hero-title,
-.hero .hero-link,
+.link-with-arrow,
 .main-nav {
   color: #FF4470;
 }
@@ -137,8 +146,8 @@ main {
 }
 
 .hero .wrapper {
-  padding-top: 16vh;
-  padding-bottom: 16vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
 }
 
 .hero .hero-title {
@@ -163,23 +172,26 @@ main {
 .hero .hero-caption {
   max-width: 640px;
   padding-right: 10%;
-  line-height: 38px;
+  line-height: 36px;
   font-size: 28px;
   font-weight: 400;
 }
 
-.hero .hero-link {
-  font-size: 20px;
-  font-weight: 500;
+.link-with-arrow {
   text-transform: uppercase;
   text-decoration: none;
+  line-height: 26px;
+  vertical-align: unset;
+  display: flex;
+  align-content: start;
+  font-weight: 500;
 }
 
-.hero .hero-link::before {
+.link-with-arrow::before {
   display: inline-block;
   vertical-align: text-top;
   margin-right: 8px;
-  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="#FF4470" points="21.5 12.4953271 16 18 13 18 17.4981689 13.5 3 13.5 3 11.5 17.4981689 11.5 13 7 16 7"></polygon></g></svg>');
+  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="%23FF4470" points="21.5 12.4953271 16 18 13 18 17.4981689 13.5 3 13.5 3 11.5 17.4981689 11.5 13 7 16 7"></polygon></g></svg>');
 }
 
 section .wrapper {
@@ -190,10 +202,11 @@ section .wrapper {
 .responsive-row {
   display: flex;
   margin-right: -20px;
+  margin-left: -20px;
 }
 
 .responsive-row > * {
-  margin-right: 20px;
+  padding: 0 20px;
 }
 
 .center {
@@ -290,11 +303,11 @@ article {
 
 /* Footer */
 footer {
-  border-top: 1px solid #d9d9d9;
+  background: #f5f5f5;
 }
 
 footer .wrapper {
-  margin-top: 24px;
+  padding-top: 24px;
   /* No spacing between child elements. */
   font-size: 0px;
 }
@@ -314,6 +327,7 @@ footer .attribution {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 24px;
+  color: #999;
 }
 
 
@@ -366,6 +380,9 @@ th, td {
     padding-left: 32px;
     padding-right: 32px;
   }
+  .responsive-row > * {
+    padding: 0 12px;
+  }
   .side-nav {
     padding: 32px 24px 32px 0;
   }
@@ -394,7 +411,8 @@ th, td {
 
   .hero .hero-title {
     font-size: 56px;
-    line-height: 64px;
+    line-height: 92px;
+    margin-bottom: -4px;
   }
 
   .hero .hero-caption {
@@ -405,6 +423,7 @@ th, td {
   .responsive-row {
     flex-direction: column;
   }
+
 
   /* doc page */
   .side-nav {

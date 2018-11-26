@@ -17,9 +17,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <header class="hero">
     {% include 'templates/topnav.html' %}
     <div class="wrapper">
-      <h1 class="hero-title">Polymer Project</h1>
+      <div class="hero-title">Polymer Project</div>
       <p class="hero-caption">Libraries, tools, and standards. Helping to build a better web.</p>
-      <a class="hero-link" href="/blog/">Blog</a>
+      <a class="link-with-arrow" href="/blog/">Blog</a>
     </div>
   </header>
 
@@ -39,8 +39,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     h2 {
       margin-top: 0;
       margin-bottom: 4px;
-
     }
+    section .section-title {
+      font-size: 40px;
+      line-height: 48px;
+      max-width: 320px;
+      margin-bottom: 20px;
+      color: #FF4470;
+    }
+    section .section-title:after {
+      content: "";
+      background: #222;
+      height: 1px;
+      width: 32px;
+      display: block;
+      margin-top: 16px;
+    }
+    section .caption {
+      margin-bottom: -8px;
+      max-width: 360px;
+    }
+    section .description {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      max-width: 560px;
+      color: #999;
+    }
+    #section-about p,
+    #section-why p,
+    #section-news p {
+      padding-right: 20px;
+      max-width: 540px;
+    }
+    #section-about .responsive-row > *,
+    #section-news .responsive-row > * {
+      margin-bottom: 40px;
+    }
+
     .product-grid-item.left {
       float: left;
     }
@@ -87,7 +122,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .product-grid-item p {
       margin-top: 0;
       margin-bottom: 0;
-      margin-right: 40px;
+      max-width: 360px;
     }
 
     .product-grid-item .status {
@@ -126,6 +161,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .product-grid-item {
         margin-bottom: 20px;
       }
+
+      section .section-title {
+        font-size: 36px;
+        line-height: 46px;
+      }
+
+      h2 {
+        font-size: 24px;
+        line-height: 32px;
+      }
     }
   </style>
 
@@ -139,13 +184,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <span class="status">Prerelease</span>
         </a>
         <a class="onload-fadein product-grid-item right" href="https://pwa-starter-kit.polymer-project.org" style="animation-delay: .3s; background: #6700DF; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #AF6AFF 0%, #6700DF 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg); padding-top: 46%; margin: 0px 13%;"></div>
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg); padding-top: 48%; margin: 0px 13%;"></div>
           <h2>PWA Starter Kit</h2>
           <p>Starter templates for building full-featured Progressive Web Apps from web components.</p>
           <span class="status">Prerelease</span>
         </a>
         <a class="onload-fadein product-grid-item left" href="https://github.com/material-components/material-components-web-components" style="animation-delay: .25s; background: #00D67C; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #20FFA7 0%, #00D67C 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg); padding-top: 46%; margin: 10px 15%;"></div>
+          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg); padding-top: 48%; margin: 10px 15%;"></div>
           <h2>Material Web Components</h2>
           <p>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</p>
           <span class="status">Prerelease</span>
@@ -173,46 +218,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
   </section>
 
-  <section>
+  <section id="section-about">
     <div class="wrapper">
+      <h1 class="section-title">About the Polymer Project</h1>
+      <h2 class="description">As front-end engineers in the Chrome team, our mission is to make the web better.</h2>
       <div class="responsive-row">
         <div style="flex: 1">
-          <h2>About the Polymer Project</h2>
-          <div>
-            <p>As front-end engineers in the Chrome team, our mission is to make the web better.</p>
-
-            <p>We work on libraries and tools to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
-
-            <p>We experiment with new patterns for building faster, smaller web applications.</p>
-
-            <p>We advocate for standards, helping ensure that web developers have a strong voice in the process.</p>
-          </div>
+          <h2 class="caption">We work on <br>libraries & tools</h2>
+          <p>to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
         </div>
         <div style="flex: 1">
-          <h2>Why Web Components?</h2>
-          <div>
-            <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
-
-            <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
-
-            <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
-
-            <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
-          </div>
-          <a href="https://webcomponents.org">More about Web Components</a>
+          <h2 class="caption">We experiment with <br>new patterns</h2>
+          <p>for building faster and smaller web applications.</p>
+        </div>
+        <div style="flex: 1">
+          <h2 class="caption">We advocate for <br>standards</h2>
+          <p>helping ensure that web developers have a strong voice in the process.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="grey-bg">
+  <section id="section-why" style="margin-bottom: 20px;">
     <div class="wrapper">
-      <h2>Latest news</h2>
+      <h1 class="section-title">Why Web Components?</h1>
+
+      <div class="responsive-row">
+        <div style="flex: 1">
+          <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
+          <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
+        </div>
+        <div style="flex: 1">
+          <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
+          <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
+          <a class="link-with-arrow" href="https://webcomponents.org">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-news" style="margin-bottom: 40px;">
+    <div class="wrapper">
+      <h1 class="section-title">Latest news</h1>
       <div class="responsive-row">
         {% for item in articles[:3] %}
         <div style="flex: 1">
-          <a href="{{{item.path}}}" class="post-title">{{{item.title}}}</a>
+          <h2 class="caption">{{{item.title}}}</h2>
           <p>{{{item.description}}}</p>
+          <a class="link-with-arrow" href="{{{item.path}}}" target="_blank">Blog Post</a>
         </div>
         {% endfor %}
       </div>
