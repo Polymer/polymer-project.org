@@ -1,49 +1,10 @@
-/* Theme colors */
-a {
-  color: #FF4470;
-}
-h1 {
-  font-size: 40px;
-  line-height: 48px;
-  font-weight: normal;
-}
-h2 {
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: normal;
-}
-h3 {
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: normal;
-}
-
-.hero,
-.main-nav {
-  background: #FFF;
-}
-
-.hero .hero-title,
-.link-with-arrow,
-.main-nav {
-  color: #FF4470;
-}
-
-.hero .hero-title::after {
-  background: #FF4470;
-}
-
-.grey-bg {
-  background: #f5f5f5;
-}
-
 /* Tagname styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Google Sans', 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #222222;
+  color: #222;
   line-height: 1.5;
 }
 
@@ -51,7 +12,23 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: normal;
+}
 
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: normal;
+}
 
 article p {
   font-family: 'Roboto', 'Noto', sans-serif;
@@ -150,7 +127,7 @@ main {
   padding-bottom: 20vh;
 }
 
-.hero .hero-title {
+.hero-title {
   position: relative;
   margin-bottom: -14px;
   padding-right: 5%;
@@ -160,7 +137,7 @@ main {
   text-indent: -4px;
 }
 
-.hero .hero-title::after {
+.hero-title::after {
   position: absolute;
   left: 0;
   bottom: 0px;
@@ -169,7 +146,7 @@ main {
   content: "";
 }
 
-.hero .hero-caption {
+.hero-caption {
   max-width: 640px;
   padding-right: 10%;
   line-height: 36px;
@@ -191,7 +168,7 @@ main {
   display: inline-block;
   vertical-align: text-top;
   margin-right: 8px;
-  content: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="➔" fill="%23FF4470" points="21.5 12.4953271 16 18 13 18 17.4981689 13.5 3 13.5 3 11.5 17.4981689 11.5 13 7 16 7"></polygon></g></svg>');
+  content: url('data:image/svg+xml; utf8, <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 12.495L16 18h-3l4.498-4.5H3v-2h14.498L13 7h3z"/></svg>');
 }
 
 section .wrapper {
@@ -409,13 +386,13 @@ th, td {
     margin-top: 56px;
   }
 
-  .hero .hero-title {
+  .hero-title {
     font-size: 56px;
     line-height: 92px;
     margin-bottom: -4px;
   }
 
-  .hero .hero-caption {
+  .hero-caption {
     font-size: 22px;
     line-height: 32px;
   }
@@ -497,13 +474,14 @@ th, td {
   animation-duration: 1s;
   opacity: 0;
 }
+
 @keyframes fadein {
   from {
-    opacity:0;
+    opacity: 0;
     transform: translate3d(0,32px,0);
   }
   to {
-    opacity:1;
+    opacity: 1;
     transform: translate3d(0,0,0);
   }
 }
