@@ -22,14 +22,14 @@ The 3.0 elements are published on npm, so you can install them using `npm instal
 npm install @polymer/paper-button
 ```
 
-The elements are all registered on [webcomponents.org](https://www.webcomponents.org/). The site was recently updated to correctly show documentation and demos from npm.
+The elements are all registered on [webcomponents.org](https://www.webcomponents.org/author/PolymerElements). The site was recently updated to correctly show documentation and demos from npm.
 
 Although we are transitioning these elements to "maintenance mode" (critical bug fixes only) as we build out the next-generation Material Web Components set, this release unblocks their use in module-based apps.
 
 
 ## lit-html
 
-[lit-html](https://polymer.github.io/lit-html/) is a next-generation HTML templating library that's built for speed, efficiency, and small code size. Since the preview releases discussed at Google I/O, there have been several releases focused on incorporating feedback from real-world usage.
+[lit-html](https://lit-html.polymer-project.org/) is a next-generation HTML templating library that's built for speed, efficiency, and small code size. Since the preview releases discussed at Google I/O, there have been several releases focused on incorporating feedback from real-world usage.
 
 Recent changes included in lit-html 0.12.0:
 
@@ -40,7 +40,7 @@ Recent changes included in lit-html 0.12.0:
 *   Improved integration with ShadyDOM/Shady CSS polyfills, so you can use lit-html with Shadow DOM when targeting browsers as old as IE11.
 *   Changes to the signature of the `render` function, allowing for unbound event listeners.
 *   New support for setting options on event listeners. 
-*   Performance improvements. Initial implementation of the [repeat](https://polymer.github.io/lit-html/guide/writing-templates.html#-repeat-items-keyfn-template-) directive was updated to use a much more efficient keyed update algorithm that minimizes unnecessary detachment and reattachment.
+*   Performance improvements. Initial implementation of the [repeat](https://lit-html.polymer-project.org/guide/writing-templates#repeating-templates-with-the-repeat-directive) directive was updated to use a much more efficient keyed update algorithm that minimizes unnecessary detachment and reattachment.
 
 The only major code change planned between now and the 1.0 release is refactoring of low-level APIs used when implementing directives (for example, the `NodePart` API). Most users won't see API changes between now and 1.0.
 
@@ -100,7 +100,7 @@ render(templateResult, destination, {eventContext: this});
 
 The render options should not change between renders. 
 
-**Breaking change.** This changes the optional third argument of `render` from a <code>[TemplateFactory](https://polymer.github.io/lit-html/api/modules/_lib_template_factory_.html#templatefactory)</code> to a <code>RenderOptions</code> object. To pass a template factory to render, add a <code>templateFactory</code> property to the options object.
+**Breaking change.** This changes the optional third argument of `render` from a <code>[TemplateFactory](https://lit-html.polymer-project.org/api/modules/_lib_template_factory_.html#templatefactory)</code> to a <code>RenderOptions</code> object. To pass a template factory to render, add a <code>templateFactory</code> property to the options object.
 
 
 ```
@@ -111,16 +111,16 @@ render(templateResult, destination, {templateFactory: myTemplateFactory});
 
 ### New directives
 
-Four new directives—<code>[classMap](https://polymer.github.io/lit-html/api/modules/_directives_classmap_.html#classmap)</code>, <code>[styleMap](https://polymer.github.io/lit-html/api/modules/_directives_stylemap_.html)</code>, <code>[guard](https://polymer.github.io/lit-html/guide/writing-templates.html#-guard-expression-valuefn-)</code>, and <code>[when](https://polymer.github.io/lit-html/guide/writing-templates.html#-when-condition-truetemplate-falsetemplate-)</code>—provide more control over rendering. The API for <code>guard</code> and <code>when</code> are not final, and may change some before 1.0.
+Four new directives—<code>[classMap](https://lit-html.polymer-project.org/api/modules/_directives_class_map_.html)</code>, <code>[styleMap](https://lit-html.polymer-project.org/api/modules/_directives_style_map_.html)</code>, <code>[guard](https://lit-html.polymer-project.org/guide/template-reference#guard)</code>, and <code>[when](https://lit-html.polymer-project.org/api/modules/_directives_when_.html)</code>—provide more control over rendering. The API for <code>guard</code> and <code>when</code> are not final, and may change some before 1.0.
 
 
 ## LitElement
 
-[LitElement](https://github.com/Polymer/lit-element/blob/master/README.md) is our next-generation web components base class and is the successor to `PolymerElement`.  Since the preview release discussed at Google I/O, we've been dogfooding the element a lot (e.g. in MWC), and have made several releases incorporating feedback. 
+[LitElement](https://lit-element.polymer-project.org/) is our next-generation web components base class and is the successor to `PolymerElement`.  Since the preview release discussed at Google I/O, we've been dogfooding the element a lot (e.g. in MWC), and have made several releases incorporating feedback. 
 
 Significant changes include:
 
-*   Refactored [lifecycle API](https://github.com/Polymer/lit-element/blob/master/README.md#api-documentation) to be more consistent and address real-world needs.
+*   Refactored [lifecycle API](https://lit-element.polymer-project.org/docs/lifecycle/about) to be more consistent and address real-world needs.
 *   Updated the docs and samples to reflect the lit-html template syntax changes.
 *   Sets the lit-html `eventContext` option so that unbound class methods can be used as event listeners.
 
