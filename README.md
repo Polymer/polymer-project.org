@@ -12,14 +12,14 @@ you'll need the following prerequisites:
 -   App Engine Python standard environment. Ensure this is installed by running the following command:
 
         gcloud components install app-engine-python
-        
+
     Or, if you installed via apt:
-    
+
         sudo apt-get install google-cloud-sdk-app-engine-python
 
 Set up your repo:
 
-    git clone https://github.com/Polymer/docs 
+    git clone https://github.com/Polymer/docs
     cd docs
     npm install
 
@@ -59,4 +59,3 @@ Build and deploy version `YYY-MM-DD` of the site:
 
     gulp
     npm run deploy YYYY-MM-DD
-

@@ -17,31 +17,67 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   {% include 'templates/topnav.html' %}
   <style>
     .author-img {
-      font-size: smaller;
-      color: #757575;
+      /* font-size: smaller; */
+      /* color: #757575; */
       border-radius: 50%;
-      margin-right: 5px;
-      vertical-align: middle;
-      width: 30px;
-      height: 30px;
+      /* margin-right: 5px; */
+      /* vertical-align: middle; */
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(0,0,0,.1);
+      box-sizing: border-box;
+      margin-bottom: -20px;
+    }
+    time {
+      display: block;
+      color: #999;
+      font-weight: 500;
+      text-align: center;
+      margin-top: -24px;
+      margin-bottom: 40px;
+    }
+    #author {
+      text-align: center;
+      display: block;
+    }
+    article p,
+    ul {
+      font-size: 18px;
+      line-height: 28px;
+    }
+    pre {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    #table-of-contents,
+    #table-of-contents + ul {
+      display: none;
+    }
+    #blog-content > * {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 800px;
+    }
+    h2 {
+      margin-top: 60px;
     }
   </style>
 
   <main class="wrapper">
     <article>
-      <h1>{{{active_article.title}}}</h1>
-      <p>{{{active_article.description}}}</p>
 
-      <p>
-        <a href="https://plus.google.com/{{{active_article.author.gplus}}}" target="blank_">
-          <img class="author-img" src="{{{active_article.author.profile_pic}}}" alt="{{{active_article.author.full_name}}} profile pic" title="{{{active_article.author.full_name}}}">
-        </a>
-        <a href="{{{active_article.author.web}}}" target="blank_">{{{active_article.author.full_name}}}</a>
-        ,
-        <time pubdate="" datetime="{{{active_article.published}}}">{{{active_article.published}}}</time>
-      </p>
+      <a id="author" href="https://plus.google.com/{{{active_article.author.gplus}}}" target="blank_">
+        <img class="author-img" src="{{{active_article.author.profile_pic}}}" alt="{{{active_article.author.full_name}}} profile pic" title="{{{active_article.author.full_name}}}">
+      </a>
+      <h1 class="center title">{{{active_article.title}}}</h1>
+      <h2 class="center description">{{{active_article.description}}}</h2>
 
-      <%= content %>
+      <!-- <a id="author" href="{{{active_article.author.web}}}" target="blank_">by {{{active_article.author.full_name}}}</a> -->
+      <time pubdate="" datetime="{{{active_article.published}}}">{{{active_article.published}}}</time>
+
+      <div id="blog-content">
+        <%= content %>
+      </div>
     </article>
   </main>
 

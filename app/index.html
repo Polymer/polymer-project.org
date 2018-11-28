@@ -40,31 +40,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin-top: 0;
       margin-bottom: 4px;
     }
-    section .section-title {
-      font-size: 40px;
-      line-height: 48px;
-      max-width: 320px;
-      margin-bottom: 20px;
-      color: #FF4470;
-    }
-    section .section-title:after {
-      content: "";
-      background: #222;
-      height: 1px;
-      width: 32px;
-      display: block;
-      margin-top: 16px;
-    }
+
     section .caption {
       margin-bottom: -8px;
       max-width: 360px;
     }
-    section .description {
-      margin-top: 20px;
-      margin-bottom: 40px;
-      max-width: 560px;
-      color: #999;
-    }
+
     #section-about p,
     #section-why p,
     #section-news p {
@@ -220,7 +201,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <section id="section-about">
     <div class="wrapper">
-      <h1 class="section-title">About the Polymer Project</h1>
+      <h1 class="title">About the Polymer Project</h1>
       <h2 class="description">As front-end engineers in the Chrome team, our mission is to make the web better.</h2>
       <div class="responsive-row">
         <div style="flex: 1">
@@ -241,7 +222,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <section id="section-why" style="margin-bottom: 20px;">
     <div class="wrapper">
-      <h1 class="section-title">Why Web Components?</h1>
+      <h1 class="title">Why Web Components?</h1>
 
       <div class="responsive-row">
         <div style="flex: 1">
@@ -259,7 +240,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <section id="section-news" style="margin-bottom: 40px;">
     <div class="wrapper">
-      <h1 class="section-title">Latest news</h1>
+      <h1 class="title">Latest news</h1>
       <div class="responsive-row">
         {% for item in articles[:3] %}
         <div style="flex: 1">
