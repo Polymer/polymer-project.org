@@ -168,7 +168,6 @@ main {
   font-size: 72px;
   font-weight: 400;
   line-height: 1.3em;
-  text-indent: -4px;
 }
 
 .hero .hero-title::after {
@@ -422,14 +421,16 @@ th, td {
   }
 
   .hero .hero-title {
-    font-size: 56px;
-    line-height: 92px;
-    margin-bottom: -4px;
+    font-size: 44px;
+    line-height: 72px;
+    margin-bottom: -10px;
+    padding-right: 0;
   }
 
   .hero .hero-caption {
     font-size: 22px;
     line-height: 32px;
+    padding-right: 0;
   }
 
   .responsive-row {
