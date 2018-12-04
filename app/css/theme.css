@@ -31,13 +31,13 @@ a {
   background: #FFF;
 }
 
-.hero .hero-title,
+.hero-title,
 .link-with-arrow,
 .main-nav {
   color: #FF4470;
 }
 
-.hero .hero-title::after {
+.hero-title::after {
   background: #FF4470;
 }
 
