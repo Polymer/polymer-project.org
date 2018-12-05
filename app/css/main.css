@@ -155,8 +155,8 @@ main {
 }
 
 .hero .wrapper {
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 21vh;
+  padding-bottom: 24vh;
 }
 
 .hero-title {
@@ -205,6 +205,17 @@ main {
 section .wrapper {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+section .caption {
+  margin-bottom: -8px;
+  max-width: 360px;
+}
+section h2 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+section p {
+  padding-right: 20px;
 }
 
 .responsive-row {
@@ -409,6 +420,12 @@ th, td {
   }
 }
 @media screen and (max-width: 640px) {
+
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
   .main-nav {
     height: 56px;
     padding-left: 20px;
