@@ -59,7 +59,7 @@ function convertMarkdownToHtml(templateName) {
     // original markdown content anyway, so that we can style it.
     if (content.match(/<!--\s*toc\s*-->/gi)) {
       data.content = toc.process(content, {
-        TOC: '<h2 id="table-of-contents">Table of Contents</h2><%= toc %>',
+        TOC: '<h3 id="table-of-contents">Table of Contents</h3><%= toc %>',
         tocMax: 3,
         anchor: function(header, attrs) {
           // if we have an ID attribute, use that, otherwise
