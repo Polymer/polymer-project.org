@@ -1,11 +1,9 @@
 {
   "private": true,
-  "engines": {
-    "node": ">=5.0.0"
-  },
   "scripts": {
-    "postinstall": "gulp",
-    "deploy": "scripts/deploy.sh"
+    "build": "gulp",
+    "serve": "dev_appserver.py dist/app.yaml",
+    "deploy": "npm run build && gcloud app deploy dist/app.yaml --project polymer-project --no-promote"
   },
   "devDependencies": {
     "del": "^2.0.2",
