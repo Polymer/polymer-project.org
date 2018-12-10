@@ -93,7 +93,7 @@ pre {
 /* Logo lockup */
 #logo-lockup {
   white-space: nowrap;
-  margin-bottom: -22px;
+  margin-bottom: -30px;
 }
 #logo-lockup::before {
   width: 72px;
@@ -470,6 +470,9 @@ th, td {
     margin-bottom: -8px;
     padding-right: 0;
   }
+  .hero-title::after {
+    bottom: -4px;
+  }
 
   .hero-caption {
     font-size: 22px;
@@ -480,7 +483,9 @@ th, td {
   .responsive-row {
     flex-direction: column;
   }
-
+  #logo-lockup {
+    margin-bottom: -20px;
+  }
   #logo-lockup::before {
     margin-right: 12px;
     width: 38px;
