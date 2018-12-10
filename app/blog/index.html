@@ -30,7 +30,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div class="wrapper">
 
     {% for item in articles %}
-    <blog-tile style="display: block; border-top: 1px solid #FF4470; margin-bottom: 16px;">
+    <div style="display: block; border-top: 1px solid #FF4470; margin-bottom: 16px;">
       <div class="responsive-row" style="padding-top: 12px;">
         <time pubdate="" datetime="{{{item.published}}}" style="flex: 1; margin-bottom: 4px;">{{{item.published}}}</time>
         <div style="flex: 2;">
@@ -45,7 +45,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </div>
 
-    </blog-tile>
+    </div>
     {% endfor %}
 
   </div>
