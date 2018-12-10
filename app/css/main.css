@@ -92,8 +92,8 @@ pre {
 
 /* Logo lockup */
 #logo-lockup {
-  margin-bottom: -24px;
   white-space: nowrap;
+  margin-bottom: -22px;
 }
 #logo-lockup::before {
   width: 72px;
@@ -103,7 +103,7 @@ pre {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   display: inline-block;
-  margin-right: 16px;
+  margin-right: 18px;
   content: '';
 }
 #logo-lockup::after {
@@ -465,9 +465,9 @@ th, td {
   }
 
   .hero-title {
-    font-size: 44px;
-    line-height: 72px;
-    margin-bottom: -10px;
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: -8px;
     padding-right: 0;
   }
 
@@ -482,9 +482,9 @@ th, td {
   }
 
   #logo-lockup::before {
-    width: 44px;
-    height: 32px;
     margin-right: 12px;
+    width: 38px;
+    height: 26px;
   }
 
   /* doc page */
