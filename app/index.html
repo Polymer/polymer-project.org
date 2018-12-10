@@ -17,7 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <header class="hero">
     {% include 'templates/topnav.html' %}
     <div class="wrapper">
-      <div class="hero-title"><span id="polymer-logo"></span>Polymer Project</div>
+      <div id="logo-lockup" class="hero-title"><span id="polymer-logo"></span>Polymer Project</div>
       <!-- <div class="hero-title">Polymer Project</div> -->
       <p class="hero-caption">We work on libraries, tools, and standards to help developers build a better web</p>
       <a class="hero-link link-with-arrow" href="/blog/">Blog</a>
@@ -25,23 +25,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </header>
 
   <style>
-    #polymer-logo {
-      width: 72px;
-      height: 52px;
-      background-image: url(images/logos/p-logo.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      display: inline-block;
-      margin-right: 16px;
-    }
-    .hero-title {
-      margin-bottom: -24px;
-      white-space: nowrap;
-    }
-    .hero-title::after {
-      display: none;
-    }
     .product-grid-item {
       display: inline-block;
       width: calc(50% - 60px);
@@ -152,7 +135,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         height: 32px;
         margin-right: 12px;
       }
-      
+
       .product-grid-item {
         display: block;
         width: auto;
