@@ -16,24 +16,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <body>
   {% include 'templates/topnav.html' %}
 
-  <main class="wrapper">
-    <article>
-      <h1>Blog</h1>
-      <p>The latest goings-on with the Polymer project and in the community.
+  <header class="hero">
+    <div class="wrapper">
+      <div id="logo-lockup" class="hero-title">Blog</div>
+      <p class="hero-caption">The latest goings-on with the Polymer project and in the community.
         We'll update this page to announce major releases and showcase cool stuff
         being built with Polymer. Have an idea for an article?
         <a href="https://github.com/Polymer/polymer-project.org/issues/new?labels=article">Suggest it!</a>
       </p>
+    </div>
+  </header>
 
-      {% for item in articles %}
-      <h2><a href="{{{item.path}}}.html">{{{item.title}}}</a></h2>
-      <div class="byline author">
-        <time pubdate="" datetime="{{{item.published}}}">{{{item.published}}}</time>
+  <div class="wrapper">
+
+    {% for item in articles %}
+    <div style="display: block; border-top: 1px solid #FF4470; margin-bottom: 16px;">
+      <div class="responsive-row" style="padding-top: 12px;">
+        <time pubdate="" datetime="{{{item.published}}}" style="flex: 1; margin-bottom: 4px;">{{{item.published}}}</time>
+        <div style="flex: 2;">
+          <h3 style="margin-bottom: 0px; margin-top: 0px;"><a href="{{{item.path}}}.html">{{{item.title}}}</a></h3>
+          <p style="margin: 0 0 10px 0; max-width: 560px;">{{{item.description}}}</p>
+          <a id="author" style="color: #999; font-weight: 500;" href="https://twitter.com/{{{item.author.twitter}}}" target="blank_">
+            <img class="author-img small" src="{{{item.author.profile_pic}}}" alt="{{{item.author.full_name}}} profile pic" title="{{{item.author.full_name}}}" />
+            {{{item.author.full_name}}}
+          </a>
+        </div>
+        <div class="byline author">
+        </div>
       </div>
-      <p>{{{item.description}}}</p>
-      {% endfor %}
-    </article>
-  </main>
+
+    </div>
+    {% endfor %}
+
+  </div>
+
 
   {% include 'templates/footer.html' %}
   <script src="/js/app.js"></script>
