@@ -91,7 +91,11 @@ pre {
 }
 
 /* Logo lockup */
-#polymer-logo {
+#logo-lockup {
+  margin-bottom: -24px;
+  white-space: nowrap;
+}
+#logo-lockup::before {
   width: 72px;
   height: 52px;
   background-image: url(../images/logos/p-logo.svg);
@@ -100,14 +104,12 @@ pre {
   background-position: 50% 50%;
   display: inline-block;
   margin-right: 16px;
-}
-#logo-lockup {
-  margin-bottom: -24px;
-  white-space: nowrap;
+  content: '';
 }
 #logo-lockup::after {
   display: none;
 }
+
 
 /* blog styling */
 .author-img {
@@ -479,6 +481,11 @@ th, td {
     flex-direction: column;
   }
 
+  #logo-lockup::before {
+    width: 44px;
+    height: 32px;
+    margin-right: 12px;
+  }
 
   /* doc page */
   .side-nav {
