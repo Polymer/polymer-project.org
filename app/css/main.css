@@ -392,6 +392,19 @@ footer .attribution {
   color: #999;
 }
 
+footer .social-links {
+  margin: -8px 0 24px -8px;
+}
+
+footer .social-links a {
+  display: inline-block;
+  padding: 8px;
+}
+
+footer .social-links img {
+  width: 24px;
+  height: 24px;
+}
 
 
 /* TODO: figure out if below rules are still needed */
