@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "gulp",
-    "serve": "dev_appserver.py dist/app.yaml",
+    "build": "cd app && jekyll build",
+    "serve": "dev_appserver.py app/_site/app.yaml",
     "deploy": "npm run build && gcloud app deploy dist/app.yaml --project polymer-project --no-promote"
   },
   "devDependencies": {

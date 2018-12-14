@@ -1,5 +1,5 @@
 ---
-title: Polymer Summit 2017 Speaker Spotlight: Chad Killingsworth, Jack Henry & Associates
+title: "Polymer Summit 2017 Speaker Spotlight: Chad Killingsworth, Jack Henry & Associates"
 ---
 
 Chad builds modern online banking experiences with Polymer. We chatted about componentized web app development and the importance of powerful theming capabilities.

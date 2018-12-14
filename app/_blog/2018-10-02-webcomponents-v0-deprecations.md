@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Web Components v0 deprecations"
 ---
 

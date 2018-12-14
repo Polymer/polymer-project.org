@@ -1,4 +1,6 @@
 .DS_STORE
+/app/_site/
+*.pyc
 
 # Generated files/folders
 *.pyc

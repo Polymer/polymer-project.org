@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+{% include topnav.html %}
+
+<header class="hero">
+  <div class="wrapper">
+    <div id="logo-lockup" class="hero-title">Blog</div>
+    <p class="hero-caption">The latest goings-on with the Polymer project and in the community.
+      We'll update this page to announce major releases and showcase cool stuff
+      being built with Polymer. Have an idea for an article?
+      <a href="https://github.com/Polymer/polymer-project.org/issues/new?labels=article">Suggest it!</a>
+    </p>
+  </div>
+</header>
+
+<div class="wrapper" style="margin-bottom: 80px;">
+  {% for item in site.data.blog %}
+  <div style="display: block; border-top: 1px solid #FF4470; margin-bottom: 16px;">
+    <div class="responsive-row" style="padding-top: 12px;">
+      <time pubdate="" datetime="{{item.published}}" style="flex: 1; margin-bottom: 4px;">{{item.published}}</time>
+      <div style="flex: 2;">
+        <h3 style="margin-bottom: 0px; margin-top: 0px;"><a href="{{item.path}}">{{item.title}}</a></h3>
+        <p style="margin: 0 0 10px 0; max-width: 560px;">{{item.description}}</p>
+        <a id="author" style="color: #999; font-weight: 500;" href="https://twitter.com/{{site.data.authors[item.author].twitter}}" target="blank_">
+          <img class="author-img small" src="{{site.data.authors[item.author].profile_pic}}" alt="{{site.data.authors[item.author].full_name}} profile pic" title="{{site.data.authors[item.author].full_name}}" />
+          {{site.data.authors[item.author].full_name}}
+        </a>
+      </div>
+      <div class="byline author">
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+</div>

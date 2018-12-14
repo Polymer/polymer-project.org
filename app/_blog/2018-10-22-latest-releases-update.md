@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Latest releases from the Polymer Project"
 ---
 

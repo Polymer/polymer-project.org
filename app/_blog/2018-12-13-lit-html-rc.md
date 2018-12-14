@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "lit-html 1.0 release candidate"
 ---
 

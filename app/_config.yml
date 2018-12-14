@@ -1,0 +1,10 @@
+permalink: /:title/
+name: Polymer Project
+description: Open-source libraries, tools, and patterns to help developers build modern web applications
+markdown: kramdown
+kramdown: 
+  parse_block_html: true
+google_analytics: UA-39334307-1
+collections:
+  blog:
+    output: true

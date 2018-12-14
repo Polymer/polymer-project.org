@@ -1,0 +1,49 @@
+---
+layout: default
+---
+{% include topnav.html %}
+
+<style>
+  #author {
+    text-align: center;
+    display: block;
+  }
+  time {
+    text-align: center;
+    margin-top: -24px;
+    margin-bottom: 40px;
+  }
+  #table-of-contents,
+  #table-of-contents + ul {
+    display: none;
+  }
+  #blog-content > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+  }
+  iframe {
+    display: block;
+  }
+  h2 {
+    margin-top: 60px;
+  }
+</style>
+
+<main class="wrapper">
+  <article>
+
+    <a id="author" href="https://twitter.com/{{page.author.twitter}}" target="blank_">
+      <img class="author-img" src="{{page.author.profile_pic}}" alt="{{page.author.full_name}} profile pic" title="{{page.author.full_name}}">
+    </a>
+    <h1 class="center title">{{page.title}}</h1>
+    <h2 class="center description">{{page.description}}</h2>
+
+    <!-- <a id="author" href="{{page.author.web}}" target="blank_">by {{page.author.full_name}}</a> -->
+    <time pubdate="" datetime="{{page.published}}">{{page.published}}</time>
+
+    <div id="blog-content">
+      {{ content }}
+    </div>
+  </article>
+</main>

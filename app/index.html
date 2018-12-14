@@ -1,241 +1,223 @@
-<!--
-@license
-Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-<!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/Organization" lang="en">
-<head>
-<title>Polymer Project</title>
-{% include 'templates/head-meta.html' %}
-</head>
-<body>
-  <header class="hero">
-    {% include 'templates/topnav.html' %}
-    <div class="wrapper">
-      <div id="logo-lockup" class="hero-title">Polymer Project</div>
-      <p class="hero-caption">We work on libraries, tools, and standards to help developers build a better web</p>
-      <a class="hero-link link-with-arrow" href="/blog/">Blog</a>
-    </div>
-  </header>
+---
+layout: default
+---
+<header class="hero">
+  {% include topnav.html %}
+  <div class="wrapper">
+    <div id="logo-lockup" class="hero-title">Polymer Project</div>
+    <p class="hero-caption">We work on libraries, tools, and standards to help developers build a better web</p>
+    <a class="hero-link link-with-arrow" href="/blog/">Blog</a>
+  </div>
+</header>
 
-  <style>
+<style>
+  .product-grid-item {
+    display: inline-block;
+    width: calc(50% - 60px);
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+    color: rgba(0,0,0,.87);
+    transition: 0.4s transform;
+    will-change: transform;
+    transform: scale(1);
+  }
+
+  #section-about .responsive-row > *,
+  #section-news .responsive-row > * {
+    margin-bottom: 40px;
+  }
+
+  .product-grid-item.left {
+    float: left;
+  }
+
+  .product-grid-item.right {
+    float: right;
+  }
+
+  .product-grid-item:hover {
+    transform: scale(1.02);
+    text-decoration: none;
+  }
+
+  .product-grid-item::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "";
+    box-shadow: 0px 2px 8px rgba(0,0,0,.2), 0px 2px 16px rgba(0,0,0,.2);
+    transition: 0.4s opacity;
+    will-change: opacity;
+    opacity: 0;
+  }
+
+  .product-grid-item:hover::before {
+    opacity: 1;
+  }
+
+  .product-grid-item .thumb {
+    position: relative;
+    margin: 10px 10%;
+    padding-top: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .product-grid-item h2 {
+    color: #fff;
+  }
+
+  .product-grid-item p {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 360px;
+  }
+
+  .product-grid-item .status {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    writing-mode: tb-rl;
+    margin: 12px;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 1160px) {
     .product-grid-item {
-      display: inline-block;
-      width: calc(50% - 60px);
-      margin-bottom: 40px;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
-      color: rgba(0,0,0,.87);
-      transition: 0.4s transform;
-      will-change: transform;
-      transform: scale(1);
+      margin-bottom: 24px;
+      width: calc(50% - 52px);
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .product-grid-item {
+      display: block;
+      width: auto;
     }
 
-    #section-about .responsive-row > *,
-    #section-news .responsive-row > * {
-      margin-bottom: 40px;
-    }
-
-    .product-grid-item.left {
-      float: left;
-    }
-
+    .product-grid-item.left,
     .product-grid-item.right {
-      float: right;
+      float: none;
     }
 
-    .product-grid-item:hover {
-      transform: scale(1.02);
-      text-decoration: none;
+    .product-grid-item {
+      margin-bottom: 20px;
     }
 
-    .product-grid-item::before {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      content: "";
-      box-shadow: 0px 2px 8px rgba(0,0,0,.2), 0px 2px 16px rgba(0,0,0,.2);
-      transition: 0.4s opacity;
-      will-change: opacity;
-      opacity: 0;
-    }
+  }
+</style>
 
-    .product-grid-item:hover::before {
-      opacity: 1;
-    }
-
-    .product-grid-item .thumb {
-      position: relative;
-      margin: 10px 10%;
-      padding-top: 50%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    .product-grid-item h2 {
-      color: #fff;
-    }
-
-    .product-grid-item p {
-      margin-top: 0;
-      margin-bottom: 0;
-      max-width: 360px;
-    }
-
-    .product-grid-item .status {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      text-align: center;
-      writing-mode: tb-rl;
-      margin: 12px;
-      font-size: 14px;
-      color: white;
-      font-weight: 500;
-      letter-spacing: .25px;
-      text-transform: uppercase;
-    }
-
-    @media screen and (max-width: 1160px) {
-      .product-grid-item {
-        margin-bottom: 24px;
-        width: calc(50% - 52px);
-      }
-    }
-
-    @media screen and (max-width: 640px) {
-      .product-grid-item {
-        display: block;
-        width: auto;
-      }
-
-      .product-grid-item.left,
-      .product-grid-item.right {
-        float: none;
-      }
-
-      .product-grid-item {
-        margin-bottom: 20px;
-      }
-
-    }
-  </style>
-
-  <section>
-    <div class="wrapper">
-      <div>
-        <a class="onload-fadein product-grid-item left" href="https://lit-element.polymer-project.org" style="animation-delay: .15s; background: #00A3E6; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #3FC7FF 0%, #00A3E6 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg); padding-top: 39%; margin: 10px 8%;"></div>
-          <h2>LitElement</h2>
-          <p>A simple base class for creating fast, lightweight web components.</p>
-          <span class="status">Prerelease</span>
-        </a>
-        <a class="onload-fadein product-grid-item right" href="https://pwa-starter-kit.polymer-project.org" style="animation-delay: .3s; background: #6700DF; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #AF6AFF 0%, #6700DF 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg); padding-top: 48%; margin: 0px 13%;"></div>
-          <h2>PWA Starter Kit</h2>
-          <p>Starter templates for building full-featured Progressive Web Apps from web components.</p>
-          <span class="status">Prerelease</span>
-        </a>
-        <a class="onload-fadein product-grid-item left" href="https://lit-html.polymer-project.org" style="animation-delay: .3s; background: #FF2F2F; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #FA5A5A 0%, #FF2F2F 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_lit-html.svg); padding-top: 45%"></div>
-          <h2>lit-html</h2>
-          <p>An efficient, expressive, extensible HTML templating library for JavaScript.</p>
-          <span class="status">Prerelease</span>
-        </a>
-        <a class="onload-fadein product-grid-item right" href="https://github.com/material-components/material-components-web-components" style="animation-delay: .25s; background: #00D67C; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #20FFA7 0%, #00D67C 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg); padding-top: 46%; margin: 10px 15%;"></div>
-          <h2>Material Web Components</h2>
-          <p>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</p>
-          <span class="status">Prerelease</span>
-        </a>
-        <a class="onload-fadein product-grid-item left" href="https://github.com/WebComponents/webcomponentsjs" style="animation-delay: .25s; background: #00D67C; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #FF4ED4 0%, #FF00C1 100%)">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_polyfills.svg); padding-top: 35%; margin: 12px 12%;"></div>
-          <h2>Web Components Polyfills</h2>
-          <p>A suite of polyfills supporting the Web Components specs.</p>
-        </a>
-        <a class="onload-fadein product-grid-item right" href="{{{site_classic}}}" style="animation-delay: .4s;">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_library.svg); padding-top: 47%; margin: 10x 8%;"></div>
-          <h2>Polymer Library</h2>
-          <p>Our original web component library.</p>
-          <span class="status">Maintenance</span>
-        </a>
-        <a class="onload-fadein product-grid-item left" href="https://www.webcomponents.org/author/PolymerElements" style="animation-delay: .35s;">
-          <div class="thumb" style="background-image:url(/images/thumbnails/thumb_elements.svg); padding-top: 35%"></div>
-          <h2>Polymer Elements</h2>
-          <p>Our original sets of web components, built with the Polymer library.</p>
-          <span class="status">Maintenance</span>
-        </a>
-      </div>
-      <div style="clear: both"></div>
+<section>
+  <div class="wrapper">
+    <div>
+      <a class="onload-fadein product-grid-item left" href="https://lit-element.polymer-project.org" style="animation-delay: .15s; background: #00A3E6; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #3FC7FF 0%, #00A3E6 100%)">
+        <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg); padding-top: 39%; margin: 10px 8%;"></div>
+        <h2>LitElement</h2>
+        <p>A simple base class for creating fast, lightweight web components.</p>
+        <span class="status">Prerelease</span>
+      </a>
+      <a class="onload-fadein product-grid-item right" href="https://pwa-starter-kit.polymer-project.org" style="animation-delay: .3s; background: #6700DF; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #AF6AFF 0%, #6700DF 100%)">
+        <div class="thumb" style="background-image:url(/images/thumbnails/thumb_pwa.svg); padding-top: 48%; margin: 0px 13%;"></div>
+        <h2>PWA Starter Kit</h2>
+        <p>Starter templates for building full-featured Progressive Web Apps from web components.</p>
+        <span class="status">Prerelease</span>
+      </a>
+      <a class="onload-fadein product-grid-item left" href="https://lit-html.polymer-project.org" style="animation-delay: .3s; background: #FF2F2F; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #FA5A5A 0%, #FF2F2F 100%)">
+        <div class="thumb" style="background-image:url(/images/thumbnails/thumb_lit-html.svg); padding-top: 45%"></div>
+        <h2>lit-html</h2>
+        <p>An efficient, expressive, extensible HTML templating library for JavaScript.</p>
+        <span class="status">Prerelease</span>
+      </a>
+      <a class="onload-fadein product-grid-item right" href="https://github.com/material-components/material-components-web-components" style="animation-delay: .25s; background: #00D67C; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #20FFA7 0%, #00D67C 100%)">
+        <div class="thumb" style="background-image:url(/images/thumbnails/thumb_material.svg); padding-top: 46%; margin: 10px 15%;"></div>
+        <h2>Material Web Components</h2>
+        <p>High-fidelity realizations of Google's Material Design spec that work anywhere on the web.</p>
+        <span class="status">Prerelease</span>
+      </a>
+      <a class="onload-fadein product-grid-item left" href="https://github.com/WebComponents/webcomponentsjs" style="animation-delay: .25s; background: #00D67C; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #FF4ED4 0%, #FF00C1 100%)">
+        <div class="thumb" style="background-image:url(/images/thumbnails/thumb_polyfills.svg); padding-top: 35%; margin: 12px 12%;"></div>
+        <h2>Web Components Polyfills</h2>
+        <p>A suite of polyfills supporting the Web Components specs.</p>
+      </a>
+      <a class="onload-fadein product-grid-item right" href="https://polymer-library.polymer-project.org" style="animation-delay: .4s;">
+        <div class="thumb" style="background-image:url(/images/thumbnails/thumb_library.svg); padding-top: 47%; margin: 10x 8%;"></div>
+        <h2>Polymer Library</h2>
+        <p>Our original web component library.</p>
+        <span class="status">Maintenance</span>
+      </a>
+      <a class="onload-fadein product-grid-item left" href="https://www.webcomponents.org/author/PolymerElements" style="animation-delay: .35s;">
+        <div class="thumb" style="background-image:url(/images/thumbnails/thumb_elements.svg); padding-top: 35%"></div>
+        <h2>Polymer Elements</h2>
+        <p>Our original sets of web components, built with the Polymer library.</p>
+        <span class="status">Maintenance</span>
+      </a>
     </div>
-  </section>
+    <div style="clear: both"></div>
+  </div>
+</section>
 
-  <section id="section-about">
-    <div class="wrapper">
-      <h1 class="title">About the Polymer Project</h1>
-      <h2 class="description">As front-end engineers in the Chrome team, our mission is to make the web better.</h2>
-      <div class="responsive-row">
-        <div style="flex: 1">
-          <h2 class="caption">We work on <br>libraries & tools</h2>
-          <p>to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
-        </div>
-        <div style="flex: 1">
-          <h2 class="caption">We experiment with <br>new patterns</h2>
-          <p>for building faster and smaller web applications.</p>
-        </div>
-        <div style="flex: 1">
-          <h2 class="caption">We advocate for <br>standards</h2>
-          <p>helping ensure that web developers have a strong voice in the process.</p>
-        </div>
+<section id="section-about">
+  <div class="wrapper">
+    <h1 class="title">About the Polymer Project</h1>
+    <h2 class="description">As front-end engineers in the Chrome team, our mission is to make the web better.</h2>
+    <div class="responsive-row">
+      <div style="flex: 1">
+        <h2 class="caption">We work on <br>libraries & tools</h2>
+        <p>to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
+      </div>
+      <div style="flex: 1">
+        <h2 class="caption">We experiment with <br>new patterns</h2>
+        <p>for building faster and smaller web applications.</p>
+      </div>
+      <div style="flex: 1">
+        <h2 class="caption">We advocate for <br>standards</h2>
+        <p>helping ensure that web developers have a strong voice in the process.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="section-why" style="margin-bottom: 20px;">
-    <div class="wrapper">
-      <h1 class="title">Why Web Components?</h1>
+<section id="section-why" style="margin-bottom: 20px;">
+  <div class="wrapper">
+    <h1 class="title">Why Web Components?</h1>
 
-      <div class="responsive-row">
-        <div style="flex: 1">
-          <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
-          <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
-        </div>
-        <div style="flex: 1">
-          <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
-          <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
-          <a class="link-with-arrow" href="https://webcomponents.org">Learn more</a>
-        </div>
+    <div class="responsive-row">
+      <div style="flex: 1">
+        <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
+        <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
+      </div>
+      <div style="flex: 1">
+        <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
+        <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
+        <a class="link-with-arrow" href="https://webcomponents.org">Learn more</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="section-news" style="margin-bottom: 40px;">
-    <div class="wrapper">
-      <h1 class="title">Latest news</h1>
-      <div class="responsive-row">
-        {% for item in articles[:3] %}
-        <div style="flex: 1">
-          <h2 class="caption">{{{item.title}}}</h2>
-          <p>{{{item.description}}}</p>
-          <a class="link-with-arrow" href="{{{item.path}}}" target="_blank">Blog Post</a>
-        </div>
-        {% endfor %}
+<section id="section-news" style="margin-bottom: 40px;">
+  <div class="wrapper">
+    <h1 class="title">Latest news</h1>
+    <div class="responsive-row">
+      {% for item in site.data.blog limit: 3 %}
+      <div style="flex: 1">
+        <h2 class="caption">{{item.title}}</h2>
+        <p>{{item.description}}</p>
+        <a class="link-with-arrow" href="{{item.path}}" target="_blank">Blog Post</a>
       </div>
+      {% endfor %}
     </div>
-  </section>
-
-  {% include 'templates/footer.html' %}
-  <script src="/js/app.js"></script>
-</body>
-</html>
+  </div>
+</section>

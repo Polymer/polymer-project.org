@@ -1,0 +1,92 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: webapp2
+  version: "2.5.2"
+
+default_expiration: "1m"
+
+handlers:
+- url: /css
+  static_dir: css
+  secure: always
+
+- url: /images
+  static_dir: images
+  secure: always
+
+- url: /service-worker.js
+  static_files: service-worker.js
+  upload: service-worker.js
+  secure: always
+  expiration: "1s" # "0s" doesn't work
+
+# Special exception for the summit site so it doesn't require
+# a trailing slash
+- url: /summit-2015
+  static_files: summit-2015/index.html
+  upload: summit-2015/index.html
+  secure: always
+
+- url: /summit-2015/$
+  static_files: summit-2015/index.html
+  upload: summit-2015/index.html
+  secure: always
+
+- url: /summit-2015/(schedule|speakers)
+  static_files: summit-2015/index.html
+  upload: summit-2015/index.html
+  secure: always
+
+- url: /summit-2015/codelabs/$
+  static_files: summit-2015/codelabs.html
+  upload: summit-2015/codelabs.html
+  secure: always
+
+- url: /summit-2015/codelabs$
+  static_files: summit-2015/codelabs.html
+  upload: summit-2015/codelabs.html
+  secure: always
+
+- url: /summit-2015/(.*)
+  static_files: summit-2015/\1
+  upload: summit-2015/(.*)
+  secure: always
+
+- url: /summit-2016
+  static_files: summit-2016/index.html
+  upload: summit-2016/index.html
+  secure: always
+
+- url: /summit-2016/$
+  static_files: summit-2016/index.html
+  upload: summit-2016/index.html
+  secure: always
+
+- url: /summit-2016/(schedule|speakers)
+  static_files: summit-2016/index.html
+  upload: summit-2016/index.html
+  secure: always
+
+- url: /summit-2016/codelabs/$
+  static_files: summit-2016/codelabs.html
+  upload: summit-2016/codelabs.html
+  secure: always
+
+- url: /summit-2016/codelabs$
+  static_files: summit-2016/codelabs.html
+  upload: summit-2016/codelabs.html
+  secure: always
+
+- url: /summit-2016/(.*)
+  static_files: summit-2016/\1
+  upload: summit-2016/(.*)
+  secure: always
+
+- url: /.*
+  script: main.app
+  secure: always

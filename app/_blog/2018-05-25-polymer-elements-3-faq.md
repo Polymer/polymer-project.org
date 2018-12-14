@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Polymer Elements 3.0 FAQ"
 ---
 If you've started updating your application to use the recently released 3.0 version
