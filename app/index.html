@@ -211,7 +211,8 @@ layout: default
   <div class="wrapper">
     <h1 class="title">Latest news</h1>
     <div class="responsive-row">
-      {% for item in site.data.blog limit: 3 %}
+      {% assign items = site.blog | sort: 'published' | reverse %}
+      {% for item in items limit: 3 %}
       <div style="flex: 1">
         <h2 class="caption">{{item.title}}</h2>
         <p>{{item.description}}</p>

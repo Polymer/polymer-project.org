@@ -16,12 +16,13 @@ layout: default
 </header>
 
 <div class="wrapper" style="margin-bottom: 80px;">
-  {% for item in site.data.blog %}
+  {% assign items = site.blog | sort: 'published' | reverse %}
+  {% for item in items %}
   <div style="display: block; border-top: 1px solid #FF4470; margin-bottom: 16px;">
     <div class="responsive-row" style="padding-top: 12px;">
       <time pubdate="" datetime="{{item.published}}" style="flex: 1; margin-bottom: 4px;">{{item.published}}</time>
       <div style="flex: 2;">
-        <h3 style="margin-bottom: 0px; margin-top: 0px;"><a href="{{item.path}}">{{item.title}}</a></h3>
+        <h3 style="margin-bottom: 0px; margin-top: 0px;"><a href="{{item.url}}">{{item.title}}</a></h3>
         <p style="margin: 0 0 10px 0; max-width: 560px;">{{item.description}}</p>
         <a id="author" style="color: #999; font-weight: 500;" href="https://twitter.com/{{site.data.authors[item.author].twitter}}" target="blank_">
           <img class="author-img small" src="{{site.data.authors[item.author].profile_pic}}" alt="{{site.data.authors[item.author].full_name}} profile pic" title="{{site.data.authors[item.author].full_name}}" />

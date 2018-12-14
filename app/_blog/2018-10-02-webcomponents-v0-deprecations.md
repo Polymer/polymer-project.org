@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Web Components v0 deprecations"
+published: 2018-10-02
+author: polymer-team
+description: "With new Web Components specs shipping widely, older web components standards are being deprecated and removed from Chrome."
+
 ---
 
 In 2014, Chrome shipped early versions of the web components specifications—Custom Elements v0, Shadow DOM v0, and HTML Imports. Polymer 1.x was built on top of these v0 specs. Since then, v1 versions of the Custom Elements and Shadow DOM specs have been standardized. These v1 specs—used by Polymer 2.x and 3.x—are now shipping in Safari and Chrome, and are slated to ship this month in Firefox. 

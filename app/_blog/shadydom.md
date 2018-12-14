@@ -1,5 +1,13 @@
 ---
+layout: post
 title: "What is shady DOM?"
+description: "Why do we need a new kind of DOM?"
+published: 2015-05-28
+author: sjmiles
+polymer_version: 1.0
+tags:
+- shadowdom
+- shadydom
 ---
 
 <!-- toc -->

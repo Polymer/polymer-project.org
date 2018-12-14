@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Polymer Elements 3.0 FAQ"
+published: 2018-05-25
+author: polymer-team
+description: "FAQ about updating your application to use the Polymer Elements 3.0"
+
 ---
 If you've started updating your application to use the recently released 3.0 version
 of the Polymer Elements, you might have run into some problems. Here are the

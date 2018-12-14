@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "lit-html 1.0 release candidate"
+published: 2018-12-13
+author: graynorton
 ---
 
 We're excited to announce the first release candidate for lit-html 1.0!

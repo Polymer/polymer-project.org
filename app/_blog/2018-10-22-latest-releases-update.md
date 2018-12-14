@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Latest releases from the Polymer Project"
+published: 2018-10-22
+author: polymer-team
+description: "An update on the latest releases from the Polymer Project."
 ---
 
 <!-- toc -->
@@ -101,7 +104,7 @@ render(templateResult, destination, {eventContext: this});
 
 The render options should not change between renders. 
 
-**Breaking change.** This changes the optional third argument of `render` from a <code>[TemplateFactory](https://lit-html.polymer-project.org/api/modules/_lib_template_factory_.html#templatefactory)</code> to a <code>RenderOptions</code> object. To pass a template factory to render, add a <code>templateFactory</code> property to the options object.
+**Breaking change.** This changes the optional third argument of `render` from a [`TemplateFactory`](https://lit-html.polymer-project.org/api/modules/_lib_template_factory_.html#templatefactory) to a <code>RenderOptions</code> object. To pass a template factory to render, add a <code>templateFactory</code> property to the options object.
 
 
 ```
@@ -112,7 +115,7 @@ render(templateResult, destination, {templateFactory: myTemplateFactory});
 
 ### New directives
 
-Four new directives—<code>[classMap](https://lit-html.polymer-project.org/api/modules/_directives_class_map_.html)</code>, <code>[styleMap](https://lit-html.polymer-project.org/api/modules/_directives_style_map_.html)</code>, <code>[guard](https://lit-html.polymer-project.org/guide/template-reference#guard)</code>, and <code>[when](https://lit-html.polymer-project.org/api/modules/_directives_when_.html)</code>—provide more control over rendering. The API for <code>guard</code> and <code>when</code> are not final, and may change some before 1.0.
+Four new directives—[`classMap`](https://lit-html.polymer-project.org/api/modules/_directives_class_map_.html), [`styleMap`](https://lit-html.polymer-project.org/api/modules/_directives_style_map_.html), [`guard`](https://lit-html.polymer-project.org/guide/template-reference#guard), and [`when`](https://lit-html.polymer-project.org/api/modules/_directives_when_.html)—provide more control over rendering. The API for <code>guard</code> and <code>when</code> are not final, and may change some before 1.0.
 
 
 ## LitElement
@@ -133,7 +136,7 @@ The current release adds the following decorators:
 
 *   `@customElement()`. Decorates a custom element class.
 
-    ```
+    ```ts
 	@customElement('my-element') 
 	class MyElement extends LitElement { ... }
     ```
@@ -141,7 +144,7 @@ The current release adds the following decorators:
 
 *   `@query()`. Decorates a property. Transforms the property into a getter that performs a querySelector on the element's render root.
 
-    ```
+    ```ts
 	@query('#submit')
     submitButton?: HTMLButtonElement
     ```
@@ -150,14 +153,14 @@ The current release adds the following decorators:
 
 *   `@queryAll()`. Decorates a property. Like @query, transforms the property into a getter that performs a querySelectorAll on the element's render root.
 
-    ```
+    ```ts
     @queryAll('button')`
     buttons!: NodeList
     ```
 
 *   `@eventOptions()`. Method decorator for setting capture, passive, and once options on event listener methods:
 
-    ```
+    ```ts
     @eventOptions({capture: true})
     onClick(e) { ... }
     ```
