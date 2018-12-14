@@ -1,5 +1,9 @@
 ---
-title:  "Polymer 3.0: New Year, New Preview"
+layout: post
+title: "Polymer 3.0: New year, new preview"
+published: 2018-01-18
+author: polymer-team
+description: "New Polymer 3.0 preview: Bug fixes and new features"
 ---
 
 Happy New Year from the Polymer team! Hope everyone had a nice break. We've all returned from our various travels and are getting ready to roll out some more web component goodness. 

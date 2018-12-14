@@ -1,5 +1,9 @@
 ---
+layout: post
 title: Polymer 3.0 Tools Update
+published: 2018-04-12
+author: polymer-team
+description: "The Polymer CLI gets improved module support"
 ---
 
 The latest pre-release version of the Polymer CLI is available, and it includes enhanced support for ES6 modules. Specifically, Polymer CLI version 1.7.0-pre.10 now supports:

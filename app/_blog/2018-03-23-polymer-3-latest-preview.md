@@ -1,5 +1,9 @@
 ---
-title:  "Hands-on with the latest Polymer 3.0 preview"
+layout: post
+title: "Polymer 3.0: Latest preview"
+published: 2018-03-23
+author: polymer-team
+description: "Hands-on with the latest Polymer 3.0 preview"
 ---
 
 In a previous [blog post](2018-02-26-3.0-preview-paths-and-names), we announced some changes to the way we handle module imports in Polymer 3.0, and described why we made those changes. We're happy to announce that you can try out the new import syntax in the latest Polymer 3.0 preview (`3.0.0-pre.12`).

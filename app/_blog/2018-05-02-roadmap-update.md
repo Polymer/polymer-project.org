@@ -1,5 +1,9 @@
 ---
+layout: post
 title: "Roadmap update, part 1: 3.0 and beyond"
+published: 2018-05-02
+author: graynorton
+description: "Updates on the Polymer 3.0 release and what comes next."
 ---
 
 <!-- toc -->

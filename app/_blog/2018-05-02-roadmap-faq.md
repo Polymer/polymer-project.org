@@ -1,5 +1,9 @@
 ---
+layout: post
 title: "Roadmap update, part 2: FAQ"
+published: 2018-05-02
+author: graynorton
+description: "Frequently-asked-questions on our roadmap update."
 ---
 
 <style>
