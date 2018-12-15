@@ -6,7 +6,9 @@ author: graynorton
 description: "Updates on the Polymer 3.0 release and what comes next."
 ---
 
-<!-- toc -->
+{::options toc_levels="1..3" /}
+* ToC
+{:toc}
 
 We're now in the final days of development on Polymer 3.0, which we'll officially release at Google I/O next week. As we approach the 3.0 release, we'd like to zoom out for a big-picture view of our roadmap.
 

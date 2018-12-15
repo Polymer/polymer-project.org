@@ -13,7 +13,9 @@ b.qa {
 }
 </style>
 
-<!-- toc -->
+{::options toc_levels="1..3" /}
+* ToC
+{:toc}
 
 This frequently-asked-questions is a follow-up to our May 2018 [Roadmap update](/blog/2018-05-02-roadmap-update).
 

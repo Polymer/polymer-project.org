@@ -11,7 +11,9 @@ tags:
 - javascript
 ---
 
-<!-- toc -->
+{::options toc_levels="1..3" /}
+* ToC
+{:toc}
 
 ## Introduction
 

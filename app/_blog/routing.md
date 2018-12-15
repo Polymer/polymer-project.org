@@ -10,7 +10,9 @@ tags:
 - urls
 ---
 
-<!-- toc -->
+{::options toc_levels="1..3" /}
+* ToC
+{:toc}
 
 <style>
   iframe {

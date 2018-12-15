@@ -6,7 +6,9 @@ author: polymer-team
 description: "An update on the latest releases from the Polymer Project."
 ---
 
-<!-- toc -->
+{::options toc_levels="1..3" /}
+* ToC
+{:toc}
 
 
 At Google I/O we announced a lot of new products—lit-html, LitElement, PWA Starter Kit, and the Material Web Components. Since then, you may have noticed it's been a little quiet around here. We've been heads-down working on getting those new products ready for release. 
