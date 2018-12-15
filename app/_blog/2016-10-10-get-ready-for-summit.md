@@ -1,5 +1,12 @@
 ---
-title:  "Get Ready for the Polymer Summit 2016"
+layout: post
+title: "Get Ready for the Polymer Summit 2016"
+published: 2016-10-10
+author: polymer-team
+description: "We're ready for Polymer Summit 2016, are you? Here are the latest event details."
+tags:
+- blog
+- announcements
 ---
 
 The Polymer Summit is almost here! We’ll kick off live from Tobacco Dock, London at 10:00AM GMT this coming Monday, October 17th. To get the most out of the event, make sure to check out the speaker list and talk schedule on our [site](https://www.polymer-project.org/summit/schedule).

@@ -1,5 +1,12 @@
 ---
-title:  "Introducing the Polymer Project Roadmap and Repo"
+layout: post
+title: "Introducing the Polymer Project Roadmap and Repo"
+published: 2015-10-16
+author: taylor
+description: "We're excited to open up the project's near-term roadmap. The roadmap is available in new repo - Polymer/project - to help enable project-level discussion and collaboration."
+tags:
+- blog
+- announcements
 ---
 
 We've been seeing exponential Polymer adoption since the [Polymer 1.0 release](https://www.youtube.com/watch?v=fD2As5RmM8Q) and the [Polymer Summit](https://www.polymer-project.org/summit), and couldn't be more excited about where the project is headed.

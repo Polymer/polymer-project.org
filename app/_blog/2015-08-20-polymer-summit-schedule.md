@@ -1,7 +1,14 @@
 ---
-title:  "Polymer Summit Schedule"
-
+layout: post
+title: "Polymer Summit Schedule"
+published: 2015-08-20
+author: polymer-team
+description: "The schedule for the first ever Polymer summit is now live!"
+tags:
+- blog
+- announcements
 ---
+
 ![Polymer summit logo](/images/logos/summit-2015.png)
 
 We’re excited to announce that the full speaker list and talk schedule has been released for the first ever Polymer Summit!  Find the latest details on our newly launched site [here](https://www.polymer-project.org/summit). Look forward to talks about topics like building full apps with Polymer, Polymer and ES6, adaptive UI with Material Design, and performance patterns in Polymer.

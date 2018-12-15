@@ -1,5 +1,12 @@
 ---
-title:  "Deprecating /deep/"
+layout: post
+title: "Deprecating /deep/"
+published: 2015-12-01
+author: polymer-team
+description: "We're updating elements to remove usage of /deep/ and ::shadow. This might cause some unexpected changes if you were relying on side-effects of these selectors."
+tags:
+- blog
+- announcements
 ---
 
 As you may have heard, the `/deep/` and `::shadow` combinators are [being deprecated](https://www.chromestatus.com/feature/6750456638341120), in favor of using CSS custom properties to more carefully inherit styles across shadow boundaries.

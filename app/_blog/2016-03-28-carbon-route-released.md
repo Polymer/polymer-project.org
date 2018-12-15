@@ -1,5 +1,12 @@
 ---
-title:  "<app-route> gets its beta release!"
+layout: post
+title: "<app-route> gets its beta release!"
+published: 2016-03-28
+author: polymer-team
+description: "The app-route element has made its beta debut - we'd love your feedback on this modular approach to routing."
+tags:
+- blog
+- announcements
 ---
 
 > *Update: app-route was previously called carbon-route. The carbon line of elements have been renamed the app elements to reflect their role as tools for building full client-side apps.*

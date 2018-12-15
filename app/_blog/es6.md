@@ -1,5 +1,14 @@
 ---
+layout: post
 title: "Building web components using ES6 classes"
+description: "How to build vanilla custom elements and Polymer elements using ES2015 features."
+published: 2015-09-24
+author: ebidel
+polymer_version: 1.1.0
+tags:
+- es2015
+- es6
+- javascript
 ---
 
 <!-- toc -->

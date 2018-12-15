@@ -1,5 +1,12 @@
 ---
-title:  Community Highlights - GE Predix UI
+layout: post
+title: "Community Highlights - GE Predix UI"
+description: "GE's Predix UI provides Polymer-based components for building dashboards for the industrial Internet of Things."
+published: 2016-03-10
+author: polymer-team
+tags:
+- blog
+- featured
 ---
 
 _In the recurring Community Highlights, we feature the latest neat projects and components being built with Polymer._

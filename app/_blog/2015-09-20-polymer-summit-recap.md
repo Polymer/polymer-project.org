@@ -1,5 +1,12 @@
 ---
-title:  "Polymer Summit Recap"
+layout: post
+title: "Polymer Summit Recap"
+published: 2015-09-29
+author: taylor
+description: "In case you missed any of the action at this year's Polymer Summit, we focused on three key themes: Develop, Design, and Deploy, giving concrete advice on how you can build your web app from start to finish. Here's a recap of all the highlights."
+tags:
+- blog
+- announcements
 ---
 
 In case you missed any of the action at this year's Polymer Summit, we focused on three key themes: Develop, Design and Deploy, giving concrete advice on how you can build your web app from start to finish. Here's a recap of all the highlights.

@@ -1,5 +1,13 @@
 ---
+layout: post
 title: "Encapsulated Routing with Elements"
+description: "An overview to doing distributed routing in an application, as well as an introduction to <app-route> and <app-location>."
+published: 2016-03-25
+author: rictic
+polymer_version: 1.4.0
+tags:
+- routing
+- urls
 ---
 
 <!-- toc -->

@@ -1,5 +1,13 @@
 ---
-title:  "Discover and communicate with nearby Bluetooth devices"
+layout: post
+title: "Discover and communicate with nearby Bluetooth devices"
+published: 2015-09-10
+author: fbeaufort
+categories: announcements
+description: "Introducing a new set of Polymer elements that simplify discovering and communicating with nearby Bluetooth devices, powered behind the scenes by the experimental Web Bluetooth API."
+tags:
+- blog
+- announcements
 ---
 
 We're particularly glad to share with you today the [platinum bluetooth elements](https://www.webcomponents.org/element/PolymerElements/platinum-bluetooth/platinum-bluetooth-device), a
