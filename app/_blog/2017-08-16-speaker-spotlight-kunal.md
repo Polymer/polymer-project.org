@@ -1,5 +1,9 @@
 ---
+layout: post
 title: "Polymer Summit 2017 Speaker Spotlight: Kunal Kundaje, Netflix"
+published: 2017-08-16
+author: katejeffreys
+description: "Kunal Kundaje on componentized database dashboards, and the inclusivity of the Web."
 ---
 
 **Could you tell us a bit about your favorite project you built with Polymer?**

@@ -1,5 +1,11 @@
 ---
+layout: post
 title: "Polymer Summit 2017 Speaker Spotlight: Chad Killingsworth, Jack Henry & Associates"
+published: 2017-08-03
+author: katejeffreys
+description: "Chad Killingsworth on componentized web app development, and the importance of powerful theming."
+tag:
+- blog
 ---
 
 Chad builds modern online banking experiences with Polymer. We chatted about componentized web app development and the importance of powerful theming capabilities.

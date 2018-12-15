@@ -1,5 +1,9 @@
 ---
-title: The future of elements
+layout: post
+title: "The future of elements"
+published: 2017-11-27
+author: notwaldorf
+description: "What we're doing with Polymer elements, what we aren't doing, and why."
 ---
 
 If you've seen Steve's [talk](https://www.youtube.com/watch?v=rvpJ5O0W_6A) from the Polymer Summit, you know that there's a bunch of changes planned for the Polymer Elements, such as performance improvements, smaller APIs and re-designing with extensibility in mind. We're very excited about this, but we're still in the early days of trying to figure out the exact shape of our elements.  We'll let you know as soon as that plan is ready!

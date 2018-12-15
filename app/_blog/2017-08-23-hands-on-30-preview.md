@@ -1,5 +1,9 @@
 ---
-title:  "Hands-on with the Polymer 3.0 preview"
+layout: post
+title: "Hands-on with the Polymer 3.0 preview"
+published: 2017-08-23
+author: arthurevans
+description: "Get started experimenting with Polymer on npm and ES6 modules."
 ---
 
 <div class="alert alert-warning">

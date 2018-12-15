@@ -1,6 +1,12 @@
 ---
-title:  "webcomponents.org"
-
+layout: post
+title: "webcomponents.org"
+published: 2017-01-09
+author: polymer-team
+description: "The new webcomponents.org is now live, with updates and elements from the Web Components community."
+tag:
+- blog
+- announcements
 ---
 
 In the last few years, the Web Components community has grown immensely. The [Polymer Slack channel](http://bit.ly/polymerslack) has over 6,000 members, and there are thousands of Web Component repositories on Bower. And with the new “v1” versions of the [Shadow DOM](https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom) and [Custom Elements](https://developers.google.com/web/fundamentals/getting-started/primers/customelements) specs, Web Components are now gaining broad cross-browser support.

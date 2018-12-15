@@ -1,5 +1,9 @@
 ---
-title:  "Preview de Polymer 3.0: npm y Módulos de ES6"
+layout: post
+title: "Preview de Polymer 3.0: npm y Módulos de ES6"
+published: 2017-09-28
+author: wmginsberg
+description: "The \"Polymer 3.0 preview\" article translated into Spanish."
 ---
 
 Cuando estuve en Cracovia para GDD Europe, encontré muchos desarrolladores que son hispanohablantes. Así que decidí traducir este artículo para compartir con más desarrolladores que, quizas, no hablan inglés. Muchas gracias a [Alberto Medina](https://twitter.com/iAlbMedina) y [Francisco Baena](https://twitter.com/baenans) por ayudarme. Sin ellos, no sé si mi español sería comprensible.

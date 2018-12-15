@@ -1,5 +1,12 @@
 ---
-title: Polymer at I/O ‘17, ICYMI
+layout: post
+title: "Polymer at I/O ‘17, ICYMI"
+published: 2017-05-26
+author: emarquez
+description: "Everything you need to know about the Polymer Project from Google I/O 2017, in case you missed it."
+tag:
+- blog
+- announcements
 ---
 
 Last week, thousands of developers converged in Mountain View, CA for Google I/O 2017. While the Polymer Project has been featured at I/O for the past few years, 2017 was our largest presence yet. Our presence included three sessions from our team, two codelabs, tons of Office Hours, an After Hours installation, and an event-wide scavenger hunt.

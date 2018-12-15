@@ -1,5 +1,9 @@
 ---
+layout: post
 title: "Polymer Summit 2017 Speaker Spotlight: Maria Husmann, PhD Student"
+published: 2017-08-09
+author: katejeffreys
+description: "Maria Husmann on the benefits of the Web as an open platform, and the greater user experience offered by Progressive Web Apps."
 ---
 
 Maria is a PHD student at ETH Zurich. Her research focuses on cross-device applications and human-computer interaction. Maria shares her thoughts on the benefits of the Web as an open platform, and the greater user experience offered by Progressive Web Apps.

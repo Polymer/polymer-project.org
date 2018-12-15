@@ -1,5 +1,12 @@
 ---
-title: Time for 2.0
+layout: post
+title: "It's time for 2.0!"
+published: 2017-05-15
+author: wmginsberg
+description: "The Polymer 2.0 library is built for performant interoperable web component development."
+tag:
+- blog
+- announcements
 ---
 
 **Polymer 2.0** has landed. Our freshest cut of the **Polymer CLI** is ready for download, our **Docs** include all the latest 2.0 guidance and upgrade tips, and our **Elements** have been ported to Hybrid mode to be used in both 1.0- and 2.0-based applications.

@@ -1,5 +1,9 @@
 ---
+layout: post
 title: "Polymer Summit 2017 Speaker Spotlight: Bede Overend, Simpla"
+published: 2017-08-30
+author: katejeffreys
+description: "Bede Overend of Simpla on facilitating engagement with Web Components."
 ---
 
 Bede Overend of Simpla talks engagement on the Web, and how Polymer speeds up the process of developing with Web Components.

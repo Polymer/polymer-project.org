@@ -1,5 +1,9 @@
 ---
-title:  "Shadow DOM v0 and HTML imports are changing"
+layout: post
+title: "Shadow DOM v0 and HTML imports are changing"
+published: 2017-10-18
+author: arthurevans
+description: "Upcoming changes to Chrome could break some Polymer 1.x and 2.x websites. Make sure your sites are up to date."
 ---
 
 

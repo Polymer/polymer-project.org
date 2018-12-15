@@ -1,5 +1,13 @@
 ---
-title: An Update on Neon Animation
+layout: post
+title: "An Update on Neon Animation"
+published: 2017-07-12
+author: emarquez
+description: "What is the status of neon-animation going forward, and what does it mean to you?"
+tags:
+- blog
+- animation
+- polymer 2
 ---
 
 You are probably here because you've probably seen this message on [`neon-animation`](https://github.com/PolymerElements/neon-animation).
