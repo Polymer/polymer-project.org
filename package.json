@@ -1,23 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "gulp",
-    "serve": "dev_appserver.py dist/app.yaml",
-    "deploy": "npm run build && gcloud app deploy dist/app.yaml --project polymer-project --no-promote"
-  },
-  "devDependencies": {
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-gray-matter": "^2.2.1",
-    "gulp-help": "^1.6.1",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-util": "^3.0.7",
-    "highlight.js": "^9.12.0",
-    "markdown-it": "^6.0.1",
-    "markdown-it-attrs": "^0.1.8",
-    "merge-stream": "^1.0.0",
-    "run-sequence": "^1.1.4",
-    "toc": "PolymerLabs/node-toc"
+    "build": "jekyll build",
+    "serve": "dev_appserver.py _site/app.yaml",
+    "deploy": "npm run build && gcloud app deploy _site/app.yaml --project polymer-project --no-promote"
   }
 }

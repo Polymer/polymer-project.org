@@ -70,7 +70,7 @@ Use unqualified inline links only for links where the linked resource is the
 method).
 
     To update custom properties dynamically, call
-    [updateStyles](/{{{polymer_version_dir}}}/api/Polymer.Base#method-updateStyles).
+    [updateStyles](https://polymer-library.polymer-project.org/2.0/api/elements/Polymer.Element#method-updateStyles).
 
 When linking off-site, it should be clear that the link goes off site. For some
 documents (like web standards) this may be clear enough from the title.
