@@ -8,9 +8,6 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-(function(exports) {
-'use strict';
-
 function downloadStarter() {
   ga('send', 'event', 'button', 'download');
 }
@@ -25,10 +22,6 @@ function recordPageview(opt_url) {
   ga('devrelTracker.send', 'pageview', url);
 }
 
-exports.recordPageview = recordPageview;
-exports.downloadStarter = downloadStarter;
-exports.recordPlunker = recordPlunker;
-
 // Analytics -----
 /* jshint ignore:start */
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -41,4 +34,12 @@ ga('create', 'UA-39334307-1', 'auto', {'siteSpeedSampleRate': 50});
 ga('create', 'UA-49880327-9', 'auto', {'name': 'devrelTracker'});
 recordPageview();
 
-})(window);
+searchBox.addEventListener('keypress', function(event) {
+  if (event.keyCode === 13 /* enter */) {
+    const site = window.location.hostname;
+    const query = encodeURIComponent(searchBox.value);
+    ga('send', 'pageview', '/search?q='+query);
+    window.location = 'https://www.google.com/search?q=site%3A'+site+'+'+query;
+    event.preventDefault();
+  }
+});
