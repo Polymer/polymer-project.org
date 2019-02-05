@@ -14,8 +14,36 @@ a {
   color: #FF4470;
 }
 
+.hero-title {
+  margin-bottom: -30px;
+}
+
+.hero-title::before {
+  width: 64px;
+  height: 44px;
+  background-image: url(../images/logos/p-logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: inline-block;
+  margin-right: 20px;
+  content: '';
+}
+
+@media screen and (max-width: 640px) {
+  .hero-title {
+    margin-bottom: -20px;
+  }
+
+  .hero-title::before {
+    margin-right: 12px;
+    width: 38px;
+    height: 26px;
+  }
+}
+
 .hero-title::after {
-  background: #FF4470;
+  display: none;
 }
 
 .grey-bg {
