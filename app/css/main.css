@@ -197,6 +197,7 @@ main {
   margin-top: 60px;
   display: flex;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .wrapper {
