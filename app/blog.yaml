@@ -1,4 +1,12 @@
 ---
+- title:  "Fast, lightweight templates and interoperable components for the modern web: lit-html and LitElement"
+  path: /blog/2019-02-05-lit-element-and-lit-html-release
+  published: 2019-02-05
+  author: justinfagnani
+- title:  "LitElement release candidate"
+  path: /blog/2019-01-11-lit-element-rc
+  published: 2019-01-11
+  author: justinfagnani
 - title:  "lit-html 1.0 release candidate"
   path: /blog/2018-12-13-lit-html-rc
   published: 2018-12-13
