@@ -1,16 +1,16 @@
 ---
-title: "Fast, lightweight templates and interoperable components for the modern web: lit-html and LitElement"
+title: "Lightning-fast templates & Web Components: lit-html & LitElement"
 ---
 
 Today we're excited to announce the first stable releases of our two next-generation web development libraries: [lit-html](https://lit-html.polymer-project.org) and [LitElement](https://lit-element.polymer-project.org/).
 
-lit-html is a tiny, fast, expressive library for HTML templating. LitElement is a simple base class for creating web components with lit-html templates.
+lit-html is a tiny, fast, expressive library for HTML templating. LitElement is a simple base class for creating Web Components with lit-html templates.
 
 If you've been following the projects, you probably know what lit-html and LitElement are all about (and you can [skip to the end](#get-started) if you like). If you're new to lit-html and LitElement, read on for an overview.
 
 ## lit-html: a tiny, fast library for HTML templating
 
-lit-html is a tiny (just over 3k bundled, minified and gzipped) and, fast JavaScript library for HTML templating. lit-html works well with functional programming approaches, letting you express your application's UI declaratively, as a function of its state.
+lit-html is a tiny (just over 3k bundled, minified, and gzipped) and fast JavaScript library for HTML templating. lit-html works well with functional programming approaches, letting you express your application's UI declaratively, as a function of its state.
 
 ```js
 const myTemplate = (name) => html`
@@ -68,19 +68,17 @@ This creates an element you can use anywhere you'd use a regular HTML element:
 
 `<name-tag name="Ida"></name-tag>`
 
-Hi, my name is Ida!
-
 If you use Web Components already, you'll be happy to hear that they're now natively supported in Chrome, Safari and Firefox. Edge support is coming soon, and polyfills are only needed for legacy browser versions. 
 
-If you're new to Web Components, you should give them a try! Web Components let you extend HTML in a way that interoperates with other libraries, tools, and frameworks. This makes them ideal for sharing UI elements within a large organization, publishing components for use anywhere on the web, or building UI design systems like Material design. 
+If you're new to Web Components, you should give them a try! Web Components let you extend HTML in a way that interoperates with other libraries, tools, and frameworks. This makes them ideal for sharing UI elements within a large organization, publishing components for use anywhere on the web, or building UI design systems like Material Design. 
 
-You can use custom elements anywhere you use HTML: in your main document, in a CMS, in Markdown, or in views [built with frameworks](https://custom-elements-everywhere.com/) like React and Vue. You can also mix and match LitElement components with other Web Components, whether they've been written using vanilla web technologies or made with the help of tools like Salesforce Lightning, StencilJS, SkateJS or the Polymer library.
+You can use custom elements anywhere you use HTML: in your main document, in a CMS, in Markdown, or in views [built with frameworks](https://custom-elements-everywhere.com/) like React and Vue. You can also mix and match LitElement components with other Web Components, whether they've been written using vanilla web technologies or made with the help of tools like [Salesforce Lightning Web Components](https://developer.salesforce.com/blogs/2018/12/introducing-lightning-web-components.html), Ionic's [Stencil](https://stenciljs.com/), [SkateJS](https://skatejs.netlify.com/) or the [Polymer library](https://polymer-library.polymer-project.org).
 
 ## Get started {#get-started}
 
 Want to try lit-html and LitElement? A good starting point is the LitElement tutorial:
 
-* [Try LitElement](https://lit-element.polymer-project.org/try/)
+* [Try LitElement](https://lit-element.polymer-project.org/try)
 
 If you're interested in using lit-html by itself, or integrating lit-html templating into another project, see the lit-html docs:
 
