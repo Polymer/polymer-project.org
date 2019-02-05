@@ -1,16 +1,16 @@
 ---
-title: "Fast, lightweight templates and interoperable components for the modern web: lit-html and LitElement"
+title: "Lightning-fast templates & Web Components: lit-html & LitElement"
 ---
 
 Today we're excited to announce the first stable releases of our two next-generation web development libraries: [lit-html](https://lit-html.polymer-project.org) and [LitElement](https://lit-element.polymer-project.org/).
 
-lit-html is a tiny, fast, expressive library for HTML templating. LitElement is a simple base class for creating web components with lit-html templates.
+lit-html is a tiny, fast, expressive library for HTML templating. LitElement is a simple base class for creating Web Components with lit-html templates.
 
 If you've been following the projects, you probably know what lit-html and LitElement are all about (and you can [skip to the end](#get-started) if you like). If you're new to lit-html and LitElement, read on for an overview.
 
 ## lit-html: a tiny, fast library for HTML templating
 
-lit-html is a tiny (just over 3k bundled, minified and gzipped) and, fast JavaScript library for HTML templating. lit-html works well with functional programming approaches, letting you express your application's UI declaratively, as a function of its state.
+lit-html is a tiny (just over 3k bundled, minified, and gzipped) and fast JavaScript library for HTML templating. lit-html works well with functional programming approaches, letting you express your application's UI declaratively, as a function of its state.
 
 ```js
 const myTemplate = (name) => html`
