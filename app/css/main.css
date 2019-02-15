@@ -13,6 +13,13 @@ a {
   text-decoration: none;
 }
 
+:target::before {
+  content: "";
+  display: block;
+  height: 60px;
+  margin-top: -60px;
+}
+
 h1 {
   font-size: 40px;
   line-height: 48px;
@@ -70,6 +77,10 @@ code {
   background: #f5f5f5;
   color: black;
   padding: 2px 4px;
+}
+
+a code {
+  color: inherit;
 }
 
 pre code {
@@ -348,7 +359,7 @@ section p {
   line-height: 22px;
 }
 
-.side-nav li:not(.active) a {
+.side-nav li:not(.active) > a {
   color: #222;
 }
 
@@ -558,6 +569,10 @@ th, td {
   }
 }
 @media screen and (max-width: 640px) {
+  :target::before {
+    height: 112px;
+    margin-top: -112px;
+  }
 
   h1 {
     font-size: 32px;
