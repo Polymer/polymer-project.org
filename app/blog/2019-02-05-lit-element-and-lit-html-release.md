@@ -84,7 +84,7 @@ If you're interested in using lit-html by itself, or integrating lit-html templa
 
 * [lit-html docs](https://lit-html.polymer-project.org/)
 
-As always, let us know what you think. You can reach us on [Slack](https://join.slack.com/t/polymer/shared_invite/enQtNTAzNzg3NjU4ODM4LTkzZGVlOGIxMmNiMjMzZDM1YzYyMzdiYTk0YjQyOWZhZTMwN2RlNjM5ZDFmZjMxZWRjMWViMDA1MjNiYWFhZWM) or [Twitter](https://twitter.com/polymer). Our projects are open source (of course!) and you can report bugs, file feature requests or suggest improvements on GitHub:
+As always, let us know what you think. You can reach us on [Slack](/slack-invite) or [Twitter](https://twitter.com/polymer). Our projects are open source (of course!) and you can report bugs, file feature requests or suggest improvements on GitHub:
 
 * [lit-html on GitHub](https://github.com/Polymer/lit-html)
 * [LitElement on GitHub](https://github.com/Polymer/lit-element)
