@@ -20,8 +20,8 @@ standard environment. Before you start you'll need the following prerequisites:
 
 Set up your repo:
 
-    git clone https://github.com/Polymer/docs
-    cd docs
+    git clone https://github.com/Polymer/polymer-project.org
+    cd polymer-project.org
     npm install
 
 
