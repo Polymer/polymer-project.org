@@ -9,8 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 'use strict';
 
-// const gulp = require('gulp');
-const gulp = require('gulp-help')(require('gulp'));
+const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const del = require('del');
 const fs = require('fs');
@@ -79,16 +78,18 @@ function convertMarkdownToHtml(templateName) {
   });
 }
 
-gulp.task('md:blog', 'Blog markdown -> HTML conversion. Syntax highlight and TOC generation', function() {
+gulp.task('md:blog', Object.assign(function() {
   return gulp.src([
       'app/blog/*.md',
     ], {base: 'app/'})
     .pipe(convertMarkdownToHtml('templates/base-blog.html'))
     .pipe($.rename({extname: '.html'}))
     .pipe(gulp.dest('dist'));
-});
+}, {
+  description: 'Blog markdown -> HTML conversion. Syntax highlight and TOC generation',
+}));
 
-gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', function() {
+gulp.task('copy', Object.assign(function() {
   const app = gulp.src([
       'app/**/*',
       '!app/**/*.md',
@@ -104,15 +105,17 @@ gulp.task('copy', 'Copy site files (polyfills, templates, etc.) to dist/', funct
     .pipe(gulp.dest('dist/templates'));
 
   return merge(app, templates);
-});
+}, {
+  description: 'Copy site files (polyfills, templates, etc.) to dist/',
+}));
 
-gulp.task('clean', 'Remove built files', function() {
+gulp.task('clean', Object.assign(function() {
   return del('dist');
-});
+}, {
+  description: 'Remove built files',
+}));
 
 // Default task. Build the dest dir.
-gulp.task('default', 'Build site', ['clean'], function(done) {
-  runSequence(
-    ['copy', 'md:blog'],
-    done);
-});
+gulp.task('default', Object.assign(gulp.series('clean', 'copy', 'md:blog'), {
+  description: 'Build site',
+}));
