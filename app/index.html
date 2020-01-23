@@ -26,18 +26,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <style>
     #product-grid {
+      /* IE11 does not support grid auto-placement (or unprefixed
+      `display: grid`), use flex as a fallback. */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: fit-content(300px);
-      grid-gap: 40px;
-      gap: 40px;
       align-items: stretch;
-      justify-items: stretch;
+      justify-content: stretch;
     }
 
     .product-grid-item {
+      /* For IE11 flex fallback only: flex-basis of 34% means that at most two
+      items can fit on a row. */
+      flex: 1 0 34%;
+      min-width: 200px;
+
       display: flex;
       flex-direction: column;
+      /* For IE11 flex fallback only: Use margin instead of gap for
+      compatibility with both flex and grid. */
+      margin: 20px;
       padding: 20px;
       background: rgba(0,0,0,0.6);
       background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
@@ -45,6 +57,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       transition: 0.4s transform;
       will-change: transform;
       transform: scale(1);
+    }
+
+    /* For IE11 flex fallback only: These hidden divs aren't needed in a grid
+    layout. */
+    .product-grid-item.flex-fallback-spacer {
+      opacity: 0;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      height: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
     }
 
     #section-about .responsive-row > *,
@@ -111,9 +134,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     @media screen and (max-width: 1160px) {
-      #product-grid {
-        grid-gap: 24px;
-        gap: 24px;
+      .product-grid-item {
+        margin: 12px;
+        padding: 12px;
       }
     }
 
@@ -121,8 +144,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       #product-grid {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
-        grid-gap: 20px;
-        gap: 20px;
+      }
+
+      .product-grid-item {
+        margin: 10px;
+        padding: 10px;
       }
     }
   </style>
@@ -169,6 +195,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <p>Our original sets of web components, built with the Polymer library.</p>
           <span class="status">Maintenance</span>
         </a>
+        <!-- For IE11 flex fallback only: If the final item in the list would
+        end up on a line of its own, this prevents it from taking up the entire
+        row. It should have no height so that it doesn't affect the layout when
+        it is alone on the last row. -->
+        <div class="product-grid-item flex-fallback-spacer"></div>
       </div>
     </div>
   </section>
