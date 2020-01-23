@@ -1,4 +1,9 @@
 ---
+- title:  "Native Web Components come to Microsoft Edge"
+  path: /blog/2020-01-15-edge-79-release
+  published: 2020-01-15
+  description: "With the release of Microsoft's new Chromium-based Edge, all major evergreen browsers now support Web Components natively."
+  author: polymer-team
 - title:  "Lightning-fast templates & Web Components: lit-html & LitElement"
   path: /blog/2019-02-05-lit-element-and-lit-html-release
   published: 2019-02-05
