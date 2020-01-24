@@ -133,6 +133,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       text-transform: uppercase;
     }
 
+    .responsive-row > * {
+      flex: 1;
+    }
+
     @media screen and (max-width: 1160px) {
       .product-grid-item {
         margin: 12px;
@@ -142,13 +146,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     @media screen and (max-width: 640px) {
       #product-grid {
+        /* For IE11 flex fallback only. */
+        flex-direction: column;
+        flex-wrap: none;
+
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
       }
 
       .product-grid-item {
+        /* For IE11 flex fallback only. */
+        flex: 0 0 auto;
+        min-width: none;
+
         margin: 10px;
         padding: 10px;
+      }
+
+      /* IE11's flex-basis is broken. When a flex container is used in a space
+      where its content determines the container's size in the flex direction,
+      elements with `flex-basis: 0px;` (implied by `flex: 1;`) contribute no
+      size, even if there's nothing forcing them to shrink. */
+      .responsive-row > * {
+        flex: 0 0 auto;
       }
     }
   </style>
@@ -209,15 +229,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1 class="title">About the Polymer Project</h1>
       <h2 class="description">As front-end engineers in the Chrome team, our mission is to make the web better.</h2>
       <div class="responsive-row">
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">We work on <br>libraries & tools</h2>
           <p>to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
         </div>
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">We experiment with <br>new patterns</h2>
           <p>for building faster and smaller web applications.</p>
         </div>
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">We advocate for <br>standards</h2>
           <p>helping ensure that web developers have a strong voice in the process.</p>
         </div>
@@ -230,11 +250,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1 class="title">Why Web Components?</h1>
 
       <div class="responsive-row">
-        <div style="flex: 1">
+        <div>
           <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
           <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
         </div>
-        <div style="flex: 1">
+        <div>
           <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
           <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
           <a class="link-with-arrow" href="https://www.webcomponents.org">Learn more</a>
@@ -248,7 +268,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1 class="title">Latest news</h1>
       <div class="responsive-row">
         {% for item in articles[:3] %}
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">{{{item.title}}}</h2>
           <p>{{{item.description}}}</p>
           <a class="link-with-arrow" href="{{{item.path}}}" target="_blank">Blog Post</a>
