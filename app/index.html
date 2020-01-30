@@ -25,10 +25,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </header>
 
   <style>
+    #product-grid {
+      /* IE11 does not support grid auto-placement (or unprefixed
+      `display: grid`), use flex as a fallback. */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: fit-content(300px);
+      align-items: stretch;
+      justify-content: stretch;
+    }
+
     .product-grid-item {
-      display: inline-block;
-      width: calc(50% - 60px);
-      margin-bottom: 40px;
+      /* For IE11 flex fallback only: flex-basis of 34% means that at most two
+      items can fit on a row. */
+      flex: 1 0 34%;
+      min-width: 200px;
+
+      display: flex;
+      flex-direction: column;
+      /* For IE11 flex fallback only: Use margin instead of gap for
+      compatibility with both flex and grid. */
+      margin: 20px;
       padding: 20px;
       background: rgba(0,0,0,0.6);
       background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
@@ -38,17 +59,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       transform: scale(1);
     }
 
+    /* For IE11 flex fallback only: These hidden divs aren't needed in a grid
+    layout. */
+    .product-grid-item.flex-fallback-spacer {
+      opacity: 0;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      height: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
     #section-about .responsive-row > *,
     #section-news .responsive-row > * {
       margin-bottom: 40px;
-    }
-
-    .product-grid-item.left {
-      float: left;
-    }
-
-    .product-grid-item.right {
-      float: right;
     }
 
     .product-grid-item:hover {
@@ -74,6 +98,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .product-grid-item .thumb {
+      flex: auto;
       position: relative;
       margin: 10px 10%;
       padding-top: 50%;
@@ -108,34 +133,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       text-transform: uppercase;
     }
 
+    .responsive-row > * {
+      flex: 1;
+    }
+
     @media screen and (max-width: 1160px) {
       .product-grid-item {
-        margin-bottom: 24px;
-        width: calc(50% - 52px);
+        margin: 12px;
+        padding: 12px;
       }
     }
 
     @media screen and (max-width: 640px) {
+      #product-grid {
+        /* For IE11 flex fallback only. */
+        flex-direction: column;
+        flex-wrap: none;
+
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+      }
+
       .product-grid-item {
-        display: block;
-        width: auto;
+        /* For IE11 flex fallback only. */
+        flex: 0 0 auto;
+        min-width: none;
+
+        margin: 10px;
+        padding: 10px;
       }
 
-      .product-grid-item.left,
-      .product-grid-item.right {
-        float: none;
+      /* IE11's flex-basis is broken. When a flex container is used in a space
+      where its content determines the container's size in the flex direction,
+      elements with `flex-basis: 0px;` (implied by `flex: 1;`) contribute no
+      size, even if there's nothing forcing them to shrink. */
+      .responsive-row > * {
+        flex: 0 0 auto;
       }
-
-      .product-grid-item {
-        margin-bottom: 20px;
-      }
-
     }
   </style>
 
   <section>
     <div class="wrapper">
-      <div>
+      <div id="product-grid">
         <a class="onload-fadein product-grid-item left" href="https://lit-element.polymer-project.org" style="animation-delay: .15s; background: #00A3E6; background: linear-gradient(315deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), linear-gradient(315deg, #3FC7FF 0%, #00A3E6 100%)">
           <div class="thumb" style="background-image:url(/images/thumbnails/thumb_litElement.svg); padding-top: 39%; margin: 10px 8%;"></div>
           <h2>LitElement</h2>
@@ -175,8 +215,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <p>Our original sets of web components, built with the Polymer library.</p>
           <span class="status">Maintenance</span>
         </a>
+        <!-- For IE11 flex fallback only: If the final item in the list would
+        end up on a line of its own, this prevents it from taking up the entire
+        row. It should have no height so that it doesn't affect the layout when
+        it is alone on the last row. -->
+        <div class="product-grid-item flex-fallback-spacer"></div>
       </div>
-      <div style="clear: both"></div>
     </div>
   </section>
 
@@ -185,15 +229,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1 class="title">About the Polymer Project</h1>
       <h2 class="description">As front-end engineers in the Chrome team, our mission is to make the web better.</h2>
       <div class="responsive-row">
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">We work on <br>libraries & tools</h2>
           <p>to help developers unlock the web’s full potential, taking advantage of cutting-edge features like Web Components, Service Workers and HTTP/2.</p>
         </div>
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">We experiment with <br>new patterns</h2>
           <p>for building faster and smaller web applications.</p>
         </div>
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">We advocate for <br>standards</h2>
           <p>helping ensure that web developers have a strong voice in the process.</p>
         </div>
@@ -206,11 +250,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1 class="title">Why Web Components?</h1>
 
       <div class="responsive-row">
-        <div style="flex: 1">
+        <div>
           <p>We’re best known for our work on Web Components, a set of modern web standards that give you the power to extend HTML.</p>
           <p>With Web Components, you can create and share custom elements that work on any site, interoperate seamlessly with the browser’s built-in elements, and play nicely with frameworks of all kinds.</p>
         </div>
-        <div style="flex: 1">
+        <div>
           <p>If you like, you can build your app entirely out of Web Components. Breaking your app up into right-sized components helps make your code cleaner and less expensive to maintain.</p>
           <p>Products like LitElement and PWA Starter Kit make Web Components easier to use and highlight best practices, helping you get great results.</p>
           <a class="link-with-arrow" href="https://www.webcomponents.org">Learn more</a>
@@ -224,7 +268,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1 class="title">Latest news</h1>
       <div class="responsive-row">
         {% for item in articles[:3] %}
-        <div style="flex: 1">
+        <div>
           <h2 class="caption">{{{item.title}}}</h2>
           <p>{{{item.description}}}</p>
           <a class="link-with-arrow" href="{{{item.path}}}" target="_blank">Blog Post</a>
