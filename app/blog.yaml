@@ -1,4 +1,9 @@
 ---
+- title:  "LitElement 3.0 & lit-html 2.0: Early Preview Release"
+  path: /blog/2020-09-22-lit-element-and-lit-html-next-preview
+  published: 2020-09-22
+  description: "Preview the next major versions of LitElement and lit-html." 
+  author: polymer-team
 - title:  "Native Web Components come to Microsoft Edge"
   path: /blog/2020-01-15-edge-79-release
   published: 2020-01-15
