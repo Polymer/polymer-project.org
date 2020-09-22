@@ -11,7 +11,7 @@ These releases include most of the breaking changes we intend to make, and most 
 We've been very happy with the current version of our libraries - they're fast, small, and stable (yay!) - and in some ways we _don't_ have very many pressing needs to make breaking changes. We don't take making breaking changes lightly. But there are some compelling reasons for changes that we think will improve the user-experience of components and applications built with LitElement.
 
 1. Performance. We have found that some of our browser-bug workaround code and customization abstractions prevent optimizations that we would like to do.
-2. Size. That same code, and our extensive public API, costs bytes. We always want to find ways to make the liraries smaller.
+2. Size. That same code, and our extensive public API, costs bytes. We always want to find ways to make the libraries smaller.
 3. Features & API cleanup. Some features are difficult to add in a cost-effective way with the current architecture, or can't really be improved without breaking changes.
 4. Server-side-rendering: lit-html has an extremely flexible and customizable API, and in some ways is more of a template-system construction kit than a single template-system. But this flexibility complicates SSR, which needs to make assumptions about how the server-rendered HTML maps to templates. SSR would only work well with the default, uncustomized lit-html, so limiting customization makes SSR more reliable. Very few developers used the customization APIs anyway.
 
