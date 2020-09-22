@@ -8,7 +8,7 @@ These releases include most of the breaking changes we intend to make, and most 
 
 ## Motivation
 
-We've been very happy with the current version of our libraries - they're fast, small, and stable (yay!) - and in some ways we _don't_ have very many pressing needs to make breaking changes. We don't take making breaking changes lightly. But there are some compelling reasons for changes that we think will improve the user-experience of components and applications built with LitElement.
+We've been very happy with the current versions of our libraries—they're fast, small, and stable (yay!)—and in some ways we _don't_ have very many pressing needs to make breaking changes. We don't make breaking changes lightly. But there are some compelling reasons for changes that we think will improve the user-experience of components and applications built with LitElement.
 
 1. Performance. We have found that some of our browser-bug workaround code and customization abstractions prevent optimizations that we would like to do.
 2. Size. That same code, and our extensive public API, costs bytes. We always want to find ways to make the libraries smaller.
@@ -28,7 +28,7 @@ The most important changes:
   * Customizing the syntax of lit-html is no longer directly supported. The `templateFactory` and `TemplateProcessor` APIs have been removed.
   * The public API has been minimized in order to facilitate better minification and future evolution.
   * The lit-html directive API has changed to be class-based and to persist directive instances. Directives should be easier to write and easier to make SSR compatible.
-  * The LitElement decorators are no-longer exported from the main module - they have to be imported individually or from a new `lit-element/decorators.js` module. This means smaller app sizes for non-decorator-users and opens the door to new decorators implementing the current TC39 JavaScript proposal when those arrive.
+  * The LitElement decorators are no longer exported from the main module—they have to be imported individually or from a new `lit-element/decorators.js` module. This means smaller app sizes for non-decorator-users and opens the door to new decorators implementing the current TC39 JavaScript proposal when those arrive.
   * lit-html no longer uses `instanceof` or module-level WeakMaps to detect special objects like template results and directives, which should improve the compatibility of multiple copies of lit-html in a single app. We still reccomend de-duping npm packages, but more cases will work now.
   * Safari 12 has a critical [template literal bug](https://bugs.webkit.org/show_bug.cgi?id=190756), which is no longer worked around in lit-html. If you support Safari 12 you will have to compile template literals to their ES5 equivalent. Note that babel-preset-env already does this for the broken versions of Safari.
 
