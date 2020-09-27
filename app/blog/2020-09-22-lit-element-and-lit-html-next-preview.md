@@ -21,7 +21,7 @@ We've been very happy with the current versions of our libraries—they're fast,
 
 These are new major versions, so there are some breaking changes, but we want to minimize disruption to our users as much as possible. We've limited the breaking changes so that they don't affect most users, or only require a mechanical change (like changing an import).
 
-Please see the READMEs ([LitElement](https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-element/README.md), [lit-html]((https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-html/README.md))) and CHANGELOGs ([LitElement](https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-element/CHANGELOG.md), [lit-html]((https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-html/CHANGELOG.md))) for the most detailed list of changes.
+Please see the READMEs ([LitElement](https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-element/README.md), [lit-html](https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-html/README.md)) and CHANGELOGs ([LitElement](https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-element/CHANGELOG.md), [lit-html](https://github.com/Polymer/lit-html/blob/lit-next/packages/lit-html/CHANGELOG.md)) for the most detailed list of changes.
 
 The most important changes:
 
