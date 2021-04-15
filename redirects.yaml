@@ -5,6 +5,9 @@
 - /1.0/ /
 - /2.0/ /
 
+# Landing page redirect
+- / https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview
+
 # bulk redirects
 # 0.5 to the legacy site
 - /0.5/* https://docs-05-dot-polymer-project.appspot.com/0.5/
