@@ -44,4 +44,4 @@ Tickets are free! [Register on the Polymer Summit 2017 website](https://summit.p
 
 If you can't make it to Copenhagen, don't worry. The talks will be livestreamed and recorded for later, and the codelabs will be available online so you can try them out from anywhere.
 
-Follow us on Twitter [@polymer](https://twitter.com/polymer) for regular updates.
+Follow us on Twitter [@polymerLibrary](https://twitter.com/polymerLibrary) for regular updates.

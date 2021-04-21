@@ -43,7 +43,7 @@ Learn to build a web component with plain JavaScript, and how to publish it on W
 
 #### Cheese
 
-While we build the App Toolbox to help developers build web component based progressive web apps more efficiently and simply, we also build reference apps and case studies. Our most recent Apps project came out of a challenge to our team: to build an awesome mobile experience that we would only expect from native, in a tiny fraction of the size. Out of that came Cheese, a photo editing app powered by Google’s Vision APIs which detects your facial features and expression, and smartly decorates your photo with silly emoji combinations. Try it out at <a href="https://cheese.polymer-project.org">cheese.polymer-project.org</a> and share your best photos with [@polymer](https://twitter.com/polymer).
+While we build the App Toolbox to help developers build web component based progressive web apps more efficiently and simply, we also build reference apps and case studies. Our most recent Apps project came out of a challenge to our team: to build an awesome mobile experience that we would only expect from native, in a tiny fraction of the size. Out of that came Cheese, a photo editing app powered by Google’s Vision APIs which detects your facial features and expression, and smartly decorates your photo with silly emoji combinations. Try it out at <a href="https://cheese.polymer-project.org">cheese.polymer-project.org</a> and share your best photos with [@polymerLibrary](https://twitter.com/polymerLibrary).
 
 #### Polymon Global Scavenger Hunt
 

@@ -8,7 +8,7 @@ One of my earliest projects at Netflix a couple of years ago was to build a dash
 
 **When and how did you first start using Polymer?**
 
-I had read about Web Components briefly a few years ago, and got another glimpse of the technology during the 2014 Chrome Dev Summit, but I hadn't actually used Web Components for anything at the time. When I joined Netflix in late 2015, one of my fellow engineers on a related team, John Tregoning, had just started using Polymer for one of the apps that he was building. I was curious to try it out too, so I decided to experiment with it and enjoyed the experience. Several of us have been building a number of apps with it since then! 
+I had read about Web Components briefly a few years ago, and got another glimpse of the technology during the 2014 Chrome Dev Summit, but I hadn't actually used Web Components for anything at the time. When I joined Netflix in late 2015, one of my fellow engineers on a related team, John Tregoning, had just started using Polymer for one of the apps that he was building. I was curious to try it out too, so I decided to experiment with it and enjoyed the experience. Several of us have been building a number of apps with it since then!
 
 **Could you tell me what excites you most about Progressive Web Apps?**
 
@@ -36,4 +36,4 @@ Tickets are free! [Register on the Polymer Summit 2017 website](https://summit.p
 
 If you can't make it to Copenhagen, don't worry. The talks will be livestreamed and recorded for later, and the codelabs will be available online so you can try them out from anywhere.
 
-Follow us on Twitter [@polymer](https://twitter.com/polymer) for regular updates.
+Follow us on Twitter [@polymerLibrary](https://twitter.com/polymerLibrary) for regular updates.
