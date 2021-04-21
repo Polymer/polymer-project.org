@@ -70,6 +70,6 @@ This year's summit took place August 22–23 in beautiful downtown [Copenhagen, 
 
 If you missed it, you can catch up on all the talks on [the Polymer Summit 2017 website](https://summit.polymer-project.org/).
 
-Follow us on Twitter [@polymer](https://twitter.com/polymer) for regular updates.
+Follow us on Twitter [@polymerLibrary](https://twitter.com/polymerLibrary) for regular updates.
 
 

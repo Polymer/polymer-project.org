@@ -20,7 +20,7 @@ We chose Polymer for the UI layer because of how close it was to the actual plat
 
 Extremely quickly--and it's very important.
 
-The theming is all tightly coupled to the same theming variables that our mobile clients already used. 
+The theming is all tightly coupled to the same theming variables that our mobile clients already used.
 
 The ability to not only get rid of, but realizing you don't need a CSS preprocessor is fabulous. CSS variables and shadow DOM give you everything you need to build a highly themeable app.
 
@@ -80,4 +80,4 @@ Tickets are free! [Register on the Polymer Summit 2017 website](https://summit.p
 
 If you can't make it to Copenhagen, don't worry. The talks will be livestreamed and recorded for later, and the codelabs will be available online so you can try them out from anywhere.
 
-Follow us on Twitter [@polymer](https://twitter.com/polymer) for regular updates.
+Follow us on Twitter [@polymerLibrary](https://twitter.com/polymerLibrary) for regular updates.
