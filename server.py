@@ -92,16 +92,15 @@ def read_redirects_file(filename):
     parts = r.split()
     match = re.match('__([a-z0-9_-]+)__(.*)', parts[1])
     if match:
-	logging.warning("Matching.")
+	logging.debug("Matching variable.")
 	site = match.group(1)
 	if site in SITE_URLS: 
-	  logging.warning("Foo: %s %s" % (site, match.group(2)))
 	  parts[1] = SITE_URLS[site] + match.group(2)
-          logging.warning("Found redirect URL %s" % parts[1])
+          logging.debug("Found redirect URL %s" % parts[1])
 	else:
 	  logging.error("Bad site in redirect file: %s" % site)
     else:
-	logging.warning("No match for %s" % parts[1])
+	logging.debug("No variable in %s" % parts[1])
     if parts[0].endswith('*'):
       wildcards[parts[0][:-1]] = parts[1]
     else:
