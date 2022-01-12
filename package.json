@@ -13,7 +13,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "highlight.js": "^9.12.0",
-    "markdown-it": "^6.0.1",
+    "markdown-it": "^12.3.2",
     "markdown-it-attrs": "^0.1.8",
     "merge-stream": "^1.0.0",
     "run-sequence": "^1.1.4",
